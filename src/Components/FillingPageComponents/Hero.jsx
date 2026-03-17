@@ -1,4 +1,3 @@
-import React from "react";
 const logo = "/assets/image/Vat-Master-Logo-1.png";
 const modelImg = "/assets/image/Screenshot_2025-12-20_132826-removebg-preview.png";
 const offerBg = "/assets/image/Frame 1000006032.png";

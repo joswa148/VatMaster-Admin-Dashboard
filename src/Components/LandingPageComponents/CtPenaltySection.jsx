@@ -10,12 +10,9 @@ export default function CtPenaltySection() {
   return (
      <section className="pen-wrap">
       <div className="pen-container">
-    
-    
         {/* RIGHT */}
         <div
-          className="pen-right"
-         
+          className="pen-right"   
         >
           <h3 className="pen-rightTitle dsakdsa">
             Who needs to complete corporate tax registration UAE?
