@@ -1,4 +1,3 @@
-import React from "react";
 const ribbonBg = "/assets/image/Group 1000005957.png";
 const cardBg = "/assets/image/Subtract 3.png";
  
