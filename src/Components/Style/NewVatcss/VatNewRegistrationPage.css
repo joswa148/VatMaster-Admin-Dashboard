@@ -1,0 +1,286 @@
+.vrp-page {
+  padding: 40px 40px;
+}
+
+/* HERO */
+.vrp-hero {
+  /* background: url(../../public/assets/image/innerbg1.png); */
+  background: url(../../../../public/assets/image/innerbg1.png);
+  background-size: 100% 100%;
+  padding: 30px 40px;
+  border-radius: 22px;
+  margin-bottom: 40px;
+}
+
+.vrp-hero-title {
+  font-size: 56px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.vrp-hero-text {
+  font-size: 18px;
+  color: #fff;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* LEFT TOP CARD */
+.vrp-left-top {
+  background: #c9f2f7;
+  border-radius: 30px;
+  padding: 28px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.vrp-left-top h3 {
+  font-size: 33px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vrp-left-top p {
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+}
+
+/* LEFT MIDDLE CARD */
+.vrp-left-middle h3 {
+  font-size: 33px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vrp-left-middle p {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+.vrp-left-middle p:nth-of-type(1) {
+  font-weight: 700;
+  width: 97%;
+}
+
+/* LEFT IMAGE */
+.vrp-left-image {
+  overflow: hidden;
+}
+
+.vrp-left-image img {
+  width: 100%;
+  object-fit: cover;
+  height: 640px;
+  border-radius: 30px;
+}
+
+/* RIGHT IMAGE */
+.vrp-right-image img {
+  width: 100%;
+  height: 81%;
+  object-fit: fill;
+  border-radius: 25px;
+}
+
+.vrp-right-image {
+   position: relative;
+    width: 100%;
+    bottom: 0px;
+    padding: 0% 0%;
+    height: 39%;
+    
+}
+
+/* RIGHT CARD */
+.vrp-right-main {
+  background: #c9f2f7;
+  border-radius: 30px;
+  padding: 45px;
+
+  
+  line-height: 1.8;
+  position: absolute;
+  top: 33.5%;
+}
+
+.vrp-right-main h3 {
+  font-size: 33px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vrp-right-main p {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+
+p.vrp-revenue {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+p.vrp-buss{
+   font-weight: 700;
+    font-size: 22px; 
+}
+
+/* ==========================================
+   TABLET + MOBILE RESPONSIVE (ADD AT BOTTOM)
+   Desktop unchanged
+========================================== */
+
+/* ===== TABLET ONLY (576px to 991.98px) ===== */
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+  .vrp-page{
+    padding: 28px 18px;
+  }
+
+  /* Hero */
+  .vrp-hero{
+    padding: 24px 22px;
+    border-radius: 18px;
+    background-size: cover;
+    background-position: center;
+  }
+  .vrp-hero-title{ font-size: 40px; }
+  .vrp-hero-text{ font-size: 15.5px; line-height: 1.7; }
+
+  /* Left card */
+  .vrp-left-top{
+    padding: 20px;
+    border-radius: 24px;
+    margin-bottom: 22px;
+  }
+  .vrp-left-top h3,
+  .vrp-left-middle h3,
+  .vrp-right-main h3{
+    font-size: 22px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .vrp-left-top p,
+  .vrp-right-main p{
+    font-size: 14.8px;
+    line-height: 1.75;
+  }
+
+  /* Left image */
+  .vrp-left-image img{
+    height: auto;
+    border-radius: 24px;
+  }
+
+  /* ✅ Right image should show on tablet */
+  .vrp-right-image{
+    display: block;
+    position: relative;
+    bottom: 0;           /* reset */
+    margin-left: 0;      /* reset */
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .vrp-right-image img{
+    width: 100%;
+    height: auto;        /* ✅ important */
+    object-fit: cover;   /* better on tab */
+    border-radius: 24px;
+  }
+
+  /* ✅ Right card should NOT be absolute on tablet */
+  .vrp-right-main{
+    position: relative;
+    top: 0;
+    margin-top: 18px;    /* space after image */
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  /* Optional: headings inside card */
+  .vrp-buss,
+  .vrp-revenue{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 14px;
+  }
+}
+
+/* ===== MOBILE (<= 575.98px) ===== */
+@media (max-width: 575.98px) {
+
+  .vrp-page{
+    padding: 20px 12px;
+  }
+
+  /* Hero */
+  .vrp-hero{
+    padding: 20px 16px;
+    border-radius: 16px;
+    background: #2a3d42;
+    background-size: cover;
+    background-position: center;
+  }
+  .vrp-hero-title{ font-size: 28px; }
+  .vrp-hero-text{ font-size: 13.8px; line-height: 1.6; }
+
+  /* Cards */
+  .vrp-left-top,
+  .vrp-right-main{
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .vrp-left-top h3,
+  .vrp-left-middle h3,
+  .vrp-right-main h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .vrp-left-top p,
+  .vrp-right-main p{
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+
+  /* Left image */
+  .vrp-left-image img{
+    height: auto;
+    border-radius: 18px;
+  }
+
+  /* ✅ Hide right image on mobile */
+  .vrp-right-image{
+    display: none;
+  }
+
+  /* ✅ Remove absolute overlap */
+  .vrp-right-main{
+    position: relative;
+    top: 0;
+    margin-top: 0;
+  }
+
+  .vrp-buss,
+  .vrp-revenue{
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+/* ===== Very small devices ===== */
+@media (max-width: 360px){
+  .vrp-hero-title{ font-size: 24px; }
+  .vrp-hero-text{ font-size: 13px; }
+}

@@ -1,0 +1,68 @@
+/* ===== Base ===== */
+.homepage-root {
+  min-height: 100vh;
+  background: #ffffff;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+/* ===== Container (Tailwind max-w-300 replacement) ===== */
+.homepage-container {
+  width: 96%;
+  max-width: 1440px; /* adjust if needed */
+  margin: 0 auto;
+  padding:  3%  0;
+  padding-bottom: 45px;
+}
+
+/* ===== Sections spacing ===== */
+.homepage-sections {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 576px) {
+  .homepage-sections {
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .homepage-sections {
+    gap: 4rem;
+  }
+}
+
+/* ===== Reveal Animation ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+
+.reveal-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Full Bleed ===== */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+@media (max-width:578px){
+  .homepage-container {
+  width: 100%;/* adjust if needed */ 
+  padding:  0%  0;
+  }
+}

@@ -1,0 +1,480 @@
+/* =========================
+   ABOUT SECTION (NO TAILWIND)
+   Bootstrap container-fluid use pannirukom
+========================= */
+
+.about-wrap {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.about-shell {
+  max-width: 1500px;     /* max-w-[1500px] */
+  margin: 0 auto;        /* mx-auto */
+  padding-left: 16px;    /* px-4 */
+  padding-right: 16px;
+}
+@media (min-width: 576px) {
+  .about-shell {
+    padding-left: 24px;  /* sm:px-6 */
+    padding-right: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .about-shell {
+    padding-left: 0px;  /* lg:px-10 */
+    padding-right: 0px;
+  }
+}
+
+/* ===== ABOUT GRID ===== */
+.about-grid {
+  display: grid;
+  align-items: start;   /* items-start */
+  grid-template-columns: 1fr; /* grid-cols-1 */
+  padding-top: 16px;    /* pt-4 */
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+    padding-top: 3%;   /* lg:pt-1 */
+  }
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+  grid-template-columns: 41% 56%; /* md:grid-cols-[48%_52%] */
+    gap: 8px;                       /* md:gap-2 */
+  }
+}
+
+@media (min-width: 992px) {
+  .about-grid {
+   grid-template-columns: 41% 56%; /* lg:grid-cols-[50%_50%] */
+    gap: 8px;                       /* lg:gap-2 */
+  }
+}
+
+/* ===== LEFT SECTION ===== */
+.about-leftRoot {
+  width: 100%;
+}
+
+.about-leftMax {
+  width: 100%;
+  /* max-width: 320px;  */
+}
+@media (min-width: 576px) {
+  .about-leftMax {
+    max-width: 360px; /* sm:max-w-[360px] */
+  }
+}
+@media (min-width: 768px) {
+  .about-leftMax {
+    max-width: 420px; /* md:max-w-[420px] */
+  }
+}
+@media (min-width: 992px) {
+  .about-leftMax {
+    max-width: 520px; /* lg:max-w-[520px] */
+  }
+}
+
+.about-leftCard {
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 42vw, 520px); /* h-[clamp(360px,42vw,520px)] */
+}
+
+/* BG image */
+.about-leftBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* (Your tailwind had lg:md:h-[80%] invalid — 
+   but you said values change panna koodathu.
+   So default h-full vechiten. 
+   If you really want LG 80%, uncomment below.)
+*/
+/*
+@media (min-width: 992px) {
+  .about-leftBg { height: 80%; }
+}
+*/
+
+/* TEXT BLOCK positions */
+.about-leftText {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 72%;
+  transform: translateY(-50%);
+}
+@media (min-width: 992px) {
+  .about-leftText {
+    left: 13%;     
+    top: 57%;     
+    transform: none;
+  }
+}
+
+.about-leftBold {
+  font-weight: 800;         
+  letter-spacing: -0.02em;   
+}
+
+
+.about-tClamp1 {
+  display: block;
+  font-size: 40px;
+}
+.about-tClamp2 {
+  display: block;
+  font-size:40px;
+}
+
+/* lines styling */
+.about-lineWhite {
+  color: #fff;
+  line-height: 1.02; /* leading-[1.02] */
+}
+
+.about-lineConsult {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  margin-top: 10px;  /* mt-[10px] */
+  line-height: 1.02;
+}
+
+.about-consultGlow {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 12%;
+  z-index: -1;
+  border-radius: 10px; /* rounded-[10px] */
+  opacity: 0.25;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.about-lineDark {
+  margin-top: 10px;
+  line-height: 1.02;
+  color: #062D33;
+}
+
+.about-lineUae {
+  margin-top: 8px; /* mt-[8px] */
+  line-height: 0.95; /* leading-[0.95] */
+  color: #062D33;
+  letter-spacing: -0.03em; 
+}
+
+/* explore btn */
+.about-exploreBtn {
+  position: absolute;
+  right: 10%;
+  bottom: 0;     
+  width: 40%;   
+  height: 12%;   /* h-[12%] */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #0B2F35;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  font-size: 20px;
+}
+@media (min-width: 992px) {
+  .about-exploreBtn {
+    top: 85%;       /* lg:top-[69%] */
+    bottom: auto;
+  }
+}
+
+/* ===== RIGHT SECTION ===== */
+.about-rightRoot {
+  width: 100%;
+}
+
+.about-rightInner {
+  width: 100%;
+  text-align: center; /* text-center */
+}
+@media (min-width: 992px) {
+  .about-rightInner {
+    text-align: left; /* lg:text-start */
+  }
+}
+
+/* Title */
+.about-title {
+  margin: 0;
+  font-weight: 800;
+  color: #000;
+  font-size: 34px;      /* text-[34px] */
+  line-height: 1.05;    /* leading-[1.05] */
+}
+@media (min-width: 576px) {
+  .about-title { font-size: 42px; } /* sm:text-[42px] */
+}
+@media (min-width: 992px) {
+  .about-title { font-size: 54px; } /* lg:text-[54px] */
+}
+
+/* paragraph */
+.about-para {
+  margin-top: 24px;       /* mt-6 */
+  font-size: 16px;        /* text-[16px] */
+  line-height: 1.7;       /* leading-[1.7] */
+  max-width: 58ch;        /* max-w-[58ch] */
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 576px) {
+  .about-para { font-size: 17px; } /* sm:text-[17px] */
+}
+@media (min-width: 992px) {
+  .about-para {
+   font-size: 18px;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: 500;
+  }
+}
+
+/* bullets */
+.about-bullets {
+  margin-top: 15px;       /* mt-10 */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;              /* space-y-5 */
+  text-align: center;
+}
+
+.about-bullets i {
+    color: var(--vmn-cyan);
+    font-size: 20px;
+}
+
+.about-bulletRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* your tailwind had lg:md:justify-start (invalid), but intention = lg start */
+@media (min-width: 992px) {
+  .about-bullets { text-align: left; }
+  .about-bulletRow { justify-content: flex-start; }
+}
+
+.about-tick {
+  color: #46bdf0;         /* text-[#46bdf0] */
+  font-size: 22px;        /* text-[22px] */
+  line-height: 1;         /* leading-none */
+}
+
+.about-bulletText {
+  color: #374151;         /* text-[#374151] */
+  font-size: 17px;        /* text-[17px] */
+  line-height: 1.4;       /* leading-[1.4] */
+}
+@media (min-width: 992px) {
+  .about-bulletText { font-size: 19px; font-weight: 600; } /* lg:text-[19px] */
+}
+
+/* ===== CARDS GRID ===== */
+.about-cardsWrap {
+  margin: 4%; /* mt-2 */
+  margin-top: 95px;
+      margin-left: 2%;
+    margin-right: 2%;
+        margin-bottom: 35px;
+}
+
+.about-cardsGrid {
+  display: grid;
+  gap: 16px; /* gap-4 */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid-cols-2 */
+}
+@media (min-width: 576px) {
+  .about-cardsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* sm:grid-cols-2 */
+}
+@media (min-width: 768px) {
+  .about-cardsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } /* md:grid-cols-3 */
+}
+@media (min-width: 992px) {
+  .about-cardsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-6 */
+    gap: 34px; /* lg:gap-6 */
+    row-gap: 60px;
+  }
+}
+
+/* =========================
+   SERVICE CARD (same Tailwind values)
+========================= */
+
+.svc-card {
+  border-radius: 16px;              /* rounded-[16px] */
+  margin-bottom: 5%;                /* mb-[5%] */
+  border: 1px solid #e5e7eb;        /* border border-[#e5e7eb] */
+  background: #fff;                 /* bg-white */
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06); /* shadow */
+  transition: box-shadow 200ms ease; /* transition */
+  min-height: 100px;                /* min-h-25 (approx) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.svc-card:hover {
+  box-shadow: 0 16px 30px rgba(0,0,0,0.10); /* hover shadow */
+}
+
+@media (min-width: 992px) {
+  .svc-card {
+    height: 330px; /* lg:min-h-30 (approx) */
+  }
+}
+
+.svc-icon {
+width: 100%;
+    height: 320px;
+}
+
+.svc-icon img{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 16px 0px 0px;              /* rounded-[16px] */
+
+}
+
+
+.svc-title {
+  margin-top: 16px; 
+  margin-bottom: 65px;        /* mt-4 */
+         /* mt-4 */
+  font-weight: 800;        /* font-extrabold */
+  color: #000;             /* text-black */
+  font-size: 16px;         /* text-[16px] */
+  line-height: 1.5;        /* leading-[1.5] */
+  white-space: pre-line;   /* whitespace-pre-line */
+}
+@media (min-width: 992px) {
+  .svc-title {
+    font-size: 18px; /* lg:text-[12px] */
+    
+
+  }
+}
+
+
+
+@media (min-width: 320px) and (max-width: 425px) {
+   
+  .about-tClamp1,.about-tClamp2{
+    font-size: 35px;
+  }
+
+  .about-grid {
+    padding-top: 30px};
+
+  .about-leftText {
+    position: absolute;
+    top: 66%;
+  }
+
+  .about-rightInner{
+    padding-top: 37px;
+  }
+
+  .about-para{
+    padding: 0px 15px;
+   text-align: left;
+       margin-top: 5px;
+       font-weight: 500;
+  }
+
+  .about-bulletRow{
+    justify-content: left;
+    padding: 0px 15px;
+    font-weight: 600;
+  }
+
+  .about-cardsWrap {
+    margin-top: 37px;
+
+  }
+  
+  .about-cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-title {
+    margin-bottom: 16px;
+  }
+
+  .about-cardsWrap {
+    margin-bottom: 0px;
+  }
+
+  .svc-card{
+    box-shadow: none;
+    margin-bottom: 7px;
+  }
+}
+
+
+@media (max-width:320px){
+  .about-leftCard {
+    position: relative;
+    width: 100%;
+    height: clamp(360px, 42vw, 520px);
+}
+
+.about-leftText {
+    position: absolute;
+    top: 68%;
+}
+}
+
+
+@media (max-width:378px){
+  .about-leftCard {
+    position: relative;
+    width: 100%;
+    height: clamp(422px, 42vw, 520px);
+}
+
+.about-leftText {
+    position: absolute;
+    top: 68%;
+}
+}
+
+
+/* @media (max-width:428px){
+  .about-leftCard {
+    position: relative;
+    width: 100%;
+    height: clamp(622px, 42vw, 520px);
+}
+
+.about-leftText {
+    position: absolute;
+    top: 68%;
+}
+} */

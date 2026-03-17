@@ -1,0 +1,194 @@
+:root {
+  --trustb-cyan: #00eaf6;
+  --trustb-text-dark: #0b2e34;
+  --trustb-shadow: 0 18px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* optional footer spacing */
+
+/* WRAP */
+.trustb-wrap {
+  padding: 3px 18px;
+  background: #fff;
+}
+
+.trustb-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =======================
+   RIBBON (IMAGE ONLY)
+======================= */
+.trustb-ribbon {
+  height: 102px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.trustb-ribbonTitle {
+  margin-top: 5%;
+  margin-left: 35px;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--trustb-text-dark);
+  text-align: center;
+  line-height: 1.4em;
+}
+
+/* =======================
+   GRID (slightly narrower cards)
+======================= */
+.trustb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px; /* add small gap so cards feel slimmer */
+  padding-bottom: 44px;
+}
+
+/* =======================
+   CARD (IMAGE ONLY)
+======================= */
+.trustb-card {
+  min-height: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: none !important;
+  background-color: #0b2e34;
+  padding: 26px 20px 26px; /* slightly reduced */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 16px; /* helps on all screens */
+  overflow: hidden;
+  text-align: center;
+}
+
+.trustb-cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ISO BADGE IMAGE (reduced size) */
+.trustb-badgeImg {
+  width: 96px;   /* ✅ reduced */
+  height: 96px;  /* ✅ reduced */
+  object-fit: contain;
+  position: relative;
+  top: -6px;
+  margin: 0px auto;
+}
+
+/* TITLE */
+.trustb-cardTitle {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 21px; /* slightly reduced */
+  font-weight: 600;
+  line-height: 1.35em;
+}
+
+/* SUBTEXT */
+.trustb-cardSub {
+  color: var(--trustb-cyan);
+  font-weight: 600;
+  font-size: 18px; /* slightly reduced */
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 992px) {
+  .trustb-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .trustb-ribbonTitle {
+    font-size: 24px;
+    margin-left: 18px;
+    margin-top: 0;
+  }
+
+  .trustb-card {
+    padding: 42px 30px 42px;
+    min-height: 265px;
+    background-size: 100% 100% !important;
+  }
+
+  .trustb-badgeImg {
+    width: 88px;
+    height: 88px;
+    top: -4px;
+  }
+
+  .trustb-cardTitle {
+    font-size: 21px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trustb-wrap {
+    padding: 10px 12px;
+  }
+
+  .trustb-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .trustb-ribbon {
+    background-image: none !important;
+    height: auto;
+    padding: 14px 10px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: var(--trustb-shadow);
+    background: #f7feff;
+  }
+
+  .trustb-ribbonTitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .trustb-card {
+    min-height: auto;
+    padding: 30px 22px 30px;
+    border-radius: 18px;
+    background-size: cover;
+  }
+
+  .trustb-badgeImg {
+    width: 84px;
+    height: 84px;
+  }
+
+  .trustb-cardTitle {
+    font-size: 22px;
+
+  }
+
+  .trustb-cardSub {
+    font-size: 18px;
+  }
+}
+@media (max-width :320px) {
+      .trustb-ribbonTitle{
+        font-size: 16px;
+      }
+
+          .trustb-cardTitle {
+        font-size: 19px;
+    }
+}

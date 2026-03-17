@@ -1,0 +1,188 @@
+/* VatNewAccountingPage.css */
+
+.vna-page {
+  padding: 40px 40px;
+}
+
+/* HERO */
+.vna-hero {
+  background: url(../../../../public/assets/image/innerbg1.png);
+  background-size: 100% 100%;
+  padding: 30px 40px;
+  border-radius: 22px;
+  margin-bottom: 40px;
+}
+
+.vna-hero-title {
+  font-size: 56px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.vna-hero-text {
+  font-size: 18px;
+  color: #fff;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* LEFT TOP CARD */
+.vna-left-card {
+  background: #c9f2f7;
+  border-radius: 30px;
+  padding: 28px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.vna-left-card h3 {
+  font-size: 35px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vna-left-card p {
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+}
+
+/* LEFT IMAGE */
+.vna-left-media {
+  overflow: hidden;
+}
+
+.vna-left-media img {
+  width: 100%;
+  /* object-fit: cover; */
+  height: 415px;
+  border-radius: 30px;
+}
+
+/* RIGHT IMAGE */
+.vna-right-media img {
+  width: 100%;
+  height: 79%;
+  border-radius: 3%;
+}
+
+.vna-right-media {
+  position: relative;
+  height: 48%;
+}
+
+/* RIGHT CARD */
+.vna-right-card {
+  background: #c9f2f7;
+  border-radius: 30px;
+  padding: 20px;
+  /* margin-bottom: 30px; */
+  /* line-height: 1.8; */
+  position: absolute;
+  /* height: 50%; */
+  top: 41%;
+}
+
+.vna-right-card h3 {
+  font-size: 35px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vna-right-card p {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+/* FEATURE LABELS */
+.vna-right-card .vna-feature-buss,
+.vna-right-card .vna-feature-label {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+  .vna-page {
+    padding: 30px 14px;
+  }
+
+  .vna-right-card {
+    margin-bottom: 0px;
+  }
+
+  .vna-hero-title {
+    font-size: 34px;
+  }
+
+  .vna-left-card h3,
+  .vna-right-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .vna-hero {
+    background: #2a3d42;
+  }
+
+  .vna-right-media {
+    bottom: 0px;
+    display: none;
+  }
+
+  .vna-right-card {
+    position: relative;
+    top: 0px;
+  }
+
+  .vna-left-media img {
+    height: auto;
+  }
+
+  .vna-hero-text {
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 320px) {
+  .vna-hero-title {
+    font-size: 30px;
+  }
+
+  .vna-hero-text {
+    font-size: 14px;
+  }
+
+  .vna-left-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .vna-left-card p {
+    font-size: 14px;
+  }
+
+  .vna-right-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .vna-right-card p {
+    font-size: 14px;
+  }
+
+  .vna-right-card .vna-feature-buss,
+  .vna-right-card .vna-feature-label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+}

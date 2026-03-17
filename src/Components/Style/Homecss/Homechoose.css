@@ -1,0 +1,249 @@
+/* src/components/WhyChooseUs.css */
+ 
+/* ---------- CONTAINER ---------- */
+/* max-w-[1240px] px-5 sm:px-6 lg:px-8 py-0 */
+.wcu-shell {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+ 
+@media (min-width: 576px) {
+  .wcu-shell {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+ 
+@media (min-width: 992px) {
+  .wcu-shell {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+}
+ 
+/* ---------- HEADER ---------- */
+.wcu-header {
+  width: 98%;
+  margin-bottom: 40px;
+}
+ 
+/* ---------- TOP BAR IMAGE ---------- */
+.wcu-topBar {
+  width: 100%;
+  height: 72px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+ 
+@media (min-width: 576px) {
+  .wcu-topBar {
+    height: 88px;
+  }
+}
+ 
+@media (min-width: 992px) {
+  .wcu-topBar {
+    height: 110px;
+  }
+}
+ 
+/* ---------- HEADER TEXT WRAP ---------- */
+.wcu-headerTextWrap {
+  position: absolute;
+  inset: 0;
+  top: -30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+ 
+@media (min-width: 576px) {
+  .wcu-headerTextWrap {
+    top: -30px;
+  }
+}
+ 
+@media (min-width: 992px) {
+  .wcu-headerTextWrap {
+    top: 40px;
+  }
+}
+ 
+/* ---------- HEADER TEXT ---------- */
+.wcu-headerText {
+    margin: 0;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0B2F35;
+    line-height: 1.2em;
+    font-size: clamp(20px, 3vw, 40px);
+    padding-top: 26px;
+}
+ 
+/* ---------- CARD WRAP ---------- */
+.wcu-cardWrap {
+  position: relative;
+  margin-top: 5%;
+}
+ 
+@media (min-width: 576px) {
+  .wcu-cardWrap {
+    margin-top: 5%;
+  }
+}
+ 
+@media (min-width: 768px) {
+  .wcu-cardWrap {
+    margin-top: 5%;
+  }
+}
+ 
+/* ---------- ACCENT BACKGROUND ---------- */
+.wcu-accent {
+    pointer-events: none;
+    position: absolute;
+       top: -17px;
+    right: 17px;
+    height: 97%;
+    width: 87%;
+    border-radius: 28px;
+    background: #00E6F6;
+    opacity: 0;
+    transform: rotate(6deg) translateX(4px) translateY(-4px) scale(0.995);
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+}
+ 
+/* ---------- CARD ---------- */
+.wcu-card {
+  position: relative;
+  overflow: hidden;
+    height: clamp(200px, 30vw, 255px);
+
+  border-radius: 26px;
+  background: #243E42;
+  color: #ffffff;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.16);
+  transform: translateY(0);
+  transition: transform 300ms ease-out;
+    width: 87%;
+    margin: 0 auto;
+    margin-bottom:45px;
+}
+ 
+/* ---------- HOVER EFFECTS ---------- */
+.wcu-cardWrap:hover .wcu-accent {
+  opacity: 0.9;
+  transform: rotate(6deg) translateX(0) translateY(0) scale(1);
+}
+ 
+.wcu-cardWrap:hover .wcu-card {
+  transform: translateY(-4px);
+}
+ 
+/* ---------- GLASS HIGHLIGHT ---------- */
+.wcu-glass {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+ 
+.wcu-glassArc {
+  height: 20vh;
+  width: 20vh;
+  border-bottom-left-radius: 100px;
+  background: rgba(255, 255, 255, 0.10);
+}
+ 
+/* ---------- CONTENT ---------- */
+.wcu-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  padding: 24px 16px;
+}
+ 
+@media (min-width: 576px) {
+  .wcu-content {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+}
+ 
+/* ---------- ICON ---------- */
+.wcu-icon {
+  font-size: 30px;
+  line-height: 1;
+}
+ 
+/* ---------- TITLE ---------- */
+.wcu-title {
+  margin-top: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(18px, 1.65vw, 26px);
+}
+ 
+/* ---------- DESCRIPTION ---------- */
+.wcu-desc {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(14.5px, 1.5vw, 15px);
+  line-height: 1.55;
+}
+
+@media (max-width: 575.98px){
+  .wcu-card{
+    width: 100% !important;
+  }
+  .wcu-card{
+    height: auto;          /* best for mobile */
+    min-height: 200px;     /* keeps card usable */
+  }
+  .wcu-headerTextWrap{
+    position: unset !important;
+  }
+  .wcu-header{
+    margin-bottom: 0px;
+  }
+  .wcu-headerText{
+    padding-top: 0;
+    padding-bottom: 0px;
+  }
+
+  .wcu-headerTextWrap {
+     margin-bottom:  0%;
+  }
+
+ .wcu-accent {
+top:-6%;
+width: 85%;
+right:2%
+ }
+
+ .wcu-card{
+  margin-bottom:0px;
+ }
+}
+@media (max-width: 575.98px){
+  .wcu-glassArc{
+    width: 25vw;
+    height: 25vw;
+    border-bottom-left-radius: 390%;
+   
+  }
+  .wcu-title{
+    font-size: 20px;
+  }
+}

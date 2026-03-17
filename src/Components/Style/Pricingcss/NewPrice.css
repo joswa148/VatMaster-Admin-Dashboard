@@ -1,0 +1,363 @@
+  /* =========================================================
+   SCOPE EVERYTHING INSIDE .prize-vatcss
+   (prevents class conflicts across CSS files)
+========================================================= */
+.prize-vatcss{
+  --dark:#2f3f43;
+  --cyan:#00EAF6;
+}
+
+/* -------------------------
+   Base Layout (scoped)
+-------------------------- */
+.prize-vatcss *{ box-sizing:border-box; }
+
+.prize-vatcss .cu-page{
+  background:#fff;
+  padding:1% 3%;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+
+.prize-vatcss .cu-shell{
+  max-width:1320px;
+  margin:0 auto;
+}
+
+/* -------------------------
+   MAIN GRID (scoped)
+-------------------------- */
+.prize-vatcss .cu-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:34px;
+  align-items:start;
+}
+
+/* -------------------------
+   LEFT HERO IMAGE CARD (scoped)
+-------------------------- */
+.prize-vatcss .cu-heroCard{
+  position:relative;
+  height:20rem;
+  width:100%;
+  border-radius:58px;
+  overflow:hidden;
+}
+
+.prize-vatcss .cu-heroImg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.prize-vatcss .cu-heroShade{
+  position:absolute;
+  inset:0;
+}
+
+.prize-vatcss .cu-heroTitle{
+  position:absolute;
+  left:40px;
+  top:31px;
+  margin:0;
+  color:#fff;
+  font-size:57px;
+  font-weight:700;
+  letter-spacing:-1px;
+}
+
+/* =========================================================
+   CYAN OVERLAY CARD (FINAL)
+   - absolute alignment in %
+   - fixed width/height with relative units
+   - no exceeding
+   - centered text (not padding alignment)
+   - child takes full size (as per your latest)
+========================================================= */
+.prize-vatcss .cu-cyanWrap{
+  position:absolute;
+  left:0%;
+  /* bottom:-15%;  (optional) */
+  /* bottom: 1%;   (if you want bottom) */
+
+  width:min(100%, 20rem);
+  height:min(90%, 7.8rem);
+
+  border-radius:46px;
+  overflow:hidden;
+
+  display:flex;
+
+  /* you used margin-top; keeping it */
+  margin-top:0px;
+}
+
+.prize-vatcss .cu-cyanCard{
+  width:100%;
+  height:100%;
+
+  background-color:cyan; /* (testing) remove when bg-img used */
+  border-radius:44px;
+
+  /* background-position:center; */
+  /* background-size:cover; */
+  /* background-repeat:no-repeat; */
+
+  /* If you want center alignment, uncomment below */
+  /* display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center; */
+
+  padding:16px 18px;
+  overflow:hidden;
+}
+
+/* Text blocks */
+.prize-vatcss .cu-cyanTitle,
+.prize-vatcss .cu-cyanTicks{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  width:100%;
+}
+
+.prize-vatcss .cu-cyanTitle{
+     font-size: 16px;
+    font-weight: 800;
+    color: #062126;
+    margin: 0 0 12px 0;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.prize-vatcss .cu-cyanTicks{
+     display: block;
+    /* margin: 6%; */
+    gap: 10px;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    justify-content: flex-start;
+}
+
+.prize-vatcss .cu-tickRow{
+ 
+ margin: 3%;
+  font-size:14px;
+  font-weight:800;
+  color:#062126;
+}
+
+.prize-vatcss .cu-tickDot{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#062126;
+  box-shadow:0 0 0 5px rgba(255,255,255,0.45);
+}
+
+/* -------------------------
+   RIGHT DARK CARD (scoped)
+-------------------------- */
+.prize-vatcss .cu-sideCard{
+  position:relative;
+  height:20rem;
+  width:100%;
+  border-radius:58px;
+  background:var(--dark);
+  overflow:hidden;
+  padding:42px 28px;
+  display:flex;
+  align-items:flex-start;
+}
+
+.prize-vatcss .cu-sideText{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  font-weight:900;
+  font-size:20px;
+  line-height:1.55;
+}
+
+.prize-vatcss .cu-sideSmall{
+  font-size:18px;
+  font-weight:800;
+  opacity:.95;
+}
+
+.prize-vatcss .cu-squares{
+  position:absolute;
+  right:22px;
+  top:22px;
+  width:120px;
+  height:120px;
+  z-index:1;
+  opacity:.18;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.prize-vatcss .cu-squares span{
+  width:44px;
+  height:44px;
+  background:rgba(255,255,255,0.22);
+  border-radius:8px;
+}
+
+.prize-vatcss .cu-sideCircle{
+  position:absolute;
+  right:-64px;
+  bottom:-30px;
+  width:217px;
+  height:200px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.10);
+}
+
+/* ======================
+   RESPONSIVE (scoped)
+====================== */
+
+/* Tablet */
+@media (max-width:992px){
+  .prize-vatcss .cu-page{
+    padding:18px 18px;
+    overflow-x:hidden;
+  }
+
+  .prize-vatcss .cu-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .prize-vatcss .cu-heroCard{
+    height:420px;
+    border-radius:42px;
+  }
+
+  .prize-vatcss .cu-sideCard{
+    height:360px;
+    border-radius:42px;
+  }
+
+  .prize-vatcss .cu-heroTitle{
+    font-size:48px;
+    left:22px;
+    top:28px;
+  }
+
+  .prize-vatcss .cu-cyanWrap{
+    left:4%;
+    /* bottom:4%; */
+    width:min(86%, 520px);
+    height:min(36%, 180px);
+  }
+
+  .prize-vatcss .cu-cyanCard{
+    border-radius:38px;
+    padding:14px 16px;
+  }
+
+  .prize-vatcss .cu-tickRow{ font-size:13.5px; }
+}
+
+/* ==============================
+   MOBILE HERO: show image + gradient + centered title
+============================== */
+@media (max-width: 767.98px) {
+  .prize-vatcss .cu-page { padding: 2% !important; }
+  .prize-vatcss .cu-shell { padding: 0 !important; margin: 0 !important; }
+  .prize-vatcss .cu-grid { margin-top: 0 !important; gap: 0 !important; }
+
+  /* Hero card */
+  .prize-vatcss .cu-heroCard {
+    position: relative;
+    height: auto !important;
+    border-radius: 22px;
+
+    overflow: hidden;
+
+   
+  }
+
+  /* picture + img */
+  .prize-vatcss .cu-heroCard picture {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .prize-vatcss .cu-heroImg {
+    position: relative !important;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ✅ Gradient overlay (dull + color) */
+  .prize-vatcss .cu-heroShade {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    /* gradient overlay */
+    /* Natural professional overlay */
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+  }
+
+  /* ✅ Centered title */
+  .prize-vatcss .cu-heroTitle {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    /* center */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    /* typography */
+    text-align: center;
+    padding: 0 14px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+  }
+
+  /* ✅ Hide only extra cards on mobile */
+  .prize-vatcss .cu-cyanWrap,
+  .prize-vatcss .cu-cyanCard,
+  .prize-vatcss .cu-sideCard,
+  .prize-vatcss .cu-heroContent,
+  .prize-vatcss .cu-heroGlow {
+    display: none !important;
+  }
+
+  .prize-vatcss .pp-wrap,
+  .prize-vatcss .pp-container {
+    margin-top: 0 !important;
+    padding-top: 12px;
+  }
+
+       .prize-vatcss .cu-heroTitle{
+        font-size: 35px;
+       }
+}
+
+

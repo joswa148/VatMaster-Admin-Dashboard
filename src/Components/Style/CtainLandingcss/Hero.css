@@ -1,0 +1,412 @@
+:root {
+  --vx-dark: #01343E;
+  --vx-cyan: #00EAF6;
+  --vx-cyanSoft: #DBFCFD;
+  --vx-green: #0FB201;
+  --vx-shadow: 0 18px 30px rgba(0, 0, 0, .12);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.vx-page {
+  background: #fff;
+  padding: 22px 61px;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.vx-shell {
+  width: 105%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.vx-topbar {
+  height: 80px;
+  background: var(--vx-dark);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  margin: 0 auto 26px;
+  margin-right: 300px;
+}
+
+.vx-logo {
+  height: 34px;
+  width: auto;
+}
+
+.vx-wa-pill {
+  background: var(--vx-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 12px 18px rgba(0, 0, 0, .18);
+  white-space: nowrap;
+}
+
+.vx-wa-pill i { font-size: 18px; }
+
+.vx-layout {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.vx-leftCard {
+  background: var(--vx-cyanSoft);
+  border-radius: 48px;
+  box-shadow: var(--vx-shadow);
+  padding: 91px 56px 44px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  width: 105%;
+  height: 96%;
+}
+
+.vx-title {
+  font-size: 50px;
+  line-height: 1.02;
+  margin: -37px 0px 13px 0;
+  color: #083B45;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.vx-title span {
+  color: var(--vx-cyan);
+  font-weight: 900;
+}
+
+.vx-desc { margin-top: 8px; }
+
+.vx-desc p {
+  margin: 0 0 12px 0;
+  color: #0C4B55;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.vx-wa-btn {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--vx-green);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 14px;
+  width: fit-content;
+  box-shadow: 0 14px 22px rgba(0, 0, 0, .18);
+}
+
+.vx-wa-btn i { font-size: 18px; }
+
+.vx-bottomCards{
+  grid-template-columns: 362px 1fr;
+}
+
+.vx-offerTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.vx-offerSub {
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.vx-offerPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.vx-offerNew {
+  font-size: 44px;
+  font-weight: 1000;
+  color: #FF1F1F;
+}
+
+.vx-aedIcon{
+  height: 18px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.vx-featuresImgCard {
+  height: 182px;
+  border-radius: 28px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 33px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.vx-partnerTitle{
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.8em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.vx-slider{
+  overflow: hidden;
+  width: 100%;
+}
+
+.vx-slideTrack{
+  display: flex;
+  width: max-content;
+  animation: vx-scroll 35s linear infinite;
+  gap: 14px;
+}
+
+.vx-slider:hover .vx-slideTrack{
+  animation-play-state: paused;
+}
+
+.vx-slide{
+  flex: 0 0 auto;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vx-slideImg{
+  background: #fff;
+  padding: 15px 24px;
+  border-radius: 14px;
+  height: 75px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+@keyframes vx-scroll{
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.vx-rightPanel {
+  position: relative;
+  border-radius: 56px;
+  overflow: hidden;
+  min-height: 640px;
+  margin-top: -133px;
+  margin-left: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vx-model {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 27px;
+  max-width: 520px;
+  height: auto;
+  pointer-events: none;
+}
+
+
+
+@media (max-width: 1200px) {
+  .vx-page { padding: 18px 18px; }
+
+  .vx-leftCard {
+    padding: 44px 40px 36px;
+    min-height: 600px;
+  }
+
+  .vx-title { font-size: 54px; }
+
+  .vx-bottomCards { grid-template-columns: 320px 1fr; }
+
+  .vx-featuresImgCard { height: 190px; }
+
+  .vx-rightPanel { min-height: 600px; }
+}
+
+/* Mobile stack */
+@media (max-width: 992px){
+  .vx-shell{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .vx-page{ padding: 14px 12px !important; }
+
+  .vx-topbar{
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .vx-layout{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .vx-leftCard{
+    width: 100% !important;
+    height: auto !important;
+    padding: 28px 18px 22px !important;
+    border-radius: 28px !important;
+  }
+
+  .vx-bottomCards{
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .vx-featuresImgCard{
+    width: 100% !important;
+    height: auto !important;
+    min-height: 170px !important;
+    background-size: cover !important;
+  }
+
+  .vx-rightPanel{
+    width: 100% !important;
+    min-height: 420px !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 28px !important;
+  }
+
+  .vx-model{
+    width: 88% !important;
+    max-width: 315px !important;
+    bottom: 0 !important;
+  }
+}
+
+@media (max-width: 576px){
+  .vx-topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 12px;
+    height: auto;
+    flex-wrap: nowrap;
+  }
+
+  .vx-logo{
+    height: 28px;
+    flex: 0 0 auto;
+  }
+
+  .vx-wa-pill{
+    padding: 8px 10px;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1;
+    min-width: 38px;
+    justify-content: center;
+  }
+
+  .vx-wa-pill i{
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .vx-rightPanel{ min-height: 508px !important; }
+  .vx-model{ width: 92% !important; }
+}
+
+@media (min-width: 600px) and (max-width: 992px) {
+  .vx-shell { width: 100% !important; }
+  .vx-topbar { margin-right: 0 !important; width: 100% !important; }
+  .vx-leftCard { width: 100% !important; height: auto !important; }
+  .vx-rightPanel { margin-top: 0 !important; margin-left: 0 !important; }
+
+  .vx-layout { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  .vx-leftCard{
+    padding: 34px 24px 22px !important;
+    border-radius: 34px !important;
+  }
+
+  .vx-title{
+    margin: 0 0 10px 0 !important;
+    font-size: 44px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .vx-desc p{
+    font-size: 15px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.5 !important;
+  }
+
+  .vx-wa-btn{
+    margin-top: 12px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+
+  .vx-bottomCards{
+    margin-top: 18px !important;
+    padding-top: 18px !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .vx-featuresImgCard{
+    width: 100% !important;
+    height: 155px !important;
+    padding: 18px 22px !important;
+    border-radius: 26px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .vx-rightPanel{
+    min-height: 420px !important;
+    border-radius: 34px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .vx-model{
+    width: 75% !important;
+    bottom: 12px !important;
+  }
+}
+
+@media (max-width: 768px){
+  .vx-slide{ width: 150px; }
+  .vx-slideImg{ height: 42px; padding: 10px 16px; }
+  .vx-slideTrack{ animation-duration: 22s; }
+}

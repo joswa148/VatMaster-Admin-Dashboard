@@ -1,0 +1,345 @@
+/* -------------------------
+   Variables
+-------------------------- */
+:root {
+  --dark: #2f3f43;
+  --cyan: #00EAF6;
+}
+ 
+/* -------------------------
+   Base Layout (NO body used)
+-------------------------- */
+* { box-sizing: border-box; }
+ 
+.cu-page {
+  background: #fff;
+  padding: 28px 50px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+ 
+.cu-shell {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+ 
+/* -------------------------
+   MAIN GRID
+-------------------------- */
+.cu-grid {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 34px;
+  align-items: start;
+}
+ 
+/* -------------------------
+   LEFT HERO IMAGE CARD
+-------------------------- */
+.cu-heroCard {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border-radius: 58px;
+  overflow: hidden;
+}
+ 
+.cu-heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.cu-heroShade {
+  position: absolute;
+  inset: 0;
+}
+ 
+.cu-heroTitle {
+  position: absolute;
+  left: 40px;
+  top: 31px;
+  margin: 0;
+  color: #fff;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+ 
+/* Cyan overlay card */
+.cu-cyanWrap {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  width: 415px;
+  border-radius: 46px;
+}
+ 
+.cu-cyanCard {
+  border-radius: 50px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+ 
+.cu-cyanTitle,
+.cu-cyanTicks {
+  position: relative;
+  z-index: 2;
+}
+ 
+.cu-cyanTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #062126;
+  margin-bottom: 14px;
+}
+ 
+.cu-tickRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  color: #062126;
+}
+ 
+.cu-tickDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #062126;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.45);
+}
+ 
+/* -------------------------
+   RIGHT DARK CARD
+-------------------------- */
+.cu-sideCard {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border-radius: 58px;
+  background: var(--dark);
+  overflow: hidden;
+  padding: 42px 28px;
+  display: flex;
+  align-items: flex-start;
+}
+ 
+.cu-sideText {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 1.55;
+}
+ 
+.cu-sideSmall {
+  font-size: 18px;
+  font-weight: 800;
+  opacity: 0.95;
+}
+ 
+/* squares */
+.cu-squares {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+  opacity: 0.18;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+ 
+.cu-squares span {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+}
+ 
+.cu-sideCircle {
+  position: absolute;
+  right: -64px;
+  bottom: -30px;
+  width: 217px;
+  height: 200px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+}
+ 
+/* ======================
+   RESPONSIVE
+====================== */
+ 
+/* Tablet */
+@media (max-width: 992px) {
+  .cu-page {
+    padding: 18px 18px;
+    overflow-x: hidden;
+  }
+ 
+  .cu-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+ 
+  .cu-heroCard {
+    height: 420px;
+    border-radius: 42px;
+  }
+ 
+  .cu-sideCard {
+    height: 360px;
+    border-radius: 42px;
+  }
+ 
+  .cu-heroTitle {
+    font-size: 48px;
+    left: 22px;
+    top: 28px;
+  }
+ 
+  .cu-cyanWrap {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    width: auto;
+    max-width: 520px;
+  }
+ 
+  .cu-cyanCard {
+    min-height: 160px;
+    border-radius: 44px;
+    padding: 24px 26px;
+  }
+ 
+  .cu-tickRow {
+    font-size: 14px;
+  }
+}
+ 
+/* Mobile */
+@media (max-width: 576px) {
+  .cu-page {
+    padding: 14px 12px;
+    overflow-x: hidden;
+  }
+ 
+  .cu-heroCard {
+    height: 360px;
+    border-radius: 34px;
+  }
+ 
+  .cu-sideCard {
+    height: 320px;
+    border-radius: 34px;
+    padding: 26px 20px;
+  }
+ 
+  .cu-heroTitle {
+    font-size: 42px;
+    left: 16px;
+    top: 22px;
+  }
+ 
+  .cu-cyanWrap {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    max-width: none;
+  }
+ 
+  .cu-cyanCard {
+    border-radius: 34px;
+    min-height: 140px;
+    padding: 18px 18px;
+  }
+ 
+  .cu-cyanTitle {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+ 
+  .cu-tickRow {
+    font-size: 13px;
+    gap: 10px;
+  }
+ 
+  .cu-tickDot {
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.45);
+  }
+ 
+  .cu-sideText {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+ 
+  .cu-sideSmall {
+    font-size: 15px;
+  }
+}
+
+/* ==============================
+   MOBILE – REMOVE ALL EMPTY SPACE
+============================== */
+@media (max-width: 767.98px) {
+
+  /* Remove page padding */
+  .cu-page {
+    padding: 0 !important;
+  }
+
+  .cu-shell {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove grid spacing */
+  .cu-grid {
+    margin-top: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* Hero = image only */
+  .cu-heroCard {
+    height: auto !important;
+    border-radius: 22px;
+    margin: 0 !important;
+  }
+
+  .cu-heroImg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Hide everything except image */
+  .cu-cyanWrap,
+  .cu-cyanCard,
+  .cu-sideCard,
+  .cu-heroContent,
+  .cu-heroGlow,
+  .cu-heroShade {
+    display: none !important;
+  }
+
+  /* Remove spacing before next section */
+  .pp-wrap,
+  .pp-container {
+    margin-top: 0 !important;
+    padding-top: 12px; /* small breathing space only */
+  }
+}

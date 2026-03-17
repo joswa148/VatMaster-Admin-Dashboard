@@ -1,0 +1,492 @@
+:root{
+  --vmn-dark:#24363c;
+  --vmn-dark2:#1b2c31;
+  --vmn-cyan:#00eaf6;
+  --vmn-white:#ffffff;
+  --green:#0FB201; /* your vmn-topwa uses this */
+}
+@media (min-width:320px) and (max-width:480px) {
+    a.vmn-topwa.wa-style-1 {
+        font-size: 14px;
+        margin-right: 0px;
+        width: 42%;
+        padding: 8px 10px;
+        text-align: center;
+        float: right !important;
+        position: absolute;
+        right: 10px;
+    }
+    .jdhe i{
+        position: relative;
+        left: -5px;
+        font-size: 16px;
+    }
+    
+    .vmn-title{
+      line-height: 1.6em !important;
+    }
+}
+.vmn-wrap{ padding: 28px 0; }
+
+.container-fluid{ padding: 0px 45px; }
+.dee{
+    width: 36px;
+    position: relative;
+    top: -4px;
+}
+.vmn-card{
+  border-radius: 26px;
+  position: relative;
+  background-size: 100% 100%;
+}
+
+/* TOP BAR (grid) */
+.vmn-topbar{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 23px;
+}
+
+/* MAIN GRID (instead of row/col) */
+.vmn-mainGrid{
+  display: grid;
+  grid-template-columns: 6fr 6fr; /* same as col-lg-7 / col-lg-5 */
+  gap: 0;
+  padding: 15px 30px;
+  padding-top: 0px;
+}
+
+.vmn-left{
+  position: relative;
+  z-index: 1;
+  padding: 28px 26px 30px;
+  color: var(--vmn-white);
+  padding-top: 16px;
+}
+
+.vmn-brand-mark{
+  width: 27%;
+  padding: 15px;
+}
+
+.vmn-title{
+  font-weight: 900;
+  font-size: 46px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.vmn-accent{ color: var(--vmn-cyan); 
+font-size: 46px;}
+
+.vmn-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vmn-list li{
+  display:flex;
+  align-items:center;
+  font-weight:600;
+  margin-bottom: 16px;
+  font-size: 17px;
+}
+
+.vmn-list i{
+  color: var(--vmn-cyan);
+  font-size: 16px;
+}
+
+.vmn-right{
+  position: relative;
+  z-index: 1;
+  padding: 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 260px;
+  left: 45px;
+}
+
+.vmn-imgBox img{
+  width:92%;
+  height: auto;
+  object-fit: contain;
+}
+
+.vmn-offer{
+  position:absolute;
+  left: -96px;
+  bottom: 18px;
+  background-image:url(../../../../public/assets/image/newcard.png);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 16px;
+  background-size: 100% 100%;
+  padding-top:70px;
+  padding-right: 43px;
+}
+
+.vmn-offer-title{ font-weight: 500; font-size: 23px; }
+.vmn-offer-sub{ font-weight:500; font-size: 23px; }
+
+.vmn-price{
+  margin-top:-4px;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.vmn-price del{
+  color: red;
+  font-weight: 800;
+}
+
+.vmn-price span{
+  color: var(--vmn-cyan);
+  font-size: 50px;
+}
+
+.VatConsultant .vmn-topwa{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  width: 174px;
+  margin-right: 20px;
+}
+
+.vmn-topwa-2{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  width:200px;
+      margin-top: 10px;
+}
+.trust{
+  background-color: #00eaf6;
+      padding: 5px 15px;
+    color: black;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.ptagvt p{
+ margin-bottom: 20px;
+ width: 80%;
+ line-height: 1.8;
+}
+
+.ptagvt {
+ margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px){
+  .vmn-mainGrid{
+    grid-template-columns: 1fr; /* stack */
+    padding: 15px 18px;
+    gap: 18px;
+  }
+
+  .vmn-right{ padding-top: 8px; }
+
+  .vmn-offer{
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+    text-align:center;
+  }
+
+  .vmn-topwa{ display:block; }
+}
+
+
+/* ===========================
+   Responsive ONLY (ADD BELOW)
+   Existing CSS-a touch pannala
+=========================== */
+
+/* <= 1199px */
+@media (max-width: 1199.98px){
+  .container-fluid{ padding: 0 30px; }
+  .vmn-title{ font-size: 72px; }
+  .vmn-right{ left: 20px; }
+  .vmn-offer{ left: -70px; }
+  .vmn-price{ font-size: 34px; }
+  .vmn-price span{ font-size: 44px; }
+      .vmn-card {
+        background-image: none !important;
+        background-color: #24363c;
+        border-radius: 0px;
+      }
+      .vmn-topbar{
+        padding: 0px;
+      }
+      .trustdiv{
+        text-align: center;
+      }
+
+      .vmn-topwa-2div{
+        text-align: center;
+      }
+
+      .vmn-topwa-2{
+       margin-top: 0px;
+      }
+}
+
+/* <= 991.98px (tablet) */
+@media (max-width: 991.98px){
+  .container-fluid{ padding: 0 18px; }
+  .vmn-card{ background-size: cover; background-position: center; }
+
+  .vmn-topbar{ grid-template-columns: 1fr auto; }
+
+  .vmn-mainGrid{
+    grid-template-columns: 1fr;
+    padding: 18px 16px;
+    gap: 18px;
+  }
+
+  .vmn-left{ padding: 0 10px 10px; }
+
+  .vmn-brand-mark{         width: 170px;
+        padding: 8px 3px; }
+  
+  .vmn-topbar{border-bottom:1px solid white;}
+
+  .vmn-title{
+    font-size: 28px;
+    margin-top: 10px;
+    line-height: 1.05;
+  }
+    
+  .ptagvt p {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+
+  .vmn-list li{ font-size: 18px; margin-bottom: 14px; }
+
+  .vmn-right{
+    left: 0;
+    padding: 10px 0 0;
+    min-height: unset;
+ 
+  }
+
+  .vmn-imgBox img{ width: 86%; }
+
+  .vmn-offer{
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    text-align:left;
+    max-width: 320px;
+    width: calc(100% - 40px);
+    padding: 12px 22px;
+    padding-top: 56px;
+    padding-right: 34px;
+  }
+
+  .vmn-topwa{ display:block; }
+}
+
+/* <= 767.98px (mobile big) */
+@media (max-width: 767.98px){
+  .vmn-wrap{ padding: 18px 0; padding-top: 0px; }
+
+  .vmn-topbar{
+    gap: 7px;
+    display: flex;
+    justify-content: space-between !important;
+  }
+
+  .vmn-title{ font-size: 46px; }
+
+  .vmn-imgBox img{ width: 92%; }
+
+  .vmn-offer{
+    max-width: 300px;
+    padding: 10px 18px;
+    padding-top: 52px;
+    padding-right: 28px;
+  }
+
+  .vmn-offer-title,
+  .vmn-offer-sub{ font-size: 20px; }
+
+  .vmn-price{ font-size: 30px; }
+  .vmn-price span{ font-size: 40px; }
+
+
+}
+
+/* <= 575.98px (mobile) */
+@media (max-width: 575.98px){
+  .container-fluid{ padding: 0 0px; }
+
+  .vmn-title{ font-size: 38px; }
+
+  .vmn-list li{ font-size: 15px; margin-bottom: 12px; display: block; }
+  .vmn-list i{ font-size: 14px; }
+
+  .vmn-imgBox img{ width: 100%; }
+
+  .vmn-offer{
+    bottom: 8px;
+    max-width: 280px;
+    width: calc(100% - 24px);
+    padding: 10px 16px;
+    padding-top: 48px;
+    padding-right: 22px;
+  }
+
+  .vmn-offer-title,
+  .vmn-offer-sub{ font-size: 18px; }
+
+  .vmn-price{ font-size: 26px; }
+  .vmn-price span{ font-size: 36px; }
+
+}
+
+@media (min-width:320px) and (max-width:480px){
+  .ptagvt p{
+    font-size: 13.5px;
+  }
+      .vmn-list li {
+        font-size: 13.7px;
+        margin-bottom: 5px;
+      }
+      .ptagvt p{
+        margin-bottom: 10px;
+      }
+      .ptagvt{
+        margin-bottom: 0px;
+      }
+          .vmn-left {
+            padding-bottom: 0px;
+          }
+
+           .vmn-right {
+            padding-top: 0px;
+          }
+
+          .vmn-list{
+        margin-bottom: 20px !important;
+
+          }
+
+          .ct-sub{
+            margin-right: 0px;
+          }
+
+              .vmn-list li {
+        font-size: 13.5px;
+        margin-bottom: 5px;
+        font-weight: normal;
+    }
+
+        .vmn-mainGrid {
+        gap: 30px;
+    }
+    .dee {
+    width:25px;
+    }
+
+    .tyj{
+      display: flex;
+      justify-content: center;
+    }
+
+    .dee {
+    position: relative;
+    top: -3px;
+}
+}
+
+/* <= 419.98px (small mobile) */
+@media (max-width: 419.98px){
+    
+  .vmn-title{ font-size: 31px; text-align: center;   margin-bottom: 10px;}
+    .vmn-accent {
+    font-size: 31px;
+  }
+
+  .vmn-offer{ max-width: 260px; padding-top: 46px; }
+
+  .vmn-price{ font-size: 24px; }
+  .vmn-price span{ font-size: 34px; }
+            .VatConsultant .vmn-topwa {
+    margin-right: 10px;
+               
+            }
+}
+
+@media (max-width:380px){
+
+      .VatConsultant .vmn-title {
+        font-size: 29px;
+    }
+
+        .VatConsultant .vmn-accent {
+        font-size: 29px;
+    }
+}
+
+
+@media (max-width:320px){
+      .vmn-brand-mark {
+        width: 165px;
+      }
+  
+          a.vmn-topwa.wa-style-1 {
+          width: 43%;
+          }
+
+          .dee{
+            top: -3px;
+          }
+
+          .VatConsultant .vmn-topwa {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--green);
+    color: #fff;
+    padding: 5px 0px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 800;
+    width: 190px;
+    margin-right: 10px;
+    font-size: 13px;
+    justify-content: center;
+}
+
+    .VatConsultant .vmn-title {
+        font-size: 24px;
+    }
+
+        .VatConsultant .vmn-accent {
+        font-size: 24px;
+    }
+}

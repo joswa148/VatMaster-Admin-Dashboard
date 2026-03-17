@@ -1,0 +1,200 @@
+
+
+* {
+  font-family: 'Poppins', sans-serif !important;
+}
+.homepage-container .hometest-sec .dots{
+  display: none !important;
+}
+
+.homepage-container .hh-btnWhatsapp {
+  width: 160px;
+  height: 47px;
+  background: linear-gradient(to bottom, #25D366, #128C7E);
+   animation: floatUpDown 2s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  /* 3D effect */
+  /* box-shadow:
+    0 8px 0 #0b5e4a,
+    0 10px 20px rgba(0,0,0,0.3); */
+
+}
+.homepage-container .jhew{
+      line-height: 2;
+}
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* mela pogum */
+  }
+  100% {
+    transform: translateY(0); /* thirumba kila varum */
+  }
+}
+@media screen and (max-width: 320px) {
+  a.vmn-topwa.wa-style-1 {
+      margin-right: 0px !important;
+        padding: 5px 10px;
+        text-align: center;
+        width: max-content;
+        display: block;
+  }
+  .vmn-brand-mark{
+    width: 130px;
+  }
+}
+
+.homepage-container .hh-btnWhatsapp:hover {
+  transform: translateY(-2px);
+}
+
+.homepage-container .hh-btnWhatsapp:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 #0b5e4a,
+    0 6px 12px rgba(0,0,0,0.3);
+}
+
+.calltoaction .hh-btnWhatsapp:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 #0b5e4a,
+    0 6px 12px rgba(0,0,0,0.3);
+}
+.calltoaction.hh-btnWhatsapp:hover {
+  transform: translateY(-2px);
+}
+
+
+.calltoaction .hh-btnWhatsapp {
+  width: 160px;
+  height: 47px;
+  background: linear-gradient(to bottom, #25D366, #128C7E);
+   animation: floatUpDown 2s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+    margin: 0 auto;
+}
+.dsakdsa{
+  padding-right: 30px;
+}
+
+@media (min-width:320px) and (max-width:480px){
+.faq-shell {
+    padding-top: 22px;
+}
+.dsakdsa{
+  padding-right: 0px;
+}
+.faq-title {
+    font-size: 23px !important;
+}
+.vat-card{
+ top: 0% !important; 
+}
+     .vat-shell {
+              border-radius: 25px !important;
+     }
+     .vat-text{
+          display: -webkit-box;
+              -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+     }
+
+     .vat-imgBox {
+        background: transparent !important;
+        height: 60px;
+        width: 60px;
+        position: absolute !important;
+        right: 3px;
+        top: 0px;
+}
+    .vat-card {
+          max-width: 100% !important;
+    }
+    .vat-card {
+    transform: unset !important;
+}
+    .vat-shell {
+        height: 100% !important;
+    }
+        .vat-stage {
+        height: 206px !important;
+    }
+
+span.vat-role {
+    display: block !important;
+}
+.vat-imgBox img {
+    object-position: top;
+}
+.vat-stars {
+    margin: 0px !important;
+}
+    .ctafoot-title {
+        font-size: 24px;
+    }
+}
+ 
+@media(max-width:320px){
+  .faq-sub {
+    font-size:13px;
+  }
+ 
+      .faq-title {
+        font-size: 19px !important;
+    }
+}
+
+
+
+@media screen and (max-width:480px) {
+/* .vat-second .tyj{
+  display: none;
+} */
+.vat-second .trust {
+    background-color: #ffffff1a;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.vat-second .trust svg{
+    width: 0.9rem;
+    height: 0.8rem;
+    position: relative;
+    top: -1px;
+    left: -2px;
+    color: #00eaf6;
+}
+.vat-second .vmn-imgBox{
+  display: none;
+}  
+.vat-second .vmn-offer {
+    position: relative;
+}
+.vat-second .vmn-list{
+      display: flex;
+    flex-wrap: wrap;
+    row-gap: 9px;
+    justify-content: center;
+    column-gap: 25px;
+}
+.vat-second .vmn-list i{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center
+}
+.vat-second .vmn-list li{
+  display: flex !important;
+}
+
+}

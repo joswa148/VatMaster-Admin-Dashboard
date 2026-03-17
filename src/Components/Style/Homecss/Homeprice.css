@@ -1,0 +1,415 @@
+#homePrics.css file below
+/* src/components/PricingCards.css */
+
+/* section bg-white already from bootstrap class bg-white */
+.pc-section {
+  background: #ffffff;
+}
+.pc-ctaBtn .pc-ctaBtnhh{
+  display: inline-flex;
+    gap: 10px;
+        align-items: anchor-center;
+}
+.pc-ctaBtn{
+  text-decoration: none;
+}
+/* container: max-w-[1240px] px-5 sm:px-6 lg:px-8 py-10 */
+.pc-shell {
+  max-width: 1240px;
+  width: 100%;
+  padding: 45px 20px;
+}
+
+@media (min-width: 576px) {
+  .pc-shell {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+
+
+/* HEADER */
+.pc-headerWrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 45px auto; /* mb-14 = 56px */
+}
+
+.pc-headerImg {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+
+.pc-headerText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b2f35;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.02em;
+  padding: 0 24px;
+  margin: 0;
+}
+
+.pc-headerSpan {
+font-size: 31px;
+    line-height: 1.5em;
+    margin-top: 5%;
+    display: inline-block;
+    width: 37%;
+}
+.ssss{
+  color: #0b2f35;
+}
+
+/* ---- CARD FRAME ---- */
+/* relative w-full aspect-[8/9] min-h-[340px] max-h-[300px]
+   NOTE: min-h 340 + max-h 300 is contradictory; keeping EXACT as given.
+*/
+.pc-cardFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 8 / 9;
+  min-height: 340px;
+  max-height: 300px;
+}
+
+/* bg image */
+.pc-cardBg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* inner absolute */
+.pc-cardInner {
+  position: absolute;
+  inset: 0;
+}
+
+/* content block:
+absolute inset-0 px-[7.5%] pt-[14%] sm:pt-[12%] lg:pt-[10%] pb-[28%] flex flex-col
+*/
+.pc-content {
+  position: absolute;
+  inset: 0;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-top: 14%;
+  padding-bottom: 28%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 576px) {
+  .pc-content {
+    padding-top: 12%;
+  }
+}
+@media (max-width: 575.98px){
+  .pc-content{
+    padding-top: 7%;
+  }
+}
+
+@media (min-width: 992px) {
+  .pc-content {
+    padding-top: 8%;
+  }
+}
+
+/* title: text-white font-extrabold tracking-[-0.02em] leading-none */
+.pc-title {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* title span: text-[16px] sm:text-[18px] lg:text-[28px] */
+.pc-titleSpan {
+  font-size: 16px;
+}
+
+@media (min-width: 576px) {
+  .pc-titleSpan {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .pc-titleSpan {
+    font-size: 23px;
+    padding-bottom: 3px;
+  }
+}
+
+
+.pc-pricePill {
+  margin-top: clamp(10px, 1.1vw, 14px);
+  display: inline-flex;
+  border-radius: 999px;
+  background: #00e6f6;
+  padding: 7px 20px; /* py-2.5 = 10px, px-5 = 20px */
+  color: #0b2f35;
+  font-weight: 800;
+  width: 66%;
+}
+
+.pc-priceText {
+  font-size: clamp(15px, 1.5vw, 18px);
+  display: inline-block;
+  text-align: left;
+  padding-left: 8px;
+}
+
+/* bullets:
+mt-[clamp(15px,1.5vw,20px)] space-y-[clamp(8px,0.9vw,12px)]
+*/
+.pc-bullets {
+  margin-top: clamp(15px, 1.5vw, 20px);
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.pc-bulletItem {
+  display: flex;
+  gap: 12px; /* gap-3 */
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+
+/* bullet icon mt-[2px] */
+.pc-bulletIcon {
+  margin-top: 2px;
+}
+
+/* bullet text: text-[clamp(15px,1vw,15px)] leading-[1.55] */
+.pc-bulletText {
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.55;
+}
+
+/* note: mt-[5%] text-white font-bold leading-[1.2] */
+.pc-note {
+    margin-top: 5%;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.7em;
+}
+
+.pc-noteLine {
+  font-size: clamp(15px, 1.3vw, 20px);
+}
+
+/* ---- ICONS ---- */
+.pc-check {
+    display: inline-flex;
+    width: 15px;
+    height: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #00e6f6;
+    padding: 1px;
+    position: relative;
+    top: -3px;
+}
+
+.pc-checkSvg {
+  width: 14px;  /* h-3.5 */
+  height: 14px; /* w-3.5 */
+}
+
+.pc-arrowCircle {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 999px;
+  background: #0b2f35;
+}
+
+.pc-arrowSvg {
+  width: 16px;
+  height: 16px;
+}
+
+/* CTA button:
+absolute inline-flex items-center justify-center top-[80%] left-[55%] gap-3
+rounded-full bg-[#00E6F6] ... shadow ... hover opacity
++ inline style:
+right: 6%, bottom: 6.5%, width: 44%, height: 18%, fontSize clamp(...)
+*/
+.pc-ctaBtn {
+  position: absolute;
+  top: 80%;
+  left: 55%;
+  right: 6%;
+  bottom: 6.5%;
+  width: 44%;
+  height: 18%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  border-radius:25px;
+  background: #00e6f6;
+  color: #0b2f35;
+  font-weight: 800;
+
+  border: 0;
+  cursor: pointer;
+
+  transition: opacity 180ms ease;
+  font-size: clamp(18px, 1.2vw, 20px);
+}
+
+.pc-ctaBtn:hover {
+  opacity: 0.9;
+}
+
+.priceaed {
+    width: 14%;
+    position: relative;
+    bottom:4px;
+}
+
+.price{
+ font-size: 24px;
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.pc-note-unorder{
+  margin-top: 12%;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+      .pc-pricePill{
+        width: 70%;
+      }
+      .pc-content {
+                padding-left: 6.5% !important;
+      }
+      .dsdssadas{
+        margin-top: -24px !important;
+      }
+      .pc-headerSpan{
+        width: 100% !important;
+        font-size: 25px;
+        margin-top: 0px !important;
+    line-height: 1.2em;
+
+      }
+      .djd{
+                top: 81% !important;
+      }
+      
+.pc-cardFrame {
+  min-height: 300px;
+}
+      .h-sasfour{
+        height: 298px !important;
+      }
+      .pc-headerWrap {
+      padding-bottom: 10px !important;
+      margin-bottom: 0px !important;
+      }
+      .wcu-accent {
+        display: none;
+      }
+      .pc-headerImg{
+        display: none;
+      }
+      .pc-headerText{
+        position: relative !important;
+      }
+
+.pc-shell {
+  padding-top: 20px;
+}
+
+.pc-cardBg{
+  height: 274px;
+}
+.pc-ctaBtn {
+  top: 76%;
+  height: 14%;
+  gap: 2px;
+}
+.pc-arrowCircle {
+    width: 24px;
+    height: 25px;
+}
+.pc-content {
+  margin-bottom: 0%;
+}
+.pc-shell{
+  padding-bottom: 15px;
+}
+    a.ts-exploreBtn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        .ts-wrapper {
+       margin-top: 0%;
+        height: 239px;
+        }
+        .pc-title{
+          font-size: 20px;
+        }
+        .pc-bulletText{
+          font-size: 12px;
+        }
+        .pc-note{
+          margin-top: 3%;
+        }
+}
+
+
+@media (max-width:320px){
+  .pc-headerSpan{
+    line-height: 1.2em;
+    font-size: 20px;
+  }
+  .pc-ctaBtn{
+    width: 50%;
+  }
+  .pc-priceText{
+    font-size: 20px;
+  }
+      .pc-pricePill {
+        width: 78%;
+    }
+
+    .priceaed {
+    width: 15%;
+    }
+
+        .pc-title {
+        font-size:17px;
+    }
+    .pc-note-unorder-1{
+      margin-top: 20%;
+    }
+}

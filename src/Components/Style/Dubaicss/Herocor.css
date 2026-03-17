@@ -1,0 +1,805 @@
+:root {
+  --dark: #01343E;
+  --cyan: #00EAF6;
+  --cyanSoft: #DBFCFD;
+  --green: #0FB201;
+  --shadow: 0 18px 30px rgba(0, 0, 0, .12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.land-vm-logo{
+  cursor: pointer;
+}
+
+img.land-vm-modeldsadsa {
+  width: 51px;
+  position: relative;
+  top: -5px;
+}
+
+/* Page */
+.land-vm-page {
+  background: #fff;
+  padding: 22px 61px;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.land-vm-shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Topbar */
+.land-vm-topbar {
+  height: 80px;
+  background: var(--dark);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  /* box-shadow: var(--shadow); */
+  margin: 0 auto 26px;
+  margin-right: 60px;
+}
+
+.land-vm-logo {
+  height: 50px;
+  width: auto;
+}
+
+.land-vm-wa-pill {
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 12px 18px rgba(0, 0, 0, .18);
+  white-space: nowrap;
+}
+
+.land-hdsahddnhs li{
+  list-style: none !important;
+  float: left;
+}
+
+.land-hdsahddnhs .land-dsada {
+  width: 6%;
+}
+
+.land-hdsahddnhs .land-dsadzas{
+  width: 94%;
+}
+
+ol, ul{
+  padding-left: 0px !important;
+}
+
+.land-dsada span{
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.land-vm-wa-pill i {
+  font-size: 18px;
+}
+
+/* Layout */
+.land-vm-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 60px;
+}
+
+/* LEFT BIG CARD */
+.land-vm-leftCard {
+  box-shadow: none !important;
+  padding: 0px 10px 0px;
+  overflow: hidden;
+
+  /* ✅ makes bottom cards sit at bottom */
+  display: flex;
+  flex-direction: column;
+  width: 105%;
+  height: 96%;
+}
+
+.land-vtur{
+  position: absolute;
+}
+
+.land-vm-title {
+  font-size: 70px;
+  line-height: 1.02;
+  color: #083B45;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 30px;
+}
+
+.land-vm-title span {
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.land-vm-desc {
+  margin-bottom: 20px;
+  margin-top: 95px;
+}
+
+.land-vm-desc p {
+  margin: 0 0 9px 0;
+  color: #0C4B55;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.land-vm-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 14px;
+  width: fit-content;
+  box-shadow: none !important;
+}
+
+.land-vm-wa-btn i {
+  font-size: 18px;
+}
+
+/* ✅ bottom cards like screenshot (locked at bottom) */
+.land-vm-bottomCards {
+  margin-top: auto;
+  padding-top: 34px;
+  display: grid;
+  grid-template-columns: 266px 1fr;
+  gap: 50px;
+  align-items: stretch;
+}
+
+/* Offer BG card */
+.land-vm-offerImgCard {
+  height: 188px;
+  width: 362px;
+  border-radius: 28px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+}
+
+.land-offer-title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.land-offer-sub {
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.land-offer-price {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.land-offer-price .land-old {
+  font-size: 22px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.land-offer-price .land-old span {
+  text-decoration: line-through;
+  opacity: .75;
+  margin-left: 6px;
+}
+
+.land-offer-price .land-new {
+  font-size: 50px;
+  font-weight: 1000;
+  color: #FF1F1F;
+}
+
+/* Features BG card */
+.land-vm-featuresImgCard {
+  height: 182px;
+  border-radius: 28px;
+  background: #00343C;
+  padding: 33px 30px;
+  align-items: center;
+}
+
+.land-vm-ticks {
+  margin: 0;
+  margin-top: 35px;
+  padding: 0;
+}
+
+.land-vm-ticks li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #E7FEFF;
+  font-weight: 900;
+  margin: 20px 0;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+/* check */
+.land-vm-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--cyan);
+  flex: 0 0 20px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 5px rgba(0, 234, 246, .18);
+  font-weight: 1000;
+  color:#00363c;
+}
+
+/* RIGHT PANEL (use PNG bg shape) */
+.land-vm-rightPanel {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: 500px;
+}
+
+/* ✅ Model alignment like screenshot */
+.land-vm-model {
+  position: absolute;
+  left: 61%;
+  transform: translateX(-50%);
+  bottom: 4px;
+  height: 484px;
+  pointer-events: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .land-vm-page {
+    padding: 18px 18px;
+  }
+
+  .land-vm-leftCard {
+    padding: 44px 40px 36px;
+    min-height: 600px;
+  }
+
+  .land-vm-title {
+    font-size: 54px;
+  }
+
+  .land-vm-bottomCards {
+    grid-template-columns: 320px 1fr;
+  }
+
+  .land-vm-offerImgCard,
+  .land-vm-featuresImgCard {
+    height: 190px;
+  }
+
+  .land-vm-rightPanel {
+    min-height: 600px;
+  }
+
+  .land-slider{
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 992px){
+
+  .land-vm-shell{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .land-vm-page{
+    padding: 14px 12px !important;
+  }
+
+  .land-vm-topbar{
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .land-vm-layout{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .land-vm-leftCard{
+    width: 100% !important;
+    height: auto !important;
+    padding: 28px 18px 22px !important;
+    border-radius: 28px !important;
+  }
+
+  .land-vm-bottomCards{
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .land-vm-offerImgCard,
+  .land-vm-featuresImgCard{
+    width: 100% !important;
+    min-height: 170px !important;
+    background-size: cover !important;
+  }
+
+  .land-vm-rightPanel{
+    width: 100% !important;
+    min-height: 420px !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    border-radius: 28px !important;
+  }
+
+  .land-vm-model{
+    width: 88% !important;
+    max-width: 315px !important;
+    bottom: 0 !important;
+  }
+
+  .land-vtur{
+    position: relative;
+  }
+
+  .land-vm-layout {
+    margin-top: 0px;
+  }
+
+  .land-vm-desc{
+    margin-top: 0px;
+  }
+
+  .land-vm-leftCard{
+    background-color:#dbfcfd;
+  }
+
+  .land-vtrtestbg{
+    width: 100% !important;
+  }
+
+  .land-clientimg{
+    width: 100% !important;
+    display: none;
+  }
+
+  .land-priceimg{
+    display: none;
+  }
+
+  .land-pricelist{
+    background-color:#01343e;
+    position: absolute;
+    left: 9% !important;
+    width: 82%;
+    padding: 10px;
+    border-radius: 20px;
+    top: 69% !important;
+  }
+
+  .land-vm-model{
+    height: 430px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 576px){
+  .land-vm-topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 12px;
+    height: auto;
+    flex-wrap: nowrap;
+  }
+
+  .land-vm-logo{
+    height: 28px;
+    flex: 0 0 auto;
+  }
+
+  .land-vm-wa-pill{
+    padding: 8px 10px;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1;
+    min-width: 38px;
+    justify-content: center;
+  }
+
+  .land-vm-wa-pill span{
+    display: inline;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .land-vm-wa-pill i{
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .land-vm-rightPanel{
+    min-height: 508px !important;
+  }
+
+  .land-vm-model{
+    width: 92% !important;
+  }
+}
+
+/* TABLET FIX (600px–992px) */
+@media (min-width: 600px) and (max-width: 992px) {
+
+  .land-vm-shell { width: 100% !important; }
+  .land-vm-topbar { margin-right: 0 !important; width: 100% !important; }
+  .land-vm-leftCard { width: 100% !important; height: auto !important; }
+  .land-vm-rightPanel { margin-top: 0 !important; margin-left: 0 !important; }
+
+  .land-vm-layout {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .land-vm-leftCard{
+    padding: 34px 24px 22px !important;
+    border-radius: 34px !important;
+  }
+
+  .land-vm-title{
+    margin: 0 0 10px 0 !important;
+    font-size: 44px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .land-vm-desc p{
+    font-size: 15px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.5 !important;
+  }
+
+  .land-vm-wa-btn{
+    margin-top: 12px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+
+  .land-vm-bottomCards{
+    margin-top: 18px !important;
+    padding-top: 18px !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .land-vm-offerImgCard{
+    width: 100% !important;
+    height: 165px !important;
+    padding: 22px !important;
+    border-radius: 26px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .land-offer-title,
+  .land-offer-sub{
+    font-size: 16px !important;
+    font-weight: 900 !important;
+  }
+
+  .land-offer-price .land-old{
+    font-size: 18px !important;
+  }
+
+  .land-offer-price .land-new{
+    font-size: 38px !important;
+  }
+
+  .land-vm-featuresImgCard{
+    width: 100% !important;
+    height: 155px !important;
+    padding: 18px 22px !important;
+    border-radius: 26px !important;
+    background-size: cover !important;
+    background-position: center !important;
+
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .land-vm-ticks{
+    margin-top: 0 !important;
+  }
+
+  .land-vm-ticks li{
+    font-size: 14px !important;
+    margin: 10px 0 !important;
+    font-weight: 900 !important;
+  }
+
+  .land-vm-check{
+    width: 18px !important;
+    height: 18px !important;
+    flex: 0 0 18px !important;
+    box-shadow: 0 0 0 4px rgba(0,234,246,.18) !important;
+  }
+
+  .land-vm-rightPanel{
+    min-height: 420px !important;
+    border-radius: 34px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .land-vm-model{
+    width: 75% !important;
+    bottom: 12px !important;
+  }
+}
+
+/* Partners slider section */
+.land-partners {
+  background: #fff8d9;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.land-partners h2 {
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+.land-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.land-slide-track {
+  display: flex;
+  width: calc(200px * 10);
+  animation: land-scroll 50s linear infinite;
+  gap: 1.5%;
+}
+
+/* hover stop */
+.land-slider:hover .land-slide-track {
+  animation-play-state: paused;
+}
+
+.land-slide {
+  width: 143px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+}
+
+.land-slide img {
+  background: #fff;
+  padding: 15px 24px;
+  border-radius: 14px;
+  height: 75px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+/* 👇 keyframes renamed to avoid conflict */
+@keyframes land-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 5)); }
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .land-partners h2 {
+    font-size: 24px;
+  }
+
+  .land-slide {
+    width: 150px;
+  }
+
+  .land-slide img {
+    height: 42px;
+  }
+
+  .land-slide-track {
+    width: calc(150px * 10);
+    animation-duration: 30s;
+  }
+
+  @keyframes land-scroll {
+    100% { transform: translateX(calc(-150px * 50)); }
+  }
+}
+
+.land-baje{
+  font-size: 18px;
+  color: #ffff;
+  line-height: 1.8em;
+  margin-bottom: 0px;
+  margin-top: -8px;
+  font-weight: 700;
+}
+
+@media (min-width:320px) and (max-width:480px){
+  .land-vm-title {
+    font-size: 29px;
+  }
+
+  .land-dsada span{
+    margin-left: -6px;
+  }
+
+  .land-offer-title{
+    font-size: 25px;
+  }
+
+  .land-offer-price .land-new {
+    font-size: 34px;
+  }
+
+  img.land-vm-modeldsadsa {
+    width: 36px;
+    margin-right: 6px;
+  }
+
+  .land-vm-offerImgCard {
+    padding-top: 20px;
+    height: auto;
+  }
+
+  .land-vm-offerImgCard{
+    padding: 20px;
+  }
+
+  .land-vm-bottomCards{
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+
+  .land-vm-leftCard{
+    min-height: 575px;
+  }
+
+  .land-vm-desc p {
+    font-size: 17px;
+  }
+
+  img.land-vm-modeldsadsa{
+    top: -3px;
+  }
+}
+
+@media (max-width: 320px) {
+  .land-vm-desc p{
+    font-size: 15px;
+  }
+
+  .land-dsada span {
+    margin-left: -10px;
+  }
+
+  .land-vm-title {
+    font-size: 26px;
+  }
+
+  .land-offer-title {
+    font-size: 22px;
+  }
+}
+
+/* bottom area */
+.land-clientimg img{
+  width: 50%;
+  position: relative;
+  width: 54%;
+  right: 23px;
+}
+
+.land-clientimg{
+  width: 50%;
+  margin-top: 30px;
+}
+
+.land-clientimg p{
+  margin-bottom: 0px;
+}
+
+.land-vtrtestbg{
+  background-size: 100% 100%;
+  padding: 10px;
+  height: 211px;
+  width: 340px;
+}
+
+.land-vtrtestbg div{
+  padding-top: 34px;
+  padding-left: 12px;
+}
+
+.land-vtrtestbg p{
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.land-priceimg{
+  position: absolute;
+  top: 55%;
+  left: 7%;
+}
+
+.land-pricelist{
+  position: absolute;
+  top: 66%;
+  left: 12%;
+  z-index: 1111;
+  color: white;
+}
+
+.land-pricelist > p:first-of-type{
+  font-size: 20px;
+  width: 82%;
+}
+
+.land-pricelist > p:nth-of-type(2){
+  font-size: 30px;
+}
+
+.land-p1{
+  text-decoration: line-through;
+  color: red;
+}
+
+.land-p2{
+  color: #00EAF6;
+  font-weight: 600;
+}

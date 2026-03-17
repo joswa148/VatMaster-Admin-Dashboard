@@ -1,0 +1,357 @@
+/* ✅ Navbar.css (FULL CSS - Desktop hover mega + Mobile offcanvas overlay dropdown) */
+
+/* =========================
+   NAV WRAP + PILL
+========================= */
+.vm-nav-wrap{
+  width: 100%;
+  padding: 0px 40px;
+  overflow: visible !important;
+}
+
+.regse ul.navbar-nav.vm-nav-links.mx-auto.mb-2.mb-lg-0.gap-lg-4 {
+    align-items: center;
+}
+.regse .container-fluid.align-items-start.px-4.px-lg-4 {
+    align-items: center !important;
+}
+.regse .dropdown-menu.vm-mega{
+  top: 97%;
+}
+.regse  li.nav-item {
+    padding: 18px 8px;
+}
+.vm-nav-pill{
+  background: #2f4045;
+  border-radius: 30px;
+  padding: 0px 0px !important;
+  overflow: visible !important;
+}
+
+/* =========================
+   LOGO
+========================= */
+.vm-logo{
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+.vm-logo-sm{ height: 34px; }
+
+/* =========================
+   NAV LINKS
+========================= */
+.vm-nav-links .nav-link{
+  color: rgba(255,255,255,0.92);
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition:  180ms ease, transform 180ms ease, color 180ms ease;
+}
+.vm-nav-links .nav-link:hover{
+  color: #00eaf6;
+  transform: translateY(-1px);
+}
+.vm-nav-links .nav-link:focus{
+    color: #00eaf6;
+}
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+.vm-wa-btn{
+  background: #17b018;
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+.vm-wa-btn:hover{
+  opacity: 0.92;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   TOGGLER
+========================= */
+.vm-toggler{
+  border: 0;
+  box-shadow: none !important;
+}
+.vm-toggler:focus{
+  box-shadow: none !important;
+}
+.vm-toggler .navbar-toggler-icon{
+  filter: invert(1);
+}
+
+/* CTA wrapper */
+.cta-whatsapp{
+  background-color:#0fb201;
+  border-radius: 30px;
+}
+.cta-whatsapp a,
+.cta-whatsapp i{
+  color:white;
+}
+
+/* ==========================================================
+   ✅ DESKTOP SERVICES DROPDOWN (HOVER MEGA MENU)
+========================================================== */
+.vm-services{ position: relative; }
+
+.vm-services-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vm-caret{
+  font-size: 12px;
+  opacity: 0.9;
+  transform: translateY(1px);
+}
+
+/* dropdown wrapper */
+.vm-services .vm-mega{
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-35%) translateY(10px) scale(0.98);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  display: block;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 9999;
+
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+}
+
+.vm-services:hover .vm-mega,
+.vm-services:focus-within .vm-mega{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-35%) translateY(0) scale(1);
+}
+
+/* mega inner card */
+.vm-mega-inner{
+  width: 367px;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+}
+
+/* right list */
+.vm-mega-right{ padding: 14px 14px 12px 14px; }
+
+.vm-mega-list{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vm-mega-item{
+  text-decoration: none;
+  color: #2f4045;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+ background: transparent !important;
+  transition: background 160ms ease, transform 160ms ease;
+  margin-bottom: 0px !important;
+}
+
+.vm-mega-item:hover{
+  /* background: rgba(47,64,69,0.08); */
+  background: transparent !important;
+  transform: translateX(2px);
+  cursor: pointer;
+}
+
+.vm-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #2f4045;
+  opacity: 0.7;
+}
+.vm-mega-text{ flex: 1; line-height: 1.2; }
+.vm-arrow{ opacity: 0.7; }
+
+/* ==========================================================
+   ✅ OFFCANVAS (MOBILE)
+========================================================== */
+.offcanvas.vm-offcanvas{
+  --bs-offcanvas-bg: #2f4045;
+  --bs-offcanvas-color: #ffffff;
+  --bs-offcanvas-border-color: rgba(255,255,255,0.10);
+  width: 340px;
+}
+
+.vm-offcanvas-head{
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.vm-offcanvas-body{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+}
+
+/* mobile links */
+.vm-m-link{
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  font-weight: 800;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  transition: background 160ms ease, transform 160ms ease;
+}
+.vm-m-link:hover{
+  color: #fff;
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   ✅ MOBILE SERVICE DROPDOWN (OVERLAY - NO PUSH)
+   Works with your structure:
+   <div class="vm-m-accordion is-open">
+     <button class="vm-m-acc-btn">...</button>
+     <div class="vm-m-panel">
+        <div class="vm-m-services">...</div>
+     </div>
+   </div>
+========================================================== */
+.vm-m-accordion{
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  position: relative;     /* ✅ anchor */
+  overflow: visible;      /* ✅ allow overlay */
+}
+
+.vm-m-acc-btn{
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: rgba(255,255,255,0.95);
+  font-weight: 900;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* caret rotate */
+.vm-m-caret{
+  transition: transform 200ms ease;
+}
+.vm-m-accordion.is-open .vm-m-caret{
+  transform: rotate(180deg);
+}
+
+/* ✅ overlay panel */
+.vm-m-panel{
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: calc(100% + 8px);
+  z-index: 50;
+
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+
+  border-radius: 14px;
+  background: rgba(47, 64, 69, 0.98);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+
+  transition: max-height 260ms ease, opacity 180ms ease, visibility 180ms ease;
+}
+
+.vm-m-accordion.is-open .vm-m-panel{
+  max-height: 560px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* services list */
+.vm-m-services{
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* each service item */
+.vm-m-s-item{
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  font-weight: 800;
+  padding: 12px 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.16);
+  transition: background 160ms ease, transform 160ms ease;
+}
+.vm-m-s-item:hover{
+  color: #fff;
+  background: rgba(0,0,0,0.22);
+  transform: translateX(2px);
+}
+
+
+.nav-link:hover{
+  cursor: pointer;
+}
+
+.vm-m-cta{ margin-top: 8px; }
+
+/* ==========================================================
+   ✅ MOBILE RESPONSIVE
+========================================================== */
+@media (max-width: 991.98px){
+  .vm-nav-pill{
+    border-radius: 28px;
+    padding: 14px 14px !important;
+  }
+  .vm-nav-wrap{
+    padding: 0px 0px;
+  }
+  .vm-logo{
+    height: 33px;
+  }
+}
+
+@media (min-width:320px) and (max-width:480px) {
+  .msjeh{
+  width: 97% !important;
+  margin: 0 auto !important;
+}
+button.navbar-toggler.vm-toggler {
+    border: 0px !important;
+}
+}

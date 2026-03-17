@@ -1,0 +1,584 @@
+:root {
+  --cyan-bg: #DFFEFF;
+  --cyan: #00EAF6;
+  --dark: #043C44;
+  --green: #16B200;
+  --shadow: 0 20px 34px rgba(0, 0, 0, .10);
+  --tick: #00EAF6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.ct-wrap {
+  padding: 15px 61px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.ct-container {
+  width: min(1245px, 100%);
+  background: var(--cyan-bg);
+  border-radius: 48px;
+  padding: 46px 50px;
+  box-shadow: none !important;
+  padding-bottom: 23px !important;
+
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 42px;
+  align-items: start;
+  padding-bottom: 0px !important;
+}
+
+/* ---------------- LEFT ---------------- */
+.ct-left {
+  min-width: 0;
+}
+
+.ct-title {
+  margin: 0 0 22px 0;
+  color: #083B45;
+  font-weight: 900;
+  font-size: 31px;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+}
+.sjae{
+    color: red;
+    font-size:42px;
+  
+}
+/* Offer card background image */
+.ct-offer {
+  background: url(../../../../public/assets/image/Framedsdsa.svg);
+
+      width: 100%;
+    max-width: 520px;
+    min-height: 354px;
+    border-radius: 34px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+        padding: 114px 46px 10px;
+    position: relative;
+    position: relative;
+    top: -17px;
+}
+
+.ct-offerText {
+  color: #083B45;
+}
+
+.ct-offerText-1{
+  text-align: center;
+}
+
+.ct-offerText-1 .ct-wa{
+  margin-right: 65px;
+}
+
+.ct-offerH3 {
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+}
+
+.ct-sub {
+  font-size: 32px;
+  font-weight: 800;
+  color: #083B45;
+  margin-right: 75px;
+  margin-bottom: 0px;
+}
+
+.ct-priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0px 0 18px 0;
+  flex-wrap: wrap;
+  margin-right: 61px;
+  margin-bottom: 0px;
+}
+
+.ct-starts {
+  font-size: 32px;
+  font-weight: 900;
+  color: #083B45;
+  position: relative;
+  margin: 5px 0px;
+}
+
+.ct-old {
+  font-size: 22px;
+  font-weight: 900;
+  color: #083B45;
+}
+
+.ct-old span {
+  text-decoration: line-through;
+  opacity: .75;
+  margin-left: 6px;
+}
+
+.ct-new {
+  font-size: 65px;
+  font-weight: 1000;
+    color: #16b200;
+  /* screenshot: white 199 */
+  text-shadow: none;
+}
+
+.ct-only {
+  font-size: 22px;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+/* WhatsApp button inside offer */
+.ct-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  justify-content: center;
+  width: 200px;
+}
+
+.ct-wa i {
+  font-size: 18px;
+}
+
+/* ---------------- RIGHT ---------------- */
+/* .ct-right {
+  min-width: 0;
+  border-radius: 42px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 63px 42px 34px;
+  overflow: hidden;
+} */
+
+.ct-rightTitle {
+  margin: 0 0 22px 0;
+  color: var(--dark);
+  font-weight: 900;
+  font-size: 31px;
+  line-height: 1.18;
+  letter-spacing: -0.2px;
+}
+
+.ct-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.ct-list li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  color: #083B45;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.ct-listTick {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.ct-listContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ct-listTitle {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.ct-data {
+    font-weight: 500;
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Tick circle EXACT */
+.ct-tick {
+ 
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  background: var(--tick);
+  display:grid;
+  place-items:center;
+  flex: 0 0 28px;
+  margin-top: 2px;
+  box-shadow: 0 0 0 6px rgba(0,234,246,.20);
+  font-weight:1000;
+  color:#00363c;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* tablet */
+@media (max-width: 992px) {
+  .ct-container {
+    grid-template-columns: 1fr;
+    padding: 34px 22px;
+    border-radius: 34px;
+    gap: 26px;
+  }
+
+  .ct-title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .ct-offer {
+    max-width: 100%;
+    min-height: 240px;
+    padding: 28px;
+  }
+
+  .ct-offerH3 {
+    font-size: 24px;
+  }
+
+  .ct-sub {
+    font-size: 18px;
+  }
+
+  .ct-starts,
+  .ct-old {
+    font-size: 18px;
+  }
+
+  .ct-new {
+    font-size: 30px;
+  }
+
+  .ct-only {
+    font-size: 18px;
+  }
+
+  .ct-right {
+    padding: 34px 24px 26px;
+    border-radius: 34px;
+  }
+
+  .ct-offer{
+    background-image: none;
+    background-color: #00EAF6;
+  }
+      .ct-wa{
+        width: 160px;
+      }
+
+       .ct-right{
+    background-image: none;
+  }
+
+      .ct-wrap{
+               background: #dffeff;
+      }
+          .ct3-heroTitle{
+            text-align: center;
+          }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  .ct-wrap {
+    padding: 26px 12px;
+  }
+
+  .ct-container {
+    padding: 22px 14px;
+    border-radius: 26px;
+  }
+
+  .ct-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .ct-offer {
+    min-height: 210px;
+    border-radius: 26px;
+    padding: 20px;
+  }
+
+  .ct-offerH3 {
+    font-size: 20px;
+  }
+
+  .ct-sub {
+    font-size: 15px;
+    margin-bottom: 0px;
+  }
+
+  .ct-starts,
+  .ct-old {
+    font-size: 16px;
+  }
+
+  .ct-new {
+    font-size: 26px;
+  }
+
+  .ct-only {
+    font-size: 16px;
+  }
+
+  .ct-wa {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+
+  .ct-right {
+    border-radius: 26px;
+    padding: 22px 16px 18px;
+  }
+
+  .ct-rightTitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .ct-tick {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+    box-shadow: 0 0 0 5px rgba(0, 234, 246, .18);
+  }
+
+  .ct-list li {
+    font-size: 13.5px;
+    gap: 10px;
+  }
+
+  .ct-listTick {
+    justify-content: flex-start;
+  }
+
+  .ct-data {
+    font-size: 13px;
+  }
+
+  .ct3-cardRight{
+    height: auto;
+  }
+}
+
+
+.digram{
+    width: 10%;
+    position: relative;
+    bottom: 7px;
+}
+
+
+
+@media (min-width:320px) and (max-width:480px){
+
+  /* Main heading */
+  .sjae {
+    font-size: 37px;
+  }
+
+  .sjae span {
+    font-size: 33px;
+  }
+
+  /* Sub headings */
+  .ct-sub,
+  .ct-starts {
+    font-size: 28px;
+  }
+
+  /* Diagram icon */
+  .digram {
+    width: 10%;
+    position: relative;
+    bottom: 5px;
+  }
+
+  /* Price row spacing */
+  .ct-priceRow {
+    margin-bottom: 0;
+    margin-right: 0px;
+  }
+
+  /* Title */
+  .ct-title {
+           font-size: 23px;
+        margin-bottom: 28px;
+        text-align: center;
+    }
+
+  /* Offer section */
+  .ct-offer {
+    padding-top: 30px;
+  }
+
+  /* List title */
+     .ct-listTitle {
+        font-size: 19px;
+    }
+      .digram {
+             width: 8%;
+        bottom: 3px;
+      }
+
+          .ct-offer {
+        min-height: 190px;
+          }
+             .ct-rightTitle {
+        font-size: 23px;
+        text-align: center;
+    }
+
+            .ct-container{
+              background: none;
+              padding: 0px;
+            }
+                .ct-right{
+                  padding: 0px;
+                }
+
+                .ct-offerText-1 .ct-wa{
+                  margin-right: 0px;
+                }
+                .ct3-cardLefttitle{
+                  font-size: 15px;
+                }
+
+                .bc-img {
+    width: 111%;
+                }
+
+                .ct3-tick{
+                  box-shadow: none;
+                }
+
+                    .ct3-list li {
+        margin: 8px 0;
+    }
+
+        .ct3-list li {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    }
+        .ct3-cardTitle {
+        font-size: 23px;
+        text-align: center;
+    }
+        .trustb-ribbonTitle {
+        margin: 0;
+        font-size: 23px;
+        line-height: 1.35;
+    }
+              }
+
+@media (max-width: 320px) {
+.ct-sub, .ct-starts {
+        font-size: 26px;
+    }
+        .digram {
+        width: 8%;
+                bottom: 2px;
+        margin-right: 0px;
+    }
+
+        .sjae {
+        font-size: 26px;
+    }
+
+        .ct-listTitle {
+        font-size: 16px;
+    }
+
+        .ct-rightTitle {
+        font-size: 19px;
+        text-align: center;
+    }
+
+        .ct-title {
+        font-size: 19px;
+        text-align: center;
+        }
+
+            .ct3-heroTitle {
+        font-size: 19px;
+        text-align: center;
+            }
+
+                .ct3-cardLefttitle {
+        font-size: 13px;
+    }
+
+        .ct3-tick {
+        width: 24px;
+        height: 17px;
+        flex: 0 0 17px;
+        box-shadow: none;
+        font-size: 11px;
+    }
+
+    .ct3-list li {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    }
+
+    .ct3-data {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+    .ct3-cardTitle {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .ct3-cardRight{
+      padding: 7px;
+    }
+
+        .ct3-tick {
+          display: none;
+        }
+
+        /* .trustb-ribbonTitle {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.35;
+    } */
+}

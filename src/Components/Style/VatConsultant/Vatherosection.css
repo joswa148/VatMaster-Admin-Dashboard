@@ -1,0 +1,855 @@
+:root {
+  --dark: #01343E;
+  --cyan: #00EAF6;
+  --cyanSoft: #DBFCFD;
+  --green: #0FB201;
+  --shadow: 0 18px 30px rgba(0, 0, 0, .12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.vm-logo{
+      cursor: pointer;
+}
+img.vm-modeldsadsa {
+  width: 51px;
+    position: relative;
+    top: -5px;
+}
+/* Page */
+.vm-page {
+  background: #fff;
+  padding: 22px 61px;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.vm-shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Topbar */
+.vm-topbar {
+  height: 80px;
+  background: var(--dark);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  /* box-shadow: var(--shadow); */
+  margin: 0 auto 26px;
+  margin-right:60px;
+}
+
+.vm-logo {
+  height: 50px;
+  width: auto;
+}
+
+.vm-wa-pill {
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 12px 18px rgba(0, 0, 0, .18);
+  white-space: nowrap;
+}
+.hdsahddnhs li{
+  list-style: none !important;
+  float: left;
+}
+.hdsahddnhs .dsada {
+  width: 6%;
+}
+
+.hdsahddnhs .dsadzas{
+  width: 94%;
+}
+ol, ul{
+  padding-left: 0px !important;
+}
+.dsada span{
+  display: flex;
+  justify-content: center;
+      margin-top: 2px;
+}
+.vm-wa-pill i {
+  font-size: 18px;
+}
+
+/* Layout */
+.vm-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 60px;
+}
+
+/* LEFT BIG CARD */
+.vm-leftCard {
+  box-shadow: none !important;
+  padding: 0px 10px 0px;
+  /* min-height: 640px; */
+  overflow: hidden;
+
+  /* ✅ makes bottom cards sit at bottom */
+  display: flex;
+  flex-direction: column;
+  width: 105%;
+  height: 96%;
+}
+
+.vtur{
+  position: absolute;
+}
+
+.vm-title {
+       font-size: 70px;
+    line-height: 1.02;
+    /* margin: 55px 0px 13px 0; */
+    color: #083B45;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin-bottom: 30px;
+}
+
+.vm-title span {
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.vm-desc {
+  margin-bottom:20px;
+  margin-top: 95px;
+}
+
+.vm-desc p {
+  margin: 0 0 9px 0;
+  color: #0C4B55;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.vm-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 14px;
+  width: fit-content;
+  box-shadow: none !important;
+}
+
+.vm-wa-btn i {
+  font-size: 18px;
+}
+
+/* ✅ bottom cards like screenshot (locked at bottom) */
+.vm-bottomCards {
+  margin-top: auto;
+  /* ✅ push to bottom */
+  padding-top: 34px;
+  display: grid;
+  grid-template-columns: 266px 1fr;
+ gap: 50px;
+  align-items: stretch;
+}
+
+/* Offer BG card */
+.vm-offerImgCard {
+  height: 188px;
+  width: 362px;
+  border-radius: 28px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+}
+
+/* .offer-lines {
+  margin-bottom: 18px;
+} */
+
+.offer-title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.offer-sub {
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.offer-price {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.offer-price .old {
+  font-size: 22px;
+  font-weight: 900;
+  color: #00343C;
+}
+
+.offer-price .old span {
+  text-decoration: line-through;
+  opacity: .75;
+  margin-left: 6px;
+}
+
+.offer-price .new {
+  font-size: 50px;
+  font-weight: 1000;
+  color: #FF1F1F;
+}
+
+/* Features BG card */
+.vm-featuresImgCard {
+  height: 182px;
+  border-radius: 28px;
+  background: #00343C;
+  padding: 33px 30px;
+
+
+  align-items: center;
+}
+
+.vm-ticks {
+  margin: 0;
+  margin-top: 35px;
+  padding: 0;
+
+}
+
+.vm-ticks li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #E7FEFF;
+  font-weight: 900;
+  margin: 20px 0;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+/* check */
+.vm-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--cyan);
+  flex: 0 0 20px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 5px rgba(0, 234, 246, .18);
+    font-weight:1000;
+  color:#00363c;
+}
+
+/* .vm-check::after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  border-left: 3px solid #00343C;
+  border-bottom: 3px solid #00343C;
+  transform: rotate(-45deg);
+  margin-top: -1px;
+} */
+
+/* RIGHT PANEL (use PNG bg shape) */
+.vm-rightPanel {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: 500px;
+
+}
+
+/* ✅ Model alignment like screenshot */
+.vm-model {
+    position: absolute;
+    left: 61%;
+    transform: translateX(-50%);
+    bottom: 4px;
+    height: 484px;
+    pointer-events: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .vm-page {
+    padding: 18px 18px;
+  }
+
+  .vm-leftCard {
+    padding: 44px 40px 36px;
+    min-height: 600px;
+  }
+
+  .vm-title {
+    font-size: 54px;
+  }
+
+  .vm-bottomCards {
+    grid-template-columns: 320px 1fr;
+  }
+
+  .vm-offerImgCard,
+  .vm-featuresImgCard {
+    height: 190px;
+  }
+
+  .vm-rightPanel {
+    min-height: 600px;
+  }
+  .slider{
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE FIX: show sections one-by-one
+   (left first, right next)
+   Don't affect desktop
+========================= */
+
+@media (max-width: 992px){
+
+  /* stop overflow / sideways layout */
+  .vm-shell{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .vm-page{
+    padding: 14px 12px !important;
+  }
+
+  /* topbar must be full width */
+  .vm-topbar{
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 1 column layout */
+  .vm-layout{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* left card full width */
+  .vm-leftCard{
+    width: 100% !important;
+    height: auto !important;
+    padding: 28px 18px 22px !important;
+    border-radius: 28px !important;
+  }
+
+  /* bottom cards already stacked */
+  .vm-bottomCards{
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .vm-offerImgCard,
+  .vm-featuresImgCard{
+    width: 100% !important;
+    /* height: auto !important; */
+    min-height: 170px !important;
+    background-size: cover !important;
+  }
+
+  /* ✅ RIGHT PANEL should be normal block (no overlap) */
+  .vm-rightPanel{
+    width: 100% !important;
+    min-height: 420px !important;
+
+    margin-top: 0 !important;     /* remove desktop overlap */
+    margin-left: 0 !important;    /* remove desktop offset */
+
+    background-size: 100% 100% !important;
+    background-position: center !important;
+
+    border-radius: 28px !important;
+  }
+
+  /* model fits inside */
+  .vm-model{
+    width: 88% !important;
+    max-width: 315px !important;
+    bottom: 0 !important;
+  }
+  .vtur{
+    position: relative;
+  }
+  .vm-layout {
+    margin-top: 0px;
+  }
+
+  .vm-desc{
+    margin-top: 0px;
+  }
+  /* .vm-topbar{
+    margin: 0px;
+  } */
+      .vm-leftCard{
+        background-color:#dbfcfd;
+      }
+    .vtrtestbg{
+      width: 100% !important;
+    }
+
+    .clientimg{
+      width: 100% !important;
+      display: none;
+    }
+
+  .priceimg{
+      display: none;
+    }
+    .pricelist{
+      background-color:#01343e;
+          position: absolute;
+    left: 9% !important;
+    width: 82%;
+    padding: 10px;
+    border-radius: 20px;
+    top: 69% !important;
+    }
+    .vm-model{
+      height: 430px;
+    }
+    .vm-model{
+      left: 50%;
+    }
+}
+
+@media (max-width: 576px){
+  .vm-topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 12px;
+    height: auto;
+    flex-wrap: nowrap;
+  }
+
+  /* keep logo from shrinking too much */
+  .vm-logo{
+    height: 28px;
+    flex: 0 0 auto;
+  }
+
+  /* WhatsApp pill becomes compact */
+  .vm-wa-pill{
+    padding: 8px 10px;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 1;
+    min-width: 38px;
+    justify-content: center;
+  }
+
+  /* show only icon in mobile */
+  .vm-wa-pill span{
+    display: inline;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .vm-wa-pill i{
+    font-size: 16px;
+    margin: 0;
+  }
+  .vm-rightPanel{
+    min-height: 508px !important;
+  }
+  .vm-model{
+    width: 92% !important;
+  }
+}
+/* =========================
+   TABLET FIX (TAB VIEW)
+   Works for 768px–1024px
+   Keeps desktop unchanged
+========================= */
+/* =========================
+   TABLET FIX (577px – 992px)
+   Fix broken bottom cards + remove desktop hacks
+========================= */
+/* =========================
+   TABLET FIX (600px–992px)
+   Keep same desktop style but scaled and aligned
+========================= */
+@media (min-width: 600px) and (max-width: 992px) {
+
+  /* remove desktop hacks (these break tablet) */
+  .vm-shell { width: 100% !important; }
+  .vm-topbar { margin-right: 0 !important; width: 100% !important; }
+  .vm-leftCard { width: 100% !important; height: auto !important; }
+  .vm-rightPanel { margin-top: 0 !important; margin-left: 0 !important; }
+
+  /* layout: stack */
+  .vm-layout {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* top spacing inside left card */
+  .vm-leftCard{
+    padding: 34px 24px 22px !important;
+    border-radius: 34px !important;
+  }
+
+  .vm-title{
+    margin: 0 0 10px 0 !important;
+    font-size: 44px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .vm-desc p{
+    font-size: 15px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.5 !important;
+  }
+
+  .vm-wa-btn{
+    margin-top: 12px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* ✅ bottom cards should be smaller + aligned like design */
+  .vm-bottomCards{
+    margin-top: 18px !important;     /* not too low */
+    padding-top: 18px !important;
+    grid-template-columns: 1fr !important;  /* one by one */
+    gap: 14px !important;
+  }
+
+  /* OFFER card: fixed “card” look */
+  .vm-offerImgCard{
+    width: 100% !important;
+    /* max-width: 420px !important; */
+    height: 165px !important;
+    padding: 22px !important;
+    border-radius: 26px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .offer-title,
+  .offer-sub{
+    font-size: 16px !important;
+    font-weight: 900 !important;
+  }
+
+  .offer-price .old{
+    font-size: 18px !important;
+  }
+
+  .offer-price .new{
+    font-size: 38px !important;
+  }
+
+  /* FEATURES card: stop it becoming huge */
+  .vm-featuresImgCard{
+    width: 100% !important;
+    /* max-width: 520px !important; */
+    height: 155px !important;
+    padding: 18px 22px !important;
+    border-radius: 26px !important;
+    background-size: cover !important;
+    background-position: center !important;
+
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  /* ✅ critical fix: remove big top margin that ruins alignment */
+  .vm-ticks{
+    margin-top: 0 !important;
+  }
+
+  .vm-ticks li{
+    font-size: 14px !important;
+    margin: 10px 0 !important;
+    font-weight: 900 !important;
+  }
+
+  .vm-check{
+    width: 18px !important;
+    height: 18px !important;
+    flex: 0 0 18px !important;
+    box-shadow: 0 0 0 4px rgba(0,234,246,.18) !important;
+  }
+
+  /* right panel (below left card) */
+  .vm-rightPanel{
+    min-height: 420px !important;
+    border-radius: 34px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .vm-model{
+    width: 75% !important;
+    /* max-width: 420px !important; */
+    bottom: 12px !important;
+  }
+}
+
+
+
+ .partners {
+  background: #fff8d9;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.partners h2 {
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(200px * 10); /* logo width × total items */
+  animation: scroll 50s linear infinite;
+      gap: 1.5%;
+
+}
+
+/* hover stop */
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+.slide {
+     width: 143px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+.slide img {
+     background: #fff;
+    padding: 15px 24px;
+    border-radius: 14px;
+    height: 75px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    margin-top: 22px;
+    cursor: pointer;
+}
+
+/* 👇 MAGIC HERE */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 5));
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .partners h2 {
+    font-size: 24px;
+  }
+
+  .slide {
+    width: 150px;
+  }
+
+  .slide img {
+    height: 42px;
+  }
+
+  .slide-track {
+    width: calc(150px * 10);
+    animation-duration: 30s;
+  }
+
+  @keyframes scroll {
+    100% {
+      transform: translateX(calc(-150px * 50));
+    }
+  }
+}
+.baje{
+    font-size: 18px;
+    color: #ffff;
+    line-height: 1.8em;
+    margin-bottom: 0px;
+    margin-top: -8px;
+    font-weight: 700;
+}
+
+@media (min-width:320px) and (max-width:480px){
+      .vm-title {
+        font-size: 29px;
+    }
+    .dsada span{
+      margin-left: -6px;
+    }
+    .offer-title{
+      font-size: 25px;
+    }
+    .offer-price .new {
+      font-size: 34px;
+    }
+    img.vm-modeldsadsa {
+    width: 36px;
+
+    margin-right: 6px;
+}
+.vm-offerImgCard {
+  padding-top: 20px;
+  height: auto;
+}
+.vm-offerImgCard{
+padding: 20px;
+}
+.vm-bottomCards{
+  margin-top: 0px;
+      padding-top: 20px;
+}
+    .vm-leftCard{
+      min-height: 575px;
+    }
+
+        .vm-desc p {
+        font-size: 17px;
+    }
+    img.vm-modeldsadsa{
+      top: -3px;
+    }
+}
+
+@media (max-width: 320px) {
+.vm-desc p{
+  font-size: 15px;
+}
+
+    .dsada span {
+        margin-left: -10px;
+    }
+
+        .vm-title {
+        font-size: 26px;
+    }
+        .offer-title {
+        font-size: 22px;
+    }
+}
+
+
+.clientimg img{
+  width: 50%;
+  position: relative;
+    width: 54%;
+    right: 23px;
+}
+
+.clientimg{
+  width: 50%;
+  margin-top: 30px;
+}
+
+.clientimg p{
+  margin-bottom:0px;
+}
+
+.vtrtestbg{
+  background-size: 100% 100%;
+    padding: 10px;
+    height: 211px;
+    width: 340px;
+
+}
+
+.vtrtestbg div{
+        padding-top: 34px;
+    padding-left: 12px;
+}
+
+.vtrtestbg p{
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.priceimg{
+      position: absolute;
+    top: 55%;
+    left: 7%;
+}
+
+.pricelist{
+   position: absolute;
+        top: 66%;
+    left: 12%;
+    z-index: 1111;
+    color: white;
+}
+
+
+.pricelist > p:first-of-type{
+  font-size: 20px;
+      width: 82%;
+}
+
+.pricelist > p:nth-of-type(2){
+  font-size: 30px;
+}
+
+.p1{
+  text-decoration: line-through;
+  color: red;
+}
+.p2{
+color: #00EAF6;
+font-weight: 600;
+}
+

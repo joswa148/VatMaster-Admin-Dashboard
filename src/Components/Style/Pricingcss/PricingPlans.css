@@ -1,0 +1,337 @@
+/* SECTION */
+.cpn-section {
+  background: #ffffff;
+}
+
+/* CONTAINER */
+.cpn-shell {
+  max-width: 1240px;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+@media (min-width: 576px) {
+  .cpn-shell {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cpn-shell {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* HEADER */
+.cpn-headRow {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 3% auto;
+}
+
+.cpn-headText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b2f35;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: -0.02em;
+  padding: 0 24px;
+  margin: 0;
+}
+
+.cpn-headSpan {
+  font-size: 31px;
+  line-height: 1.5em;
+  margin-top: 5%;
+  display: inline-block;
+  width: 37%;
+}
+
+/* ---- CARD FRAME ---- */
+.cpn-cardWrap{
+  position: relative;
+  width: 100%;
+
+  /* ✅ values come from props via CSS variables */
+  min-height: var(--cpn-minH, 402px);
+  max-height: var(--cpn-maxH, 520px);
+
+  /* ✅ aspect ratio optional */
+  aspect-ratio: var(--cpn-ar, 8 / 9);
+
+  border-radius: 22px;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+/* background image */
+.cpn-cardBg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* inner */
+.cpn-cardInner {
+  position: absolute;
+  inset: 0;
+}
+
+/* content block */
+.cpn-cardContent {
+  position: absolute;
+  inset: 0;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
+  padding-top: 14%;
+  padding-bottom: 28%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 576px) {
+  .cpn-cardContent {
+    padding-top: 12%;
+  }
+}
+@media (max-width: 575.98px) {
+  .cpn-cardContent {
+    padding-top: 7%;
+  }
+}
+@media (min-width: 992px) {
+  .cpn-cardContent {
+    padding-top: 8%;
+  }
+}
+
+/* title */
+.cpn-title {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.cpn-titleTx {
+  font-size: 16px;
+}
+
+@media (min-width: 576px) {
+  .cpn-titleTx {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cpn-titleTx {
+    font-size: 20px;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* price pill */
+.cpn-pill {
+  margin-top: clamp(10px, 1.1vw, 14px);
+  display: inline-flex;
+  border-radius: 999px;
+  background: #00e6f6;
+  padding: 10px 20px;
+  color: #0b2f35;
+  font-weight: 800;
+  width: 60%;
+}
+
+.cpn-pillTx {
+  font-size: clamp(15px, 1.5vw, 18px);
+}
+
+/* bullets */
+.cpn-list {
+  margin-top: clamp(15px, 1.5vw, 20px);
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.cpn-li {
+  display: flex;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cpn-li + .cpn-li {
+  margin-top: clamp(8px, 0.9vw, 12px);
+}
+
+.cpn-liIc {
+  margin-top: 2px;
+}
+
+.cpn-liTx {
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.55;
+}
+
+/* note */
+.cpn-note {
+  margin-top: 5%;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.7em;
+}
+
+.cpn-noteLn {
+  font-size: clamp(14px, 1.3vw, 20px);
+}
+
+/* icons */
+.cpn-check {
+  display: inline-flex;
+  width: 15px;
+  height: 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #00e6f6;
+  padding: 1px;
+  position: relative;
+  top: -3px;
+}
+
+.cpn-checkSvg {
+  width: 14px;
+  height: 14px;
+}
+
+/* WhatsApp circle */
+.cpn-waCircle {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 999px;
+  background: #0b2f35;
+  color: #00e6f6;
+}
+
+.cpn-waSvg {
+  width: 18px;
+  height: 18px;
+}
+
+/* CTA button */
+.cpn-btn {
+  position: absolute;
+  top: 80%;
+  left: 55%;
+  right: 6%;
+  bottom: 6.5%;
+  width: 44%;
+  height: 15%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  border-radius: 999px;
+  background: #00e6f6;
+  color: #0b2f35;
+  font-weight: 800;
+  text-decoration: none;
+
+  border: 0;
+  cursor: pointer;
+
+ 
+  transition: opacity 180ms ease;
+  font-size: clamp(16px, 1.2vw, 20px);
+}
+
+.cpn-btn:hover {
+  opacity: 0.9;
+}
+
+.aedSign{
+   width: 17%;
+  position: relative;
+  bottom: 3px;
+}
+
+
+/* Mobile tuning */
+@media (min-width: 319px) and (max-width:575.98px) {
+  .cpn-btn {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .cpn-waCircle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cpn-waSvg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .fs-1{
+    font-size: 23px !important;
+    margin-bottom: 0px !important;
+  }
+
+  
+    .cpn-note {
+    margin-top: 18%;
+    }
+
+    .pp-wrap {
+      padding-bottom: 0px !important;
+    }
+}
+
+@media (max-width:395px){
+      .cpn-btn {
+        font-size: 16px;
+        gap: 4px ;
+         height: 11%;
+}
+    .fs-1 {
+        font-size: 20px !important;
+    }
+
+    .ctn-pill{
+          width: 51% !important;
+    }
+
+}
+
+@media (max-width:320px){
+      .cpn-btn {
+        font-size: 12px;
+        gap: 4px;
+            height: 12%;
+}
+.fs-1{
+    font-size: 23px !important;
+    margin-bottom: 0px !important;
+  }
+
+    .cpn-note {
+    margin-top: 5%;
+    }
+}
+
+

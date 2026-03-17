@@ -1,0 +1,296 @@
+:root {
+  --card: #ffffff;
+  --tick: #00EAF6;
+  --wa: #16B200;
+  --text: #0B2E34;
+  --shadow: 0 20px 30px rgba(0, 0, 0, .18);
+}
+
+.ct3-wrap {
+  padding: 44px 73px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.ct3-data {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* main container */
+.ct3-shell {
+  position: relative;
+  width: min(1245px, 100%);
+  border-radius: 70px;
+  overflow: hidden;
+  /* box-shadow: var(--shadow); */
+
+  /* ✅ layout */
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 102px;
+
+  /* ✅ responsive padding */
+padding-bottom: 60px !important;
+    padding: 92px 60px;
+}
+
+/* ✅ background image layer */
+.ct3-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* optional subtle grid overlay (very light) */
+.ct3-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(255, 255, 255, .10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, .10) 1px, transparent 1px);
+  background-size: 140px 140px;
+  opacity: .10;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* content above bg */
+.ct3-left,
+.ct3-right {
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT TITLE */
+.ct3-heroTitle {
+  margin: 0 0 45px;
+  color: #fff;
+  font-weight: 900;
+font-size: 27px;
+    line-height: 1.6em;
+}
+
+/* cards */
+.ct3-card {
+  position: relative;
+  border-radius: 46px;
+  padding: 32px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .25);
+}
+
+.ct3-cardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+}
+
+.ct3-cardTitle {
+  margin: 27px 0 18px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.5em;
+}
+
+.ct3-cardLefttitle {
+  margin: 27px 0 18px;
+  color:aliceblue;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.22;
+}
+
+.bc-img {
+  width: 100%;
+  border-radius: 20px;
+  height: auto;
+  object-fit: cover;
+
+}
+
+.ct3-list {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ct3-cardRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0px;
+  margin-left: -6%;
+  background-repeat: no-repeat;
+  padding: 23px 40px;
+  border-radius: 60px;
+  background-size: 100% 100%;
+  height: 624px;
+}
+
+.ct3-list li {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin: 12px 0;
+    font-weight: 650;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Tick */
+.ct3-tick {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--tick);
+  display: grid;
+  place-items: center;
+  flex: 0 0 20px;
+  margin-top: 2px;
+  box-shadow: 0 0 0 6px rgba(0, 234, 246, .20);
+  font-weight: 1000;
+  color: #00363c;
+}
+
+/* right align */
+.ct3-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+
+/* laptop */
+@media (max-width: 1100px) {
+  .ct3-shell {
+    padding: 56px;
+    gap: 34px;
+    border-radius: 56px;
+  }
+
+  .ct3-heroTitle {
+    font-size: 32px;
+  }
+
+  .ct3-bg{
+    background-color: #00363c;
+    background-image: none !important;
+  }
+  .ct3-cardRight{
+    background-color: white;
+    background-image: none !important;
+    margin-left: 0% !important;
+  }
+      .ct3-cardTitle{
+        color: black;
+      }
+
+}
+
+/* tablet + mobile stack */
+@media (max-width: 992px) {
+  .ct3-shell {
+    grid-template-columns: 1fr;
+    padding: 40px 18px;
+    gap: 26px;
+    border-radius: 44px;
+  }
+
+  .ct3-heroTitle {
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+
+  .ct3-cardTitle {
+    font-size: 20px;
+  }
+
+  .ct3-list li {
+    font-size: 14px;
+  }
+
+  .ct3-cardLeft,
+  .ct3-cardRight {
+    max-width: 100%;
+    padding: 26px;
+    border-radius: 32px;
+  }
+}
+
+/* small phones */
+@media (max-width: 520px) {
+  .ct3-wrap {
+    padding: 26px 12px;
+  }
+
+  .ct3-shell {
+    padding: 26px 14px;
+    border-radius: 28px;
+  }
+
+  .ct3-heroTitle {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .ct3-cardTitle {
+    font-size: 18px;
+  }
+
+  .ct3-list li {
+    font-size: 13px;
+    margin: 14px 0;
+  }
+
+  .ct3-cardLeft,
+  .ct3-cardRight {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .ct3-tick {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    box-shadow: 0 0 0 5px rgba(0, 234, 246, .18);
+  }
+}
+
+
+.vat-registration-page .ctafoot-footerGrid{
+  display: none;
+}
+
+.vat-registration-page .ctafoot-copy {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+    font-weight: 500;
+    background: transparent !important;
+  }
+
+
+  .vat-registration-page .ctafoot-footer{
+    padding-bottom: 10px !important;
+        padding: 68px 0;
+  }
+
+  
+.vat-registration-page .ctafoot-copy{
+    padding: 10px 20px;
+    border: 0px;
+}

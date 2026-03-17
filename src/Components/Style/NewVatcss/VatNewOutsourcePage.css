@@ -1,0 +1,157 @@
+/* VatNewOutsourcePage.css */
+
+.vno-page {
+  padding: 40px 40px;
+}
+
+/* HERO */
+.vno-hero {
+  background: url(../../../../public/assets/image/innerbg1.png);
+  background-size: 100% 100%;
+  padding: 30px 40px;
+  border-radius: 22px;
+  margin-bottom: 40px;
+}
+
+.vno-hero-title {
+  font-size: 56px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.vno-hero-text {
+  font-size: 18px;
+  color: #fff;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* LEFT TOP CARD */
+.vno-left-card {
+  background: #c9f2f7;
+  border-radius: 30px;
+  padding: 28px;
+  margin-bottom: 0px;
+  line-height: 1.8;
+}
+
+.vno-left-card h3 {
+  font-size: 35px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vno-left-card p {
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+}
+
+/* RIGHT IMAGE */
+.vno-right-media img {
+  width: 100%;
+  height: 52%;
+  border-radius: 30px;
+}
+
+.vno-right-media {
+  position: relative;
+height: 100%;
+}
+
+/* RIGHT CARD */
+.vno-right-card {
+  background: #c9f2f7;
+  border-radius: 30px;
+  padding: 28px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  position: absolute;
+  top: 58%;
+}
+
+.vno-right-card h3 {
+  font-size: 35px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.vno-right-card p {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+  .vno-page {
+    padding: 30px 14px;
+  }
+
+  .vno-right-card {
+    margin-bottom: 0px;
+  }
+
+  .vno-hero-title {
+    font-size: 34px;
+  }
+
+  .vno-left-card h3,
+  .vno-right-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .vno-hero {
+    background: #2a3d42;
+  }
+
+  .vno-right-media {
+    bottom: 0px;
+    display: none;
+  }
+
+  .vno-right-card {
+    position: relative;
+    top: 0px;
+  }
+
+  .vno-hero-text {
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 320px) {
+  .vno-hero-title {
+    font-size: 30px;
+  }
+
+  .vno-hero-text {
+    font-size: 14px;
+  }
+
+  .vno-left-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .vno-left-card p {
+    font-size: 14px;
+  }
+
+  .vno-right-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .vno-right-card p {
+    font-size: 14px;
+  }
+}
