@@ -1,20 +1,21 @@
-import React from "react";
-const rightBg = "/assets/image/Group 1000005923.png";
-const offerBg = "/assets/image/Frame 1000006032.png";
 const digram = "/assets/image/UAE_Dirham_Symboll.svg";
 import "../Style/VatsecondRegistration/CtPenaltySectionNew.css";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
+import { useMeta } from "../../hooks/useMeta";
+import React from "react";
 
 const Tick = () => <span className="ct-tick">✓</span>;
 
 export default function CtPenaltySectionNew() {
   const { whatsappUrl } = useWhatsAppRouting();
+  const { setPageMeta } = useMeta();
+
+  React.useEffect(() => {
+    setPageMeta("vat-registration");
+  }, [setPageMeta]);
   return (
     <section className="ct-wrap">
       <div className="ct-container">
-
-       
-
         {/* RIGHT */}
         <div
           className="ct-right" >
@@ -52,32 +53,20 @@ export default function CtPenaltySectionNew() {
             </li>
           </ul>
         </div>
-
-
          {/* LEFT */}
         <div className="ct-left">
           <p className="ct-title">
             Affordable Price & Fast Service
           </p>
-
           <div
-            className="ct-offer"
->
+            className="ct-offer">
             <div className="ct-offerText ct-offerText-1">
 
               <h2 className="ct-sub">VAT Registration</h2>
 
               <div className="ct-priceRow">
                 <div className="ct-starts">Starts  <img src={digram} alt="VAT Registration" className="digram" /> <span className="sjae">125/-</span> </div>
-
-                {/* <span className="ct-old">
-                  <span>499</span>
-                </span> */}
-
-                {/* <span className="ct-new">99</span>
-                <span className="ct-only">/-</span> */}
               </div>
-
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="ct-wa">
                 <i className="bi bi-whatsapp" />
                 WhatsApp us
@@ -85,7 +74,6 @@ export default function CtPenaltySectionNew() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import ModernLayout from "../CommonDasboardComponents/ModernLayout";
+import AdminModal from "../CommonDasboardComponents/AdminModal";
 
 const BlogCMSDashboard = () => {
     const [search, setSearch] = useState("");
     const [isSyncing, setIsSyncing] = useState(false);
+    
+    // Modal State
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [editingPost, setEditingPost] = useState(null);
+    const [formData, setFormData] = useState({ title: "", author: "", category: "Legal", status: "Published" });
     
     const initialData = [
         { id: 1, title: "New VAT Regulations in UAE 2026", author: "Ahmed Al", category: "Legal", status: "Published", date: "Mar 15, 2026" },
@@ -17,7 +23,6 @@ const BlogCMSDashboard = () => {
     });
 
     useEffect(() => {
-        // Use a small delay before showing sync status to avoid cascading render lint
         const syncStart = setTimeout(() => setIsSyncing(true), 10);
         const timer = setTimeout(() => {
             localStorage.setItem('vat_masters_blog_posts', JSON.stringify(posts));
@@ -29,22 +34,37 @@ const BlogCMSDashboard = () => {
         };
     }, [posts]);
 
+    const handleOpenModal = (post = null) => {
+        if (post) {
+            setEditingPost(post);
+            setFormData({ title: post.title, author: post.author, category: post.category, status: post.status });
+        } else {
+            setEditingPost(null);
+            setFormData({ title: "", author: "", category: "Legal", status: "Published" });
+        }
+        setIsModalOpen(true);
+    };
+
+    const handleSave = () => {
+        if (!formData.title || !formData.author) return alert("Please fill all fields");
+
+        if (editingPost) {
+            setPosts(posts.map(p => p.id === editingPost.id ? { ...p, ...formData } : p));
+        } else {
+            const newPost = {
+                id: Date.now(),
+                ...formData,
+                date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+            };
+            setPosts([newPost, ...posts]);
+        }
+        setIsModalOpen(false);
+    };
+
     const deletePost = (id) => {
         if (window.confirm("Are you sure you want to delete this post?")) {
             setPosts(posts.filter(p => p.id !== id));
         }
-    };
-
-    const addDummyPost = () => {
-        const newPost = {
-            id: Date.now(),
-            title: "New Dynamic Article " + (posts.length + 1),
-            author: "Admin",
-            category: "General",
-            status: "Draft",
-            date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-        };
-        setPosts([newPost, ...posts]);
     };
 
     return (
@@ -68,6 +88,13 @@ const BlogCMSDashboard = () => {
                 .status-badge { padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 800; }
                 .status-published { background: #dcfce7; color: #166534; }
                 .status-draft { background: #fef3c7; color: #92400e; }
+
+                .form-group { margin-bottom: 20px; }
+                .form-group label { display: block; font-size: 13px; font-weight: 700; color: #64748b; margin-bottom: 8px; }
+                .form-group input, .form-group select { 
+                    width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 14px;
+                }
+                .form-group input:focus { border-color: var(--primary); }
             `}</style>
 
             <header className="content-header">
@@ -79,7 +106,7 @@ const BlogCMSDashboard = () => {
                         <span className="sync-badge" style={{ background: "#d1fae5", color: "#065f46" }}>✅ Synced</span>
                     )}
                 </div>
-                <button className="add-btn" onClick={addDummyPost}>+ New Post</button>
+                <button className="add-btn" onClick={() => handleOpenModal()}>+ New Post</button>
             </header>
 
             <div className="table-card">
@@ -116,7 +143,7 @@ const BlogCMSDashboard = () => {
                                 </td>
                                 <td style={{ color: "var(--neutral-400)" }}>{post.date}</td>
                                 <td style={{ textAlign: "right" }}>
-                                    <button style={{ background: "none", border: "none", cursor: "pointer", fontSize: "16px" }}>✏️</button>
+                                    <button onClick={() => handleOpenModal(post)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "16px" }}>✏️</button>
                                     <button onClick={() => deletePost(post.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "16px", marginLeft: "8px" }}>🗑️</button>
                                 </td>
                             </tr>
@@ -124,6 +151,51 @@ const BlogCMSDashboard = () => {
                     </tbody>
                 </table>
             </div>
+
+            <AdminModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)}
+                title={editingPost ? "Edit Blog Post" : "Add New Post"}
+                onConfirm={handleSave}
+                confirmText={editingPost ? "Update Post" : "Publish Post"}
+            >
+                <div className="form-group">
+                    <label>Article Title</label>
+                    <input 
+                        type="text" 
+                        value={formData.title} 
+                        onChange={e => setFormData({...formData, title: e.target.value})}
+                        placeholder="e.g. New Corporate Tax Rules"
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Author Name</label>
+                    <input 
+                        type="text" 
+                        value={formData.author} 
+                        onChange={e => setFormData({...formData, author: e.target.value})}
+                        placeholder="e.g. John Doe"
+                    />
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="form-group">
+                        <label>Category</label>
+                        <select value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}>
+                            <option>Legal</option>
+                            <option>Tutorial</option>
+                            <option>Business</option>
+                            <option>General</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label>Status</label>
+                        <select value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})}>
+                            <option>Published</option>
+                            <option>Draft</option>
+                        </select>
+                    </div>
+                </div>
+            </AdminModal>
         </ModernLayout>
     );
 };

@@ -5,14 +5,19 @@ const offerBg = "/assets/image/Frame 1000006032.png";
 const newsub = "/assets/image/newsub.png";
 const clients = "/assets/image/homepic.png";
 import { useNavigate } from "react-router-dom";
-
-import "../Style/VatRegistration/Vatherosection.css";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
+import { useMeta } from "../../hooks/useMeta";
+
 const Tick = () => <span className="vm-check">✓</span>;
 
 export default function Vatherosection() {
   const { whatsappUrl } = useWhatsAppRouting();
+  const { setPageMeta } = useMeta();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    setPageMeta("corporate-tax");
+  }, [setPageMeta]);
   return (
 
     <section className="vm-page">

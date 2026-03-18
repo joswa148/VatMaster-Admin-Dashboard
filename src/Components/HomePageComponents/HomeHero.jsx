@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState, useRef } from "react";
+import { useEffect, useLayoutEffect, useState, useRef, useCallback } from "react";
 const frameBg = "/assets/image/frame-10.png";
 const gridOverlay = "/assets/image/group-14.png";
 const logo = "/assets/image/Vat-Master-Logo-1.png";
@@ -8,16 +8,11 @@ import "../Style/Homecss/Home.css";
 import { useNavigate } from "react-router-dom";
 const Aedsy = "/assets/image/AED-Symbol.svg";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
+import { useMeta } from "../../hooks/useMeta";
 
 /* helpers */
 const Check = ({ small }) => (
   <span className={`hh-check ${small ? "hh-check--small" : ""}`}>✓</span>
-);
-
-const WhatsAppIcon = () => (
-  <svg viewBox="0 0 32 32" className="hh-icon" fill="currentColor">
-    <path d="M26.7 5.3A14.8 14.8 0 0 0 16 .7C8 .7 1.5 7.2 1.5 15.2c0 2.5.7 5 1.9 7.2l-2.1 8.9 9.1-2a15 15 0 0 0 5.6 1.1c8 0 14.5-6.5 14.5-14.5 0-3.9-1.5-7.5-3.8-10.6z" />
-  </svg>
 );
 
 const ArrowUpRight = () => (
@@ -116,7 +111,7 @@ const NoShakeStack = () => {
   const timeoutRef = useRef(null);
   const cycleRef = useRef(null);
 
-  const apply = React.useCallback(() => {
+  const apply = useCallback(() => {
     const cards = Array.from(
       stackRef.current?.querySelectorAll(".hh-stack-card") || []
     );
@@ -135,14 +130,14 @@ const NoShakeStack = () => {
     });
   }, [apply]);
 
-  const scheduleNext = React.useCallback(() => {
+  const scheduleNext = useCallback(() => {
     clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       cycleRef.current?.();
     }, 6000);
   }, []);
 
-  const cycle = React.useCallback(() => {
+  const cycle = useCallback(() => {
     if (animatingRef.current) return;
     animatingRef.current = true;
 
@@ -380,6 +375,11 @@ const NavLinks = ({
 export default function HomeHero() {
   const navigate = useNavigate();
   const { whatsappUrl } = useWhatsAppRouting();
+  const { setPageMeta } = useMeta();
+
+  useEffect(() => {
+    setPageMeta("home");
+  }, [setPageMeta]);
 
   const [heroReady, setHeroReady] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -432,10 +432,6 @@ export default function HomeHero() {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
-
-
-
-
   return (
     <section
       className="hh-section"

@@ -4,15 +4,20 @@ const offerBg = "/assets/image/Frame 1000006032.png";
 const newsub = "/assets/image/newsub.png";
 const clients = "/assets/image/homepic.png";
 import { useNavigate } from "react-router-dom";
-
-import "../Style/Landingcss/Herocor.css";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
+import { useMeta } from "../../hooks/useMeta";
+import React from "react";
 
 const Tick = () => <span className="land-vm-check">✓</span>;
 
 export default function Hero() {
   const { whatsappUrl } = useWhatsAppRouting();
+  const { setPageMeta } = useMeta();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    setPageMeta("corporate-tax");
+  }, [setPageMeta]);
 
   return (
     <section className="land-vm-page">

@@ -15,6 +15,11 @@ export const useMeta = () => {
             title: "Corporate Tax Registration UAE | UAE Tax Consultants",
             description: "Get your Corporate Tax registration done by FTA-certified experts. Hassle-free and fast process for business income tax compliance.",
             keywords: "corporate tax registration, uae tax, business tax"
+        },
+        "vat-registration": {
+            title: "VAT Registration UAE | Fast & Easy VAT Services",
+            description: "Register for VAT in UAE quickly with VAT Masters. Our experts handle all documentation and compliance for your business.",
+            keywords: "vat registration uae, vat consultant dubai, register for vat"
         }
     }), []);
 
