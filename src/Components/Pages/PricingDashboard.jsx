@@ -38,8 +38,18 @@ const PricingDashboard = () => {
         const saved = localStorage.getItem('vat_masters_pricing_raw_data');
         if (!saved) return initialData;
         try {
-            return JSON.parse(saved);
-        } catch {
+            const parsed = JSON.parse(saved);
+            // Merge logic: Add any missing services from initialData to the existing data
+            const existingIds = new Set(parsed.map(item => item.id));
+            const missingServices = initialData.filter(item => !existingIds.has(item.id));
+            
+            if (missingServices.length > 0) {
+                console.log("Merging missing services:", missingServices);
+                return [...parsed, ...missingServices];
+            }
+            return parsed;
+        } catch (e) {
+            console.error("Error parsing saved pricing data:", e);
             return initialData;
         }
     });
@@ -125,12 +135,21 @@ const PricingDashboard = () => {
                     </div>
                     <div className="breadcrumbs">Dashboard / Pricing</div>
                 </div>
-                <button className="add-btn" onClick={() => {
-                    setFormData({ id: Date.now().toString(), name: "", price: "", originalPrice: "", currency: "AED", status: "active" });
-                    setIsModalOpen(true);
-                }}>
-                    <span>+</span> Add Service
-                </button>
+                <div style={{ display: "flex", gap: "12px" }}>
+                    <button onClick={() => {
+                        if (window.confirm("Are you sure you want to reset all prices to defaults? This will overwrite your current settings.")) {
+                            setData(initialData);
+                        }
+                    }} className="btn-secondary">
+                        🔄 Reset to Defaults
+                    </button>
+                    <button onClick={() => {
+                        setFormData({ id: `service-${Date.now()}`, name: "", price: "", originalPrice: "", currency: "AED", status: "active" });
+                        setIsModalOpen(true);
+                    }} className="btn-primary">
+                        + Add Service
+                    </button>
+                </div>
             </header>
 
             <div className="table-card">

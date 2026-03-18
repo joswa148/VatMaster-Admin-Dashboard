@@ -9,7 +9,32 @@ const BlogCMSDashboard = () => {
     // Modal State
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingPost, setEditingPost] = useState(null);
-    const [formData, setFormData] = useState({ title: "", author: "", category: "Legal", status: "Published" });
+    
+    // Dynamic Categories
+    const [availableCategories, setAvailableCategories] = useState([]);
+    
+    useEffect(() => {
+        const savedCats = localStorage.getItem('vat_masters_categories');
+        if (savedCats) {
+            const parsed = JSON.parse(savedCats);
+            setTimeout(() => setAvailableCategories(parsed), 0);
+        }
+    }, []);
+
+    const [formData, setFormData] = useState({ 
+        title: "", 
+        author: "", 
+        category: "", 
+        status: "Published" 
+    });
+
+    useEffect(() => {
+        if (!editingPost && availableCategories.length > 0 && !formData.category) {
+            setTimeout(() => {
+                setFormData(prev => ({ ...prev, category: availableCategories[0].name }));
+            }, 0);
+        }
+    }, [availableCategories, editingPost, formData.category]);
     
     const initialData = [
         { id: 1, title: "New VAT Regulations in UAE 2026", author: "Ahmed Al", category: "Legal", status: "Published", date: "Mar 15, 2026" },
@@ -40,7 +65,12 @@ const BlogCMSDashboard = () => {
             setFormData({ title: post.title, author: post.author, category: post.category, status: post.status });
         } else {
             setEditingPost(null);
-            setFormData({ title: "", author: "", category: "Legal", status: "Published" });
+            setFormData({ 
+                title: "", 
+                author: "", 
+                category: availableCategories.length > 0 ? availableCategories[0].name : "Uncategorized", 
+                status: "Published" 
+            });
         }
         setIsModalOpen(true);
     };
@@ -181,10 +211,13 @@ const BlogCMSDashboard = () => {
                     <div className="form-group">
                         <label>Category</label>
                         <select value={formData.category} onChange={e => setFormData({...formData, category: e.target.value})}>
-                            <option>Legal</option>
-                            <option>Tutorial</option>
-                            <option>Business</option>
-                            <option>General</option>
+                            {availableCategories.length > 0 ? (
+                                availableCategories.map(cat => (
+                                    <option key={cat.slug} value={cat.name}>{cat.name}</option>
+                                ))
+                            ) : (
+                                <option>Uncategorized</option>
+                            )}
                         </select>
                     </div>
                     <div className="form-group">
