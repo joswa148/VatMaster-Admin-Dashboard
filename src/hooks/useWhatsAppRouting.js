@@ -10,7 +10,7 @@ export const useWhatsAppRouting = () => {
     
     const defaultRouting = useMemo(() => ({
         number: "971525966056", // Default fallback
-        message: "Hello The VAT Consultant, I am seeking for TAX Services."
+        message: "Hello, VAT Master, We are looking for VAT Services."
     }), []);
 
     const [routing, setRouting] = useState(defaultRouting);

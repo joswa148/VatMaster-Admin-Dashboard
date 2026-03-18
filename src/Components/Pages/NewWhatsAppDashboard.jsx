@@ -9,13 +9,13 @@ const NewWhatsAppDashboard = () => {
     
     // 1. Global (Day-based) Data
     const initialGlobalData = [
-        { id: 1, day: "Monday", name: "Sales Support", number: "+971501234567", message: "Hello, I need help with VAT...", status: "active" },
-        { id: 2, day: "Tuesday", name: "Tax Consultant", number: "+971521234567", message: "Inquiry about corporate tax...", status: "active" },
-        { id: 3, day: "Wednesday", name: "Billing Dept", number: "+971551234567", message: "Payment confirmation for invoice...", status: "active" },
-        { id: 4, day: "Thursday", name: "General Info", number: "+971581234567", message: "General VAT registration query...", status: "active" },
-        { id: 5, day: "Friday", name: "Sales Support", number: "+971501234567", message: "Hello, I need help with VAT...", status: "active" },
-        { id: 6, day: "Saturday", name: "Sales Support", number: "+971501234567", message: "Hello, I need help with VAT...", status: "active" },
-        { id: 7, day: "Sunday", name: "Sales Support", number: "+971501234567", message: "Hello, I need help with VAT...", status: "active" },
+        { id: 1, day: "Monday", name: "Sales Support", number: "+971501234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
+        { id: 2, day: "Tuesday", name: "Tax Consultant", number: "+971521234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
+        { id: 3, day: "Wednesday", name: "Billing Dept", number: "+971551234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
+        { id: 4, day: "Thursday", name: "General Info", number: "+971581234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
+        { id: 5, day: "Friday", name: "Sales Support", number: "+971501234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
+        { id: 6, day: "Saturday", name: "Sales Support", number: "+971501234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
+        { id: 7, day: "Sunday", name: "Sales Support", number: "+971501234567", message: "Hello, VAT Master, We are looking for VAT Services.", status: "active" },
     ];
 
     const [globalData, setGlobalData] = useState(() => {
@@ -42,7 +42,7 @@ const NewWhatsAppDashboard = () => {
         day: "Monday",
         name: "",
         number: "",
-        message: "Hello The VAT Consultant, We are Seeking for TAX Services.",
+        message: "Hello, VAT Master, We are looking for VAT Services.",
         status: "active"
     });
 
@@ -50,7 +50,7 @@ const NewWhatsAppDashboard = () => {
         path: "/",
         name: "",
         number: "",
-        message: "Hello, I am inquiring about this specific page.",
+        message: "Hello, VAT Master, We are looking for VAT Services.",
         status: "active"
     });
 
