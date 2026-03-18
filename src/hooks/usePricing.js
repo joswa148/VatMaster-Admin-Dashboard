@@ -1,56 +1,29 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 /**
- * Hook to manage and fetch service pricing globally.
- * Allows updating prices from the dashboard and reflecting them on landing pages.
+ * Hook to manage site-wide pricing dynamically.
+ * Fetches data from localStorage and listens for updates.
  */
 export const usePricing = () => {
-    const defaultPricing = useMemo(() => ({
-        "corporate-tax": {
-            id: "corporate-tax",
-            name: "Corporate Tax Registration",
-            price: "199",
-            originalPrice: "499",
-            currency: "AED",
-            status: "active"
-        },
-        "vat-registration": {
-            id: "vat-registration",
-            name: "VAT Registration",
-            price: "299",
-            originalPrice: "599",
-            currency: "AED",
-            status: "active"
-        }
-    }), []);
+    const [prices, setPrices] = useState(() => {
+        const saved = localStorage.getItem('vat_masters_pricing_config');
+        return saved ? JSON.parse(saved) : {};
+    });
 
-    const [pricing, setPricing] = useState(defaultPricing);
-    const [isLoading, setIsLoading] = useState(true);
-
-    const refreshPricing = useCallback(() => {
+    const refreshPrices = useCallback(() => {
         const saved = localStorage.getItem('vat_masters_pricing_config');
         if (saved) {
-            try {
-                setPricing(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse pricing config", e);
-                setPricing(defaultPricing);
-            }
-        } else {
-            setPricing(defaultPricing);
+            setPrices(JSON.parse(saved));
         }
-        setIsLoading(false);
-    }, [defaultPricing]);
+    }, []);
 
     useEffect(() => {
-        // Initial fetch simulation
-        const timer = setTimeout(() => {
-            refreshPricing();
-        }, 600);
+        // Initial sync to ensure we have the latest if storage changed during mount
+        const timer = setTimeout(refreshPrices, 0);
 
         const handleStorage = (e) => {
             if (e.key === 'vat_masters_pricing_config') {
-                refreshPricing();
+                refreshPrices();
             }
         };
 
@@ -59,15 +32,40 @@ export const usePricing = () => {
             window.removeEventListener('storage', handleStorage);
             clearTimeout(timer);
         };
-    }, [refreshPricing]);
+    }, [refreshPrices]);
 
-    const getPrice = (id) => {
-        return pricing[id] || defaultPricing[id] || { price: "0", originalPrice: "0", currency: "AED" };
+    /**
+     * Get price for a specific service ID with a fallback.
+     * @param {string} serviceId - Unique ID of the service (e.g., 'vat-registration-micro')
+     * @param {string|number} defaultPrice - Fallback price if not found in storage
+     * @returns {string} - The current price
+     */
+    const getPrice = (serviceId, defaultPrice) => {
+        if (prices[serviceId] && prices[serviceId].status === 'active') {
+            return prices[serviceId].price;
+        }
+        return defaultPrice.toString();
+    };
+
+    /**
+     * Get the full service object (price, originalPrice, currency).
+     */
+    const getService = (serviceId, defaults = {}) => {
+        if (prices[serviceId] && prices[serviceId].status === 'active') {
+            return prices[serviceId];
+        }
+        return {
+            price: defaults.price || "0",
+            originalPrice: defaults.originalPrice || "0",
+            currency: defaults.currency || "AED",
+            name: defaults.name || serviceId
+        };
     };
 
     return {
-        pricing,
+        prices,
         getPrice,
-        isLoading
+        getService,
+        refreshPrices
     };
 };

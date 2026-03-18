@@ -9,31 +9,33 @@ import { CommonPricingCard } from "../CommonComponents/CommonPricingCards";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
 
 
+import { usePricing } from "../../hooks/usePricing";
+
 /* ✅ Tick icon */
 const Tick = () => <span className="cu-tickDot">✓</span>;
 
-const plans = [
-  {
-    title: "Individual DE-Registration",
-    price: "499",
-    items: ["1 Single Registration for 1 firm/company", "Free Consultancy"],
-  },
-  {
-    title: "Group DE-Registration",
-    price: "999",
-    items: ["1 Group Registration", "Up to 3 firm/companies", "Free Consultancy"],
-    featured: true,
-  },
-  {
-    title: "Group DE-Registration",
-    price: "1499",
-    items: ["Group Registration", "Up to 5 firm/companies", "Free Consultancy"],
-  },
-];
-
-
 export default function VatDeregister() {
   const { whatsappUrl } = useWhatsAppRouting();
+  const { getPrice } = usePricing();
+
+  const plans = [
+    {
+      title: "Individual DE-Registration",
+      price: getPrice("dereg-individual", "499"),
+      items: ["1 Single Registration for 1 firm/company", "Free Consultancy"],
+    },
+    {
+      title: "Group DE-Registration",
+      price: getPrice("dereg-group-3", "999"),
+      items: ["1 Group Registration", "Up to 3 firm/companies", "Free Consultancy"],
+      featured: true,
+    },
+    {
+      title: "Group DE-Registration",
+      price: getPrice("dereg-group-5", "1499"),
+      items: ["Group Registration", "Up to 5 firm/companies", "Free Consultancy"],
+    },
+  ];
   return (
     <div className='prize-vatcss'>
       <Navbar />

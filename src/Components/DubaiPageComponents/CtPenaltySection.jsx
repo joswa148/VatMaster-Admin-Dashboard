@@ -9,21 +9,16 @@ export default function CtPenaltySection() {
   const { whatsappUrl } = useWhatsAppRouting();
   return (
      <section className="pen-wrap">
-     
    <div className="bg-pen">
       <p className="avoidep">Avoid AED 10,000 penalty by registering for Corporate Tax today!</p>
        <div className="pen-container">
-    
-    
         {/* RIGHT */}
         <div
           className="pen-right"
-         
         >
           <h3 className="pen-rightTitle dsakdsa">
             Who needs to complete corporate tax registration UAE?
           </h3>
-
           <ul className="pen-list">
             <li>
               <span className="pen-tickWrap">
@@ -36,7 +31,6 @@ export default function CtPenaltySection() {
                 recognised under the applicable legislation in the UAE
               </span>
             </li>
-
             <li>
               <span className="pen-tickWrap">
                 <Tick />
@@ -46,7 +40,6 @@ export default function CtPenaltySection() {
                 but effectively managed and controlled in the UAE
               </span>
             </li>
-
             <li>
               <span className="pen-tickWrap">
                 <Tick />
@@ -57,7 +50,6 @@ export default function CtPenaltySection() {
                 issued in accordance with Article 11(6); and
               </span>
             </li>
-
             <li>
               <span className="pen-tickWrap">
                 <Tick />
@@ -70,27 +62,20 @@ export default function CtPenaltySection() {
             </li>
           </ul>
         </div>
-
         {/* LEFT */}
         <div className="pen-left">
           <p className="pen-title">
            Ranked #1 Among Corporate Tax Consultants Dubai
           </p>
-
           <div
             className="pen-offer"
             style={{ backgroundImage: `url(${offerBg})` }}
           >
             <div className="pen-offerText">
-            
-
               <h2 className="pen-sub">Corporate Tax Registration</h2>
 
               <div className="pen-priceRow">
                 <span className="pen-starts">Starts</span>
-
-              
-
               <span className="cert-new">
                                                   <img
                                                     className="cert-vm-mod"
@@ -101,7 +86,6 @@ export default function CtPenaltySection() {
                                                 </span>
                
               </div>
-
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="pen-wa">
                 <i className="bi bi-whatsapp" />
                 WhatsApp us
@@ -109,7 +93,6 @@ export default function CtPenaltySection() {
             </div>
           </div>
         </div>
-
       </div>
    </div>
     </section>

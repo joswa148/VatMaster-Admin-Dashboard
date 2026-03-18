@@ -4,50 +4,55 @@ import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
 
 import "../style/Pricingcss/PricingPlans.css";
 
-const cards = [
-    {
-        id: 1,
-        title: "VAT Registration",
-        priceText: "125",
-        bullets: [
-            "1 Single Registration for 1 firm/company",
-            "Free VAT Consultancy",
-            "Free CA Consultancy",
-            "Free VAT Implementation Consultancy",
-        ],
-        noteLines: ["Free VAT", "Implementation", "Consultancy"],
-        ctaText: "WhatsApp us",
-    },
-    {
-        id: 2,
-        title: "VAT Registration – 1 Company",
-        priceText: "99",
-        bullets: [
-            "1 Single Registration for 1 firm/company",
-            "Free VAT Consultancy",
-            "Free CA Consultancy",
-            "Free VAT Implementation Consultancy",
-        ],
-        noteLines: ["Free VAT", "Implementation", "Consultancy"],
-        ctaText: "WhatsApp us",
-    },
-    {
-        id: 3,
-        title: "VAT Registration – Group",
-        priceText: "499 ",
-        bullets: [
-            "1 Single Registration for 1 firm/company",
-            "Up to 3 Companies",
-            "Free VAT & CA Consultancy",
-            "Free VAT Implementation Consultancy",
-        ],
-        noteLines: ["Free VAT", "Implementation", "Consultancy"],
-        ctaText: "WhatsApp us",
-    },
-];
+import { usePricing } from "../../hooks/usePricing";
+
+import "../style/Pricingcss/PricingPlans.css";
 
 export default function PricingPlans() {
     const { whatsappUrl } = useWhatsAppRouting();
+    const { getPrice } = usePricing();
+
+    const cards = [
+        {
+            id: 1,
+            title: "VAT Registration",
+            priceText: getPrice("vat-reg-single", "125"),
+            bullets: [
+                "1 Single Registration for 1 firm/company",
+                "Free VAT Consultancy",
+                "Free CA Consultancy",
+                "Free VAT Implementation Consultancy",
+            ],
+            noteLines: ["Free VAT", "Implementation", "Consultancy"],
+            ctaText: "WhatsApp us",
+        },
+        {
+            id: 2,
+            title: "VAT Registration – 1 Company",
+            priceText: getPrice("vat-reg-promo", "99"),
+            bullets: [
+                "1 Single Registration for 1 firm/company",
+                "Free VAT Consultancy",
+                "Free CA Consultancy",
+                "Free VAT Implementation Consultancy",
+            ],
+            noteLines: ["Free VAT", "Implementation", "Consultancy"],
+            ctaText: "WhatsApp us",
+        },
+        {
+            id: 3,
+            title: "VAT Registration – Group",
+            priceText: getPrice("vat-reg-group", "499"),
+            bullets: [
+                "1 Single Registration for 1 firm/company",
+                "Up to 3 Companies",
+                "Free VAT & CA Consultancy",
+                "Free VAT Implementation Consultancy",
+            ],
+            noteLines: ["Free VAT", "Implementation", "Consultancy"],
+            ctaText: "WhatsApp us",
+        },
+    ];
 
     return (
         <section className="cpn-section" id="pricing">

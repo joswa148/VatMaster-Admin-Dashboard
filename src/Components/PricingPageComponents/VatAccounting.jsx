@@ -7,45 +7,48 @@ import CalltoAction from "../CommonComponents/CalltoAction";
 import { CommonPricingCard } from "../CommonComponents/CommonPricingCards";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
 
+import { usePricing } from "../../hooks/usePricing";
+
 /* ✅ Tick icon */
 const Tick = () => <span className="cu-tickDot">✓</span>;
 
-const plans = [
-  {
-    title: "Accounting Bookkeeping Micro",
-    price: "499",
-    items: [
-      "Transactions < 100",
-      "30 Minutes Live session",
-      "Dedicated Accounts Manager",
-      "Full Cycle Accounting & Bank Reconciliation",
-    ],
-  },
-  {
-    title: "Accounting Bookkeeping Small",
-    price: "999",
-    items: [
-      "Transactions < 500",
-      "1 Hr Live session",
-      "Dedicated Accounts Manager",
-      "Full Cycle Accounting & Bank Reconciliation",
-    ],
-    featured: true,
-  },
-  {
-    title: "Accounting Bookkeeping Medium",
-    price: "1499",
-    items: [
-      "Transactions < 1000",
-      "2 Hr Live session",
-      "Dedicated Accounts Manager",
-      "Full Cycle Accounting & Bank Reconciliation",
-    ],
-  },
-];
-
 export default function VatAccounting() {
   const { whatsappUrl } = useWhatsAppRouting();
+  const { getPrice } = usePricing();
+
+  const plans = [
+    {
+      title: "Accounting Bookkeeping Micro",
+      price: getPrice("accounting-micro", "499"),
+      items: [
+        "Transactions < 100",
+        "30 Minutes Live session",
+        "Dedicated Accounts Manager",
+        "Full Cycle Accounting & Bank Reconciliation",
+      ],
+    },
+    {
+      title: "Accounting Bookkeeping Small",
+      price: getPrice("accounting-small", "999"),
+      items: [
+        "Transactions < 500",
+        "1 Hr Live session",
+        "Dedicated Accounts Manager",
+        "Full Cycle Accounting & Bank Reconciliation",
+      ],
+      featured: true,
+    },
+    {
+      title: "Accounting Bookkeeping Medium",
+      price: getPrice("accounting-medium", "1499"),
+      items: [
+        "Transactions < 1000",
+        "2 Hr Live session",
+        "Dedicated Accounts Manager",
+        "Full Cycle Accounting & Bank Reconciliation",
+      ],
+    },
+  ];
   return (
     <div className='prize-vatcss'>
       <Navbar />

@@ -8,15 +8,40 @@ const PricingDashboard = () => {
 
     // Initial default data
     const initialData = [
-        { id: "corporate-tax", name: "Corporate Tax Registration", price: "199", originalPrice: "499", currency: "AED", status: "active" },
-        { id: "vat-registration", name: "VAT Registration", price: "299", originalPrice: "599", currency: "AED", status: "active" },
-        { id: "accounting", name: "Accounting & Bookkeeping", price: "499", originalPrice: "999", currency: "AED", status: "active" },
-        { id: "deregistration", name: "VAT De-registration", price: "399", originalPrice: "799", currency: "AED", status: "inactive" },
+        // VAT Return Filing
+        { id: "vat-return-micro", name: "VAT Return Filing - Micro", price: "499", originalPrice: "999", currency: "AED", status: "active" },
+        { id: "vat-return-small", name: "VAT Return Filing - Small", price: "999", originalPrice: "1999", currency: "AED", status: "active" },
+        { id: "vat-return-medium", name: "VAT Return Filing - Medium", price: "1499", originalPrice: "2999", currency: "AED", status: "active" },
+        
+        // VAT Registration
+        { id: "vat-reg-single", name: "VAT Registration - Single", price: "125", originalPrice: "499", currency: "AED", status: "active" },
+        { id: "vat-reg-promo", name: "VAT Registration - Promo", price: "99", originalPrice: "299", currency: "AED", status: "active" },
+        { id: "vat-reg-group", name: "VAT Registration - Group", price: "499", originalPrice: "999", currency: "AED", status: "active" },
+
+        // Accounting & Bookkeeping
+        { id: "accounting-micro", name: "Accounting & Bookkeeping - Micro", price: "499", originalPrice: "1499", currency: "AED", status: "active" },
+        { id: "accounting-small", name: "Accounting & Bookkeeping - Small", price: "999", originalPrice: "2499", currency: "AED", status: "active" },
+        { id: "accounting-medium", name: "Accounting & Bookkeeping - Medium", price: "1499", originalPrice: "3499", currency: "AED", status: "active" },
+
+        // De-Registration
+        { id: "dereg-individual", name: "VAT De-Registration - Individual", price: "499", originalPrice: "1499", currency: "AED", status: "active" },
+        { id: "dereg-group-3", name: "VAT De-Registration - Group (3)", price: "999", originalPrice: "2499", currency: "AED", status: "active" },
+        { id: "dereg-group-5", name: "VAT De-Registration - Group (5)", price: "1499", originalPrice: "3499", currency: "AED", status: "active" },
+
+        // Home Page Specific / Additional
+        { id: "corporate-tax-reg", name: "Corporate Tax Registration", price: "125", originalPrice: "499", currency: "AED", status: "active" },
+        { id: "outsource-cfo", name: "Outsource CFO", price: "499", originalPrice: "999", currency: "AED", status: "active" },
+        { id: "vat-consultancy", name: "VAT & TAX Consultancy", price: "499", originalPrice: "999", currency: "AED", status: "active" },
     ];
 
     const [data, setData] = useState(() => {
         const saved = localStorage.getItem('vat_masters_pricing_raw_data');
-        return saved ? JSON.parse(saved) : initialData;
+        if (!saved) return initialData;
+        try {
+            return JSON.parse(saved);
+        } catch {
+            return initialData;
+        }
     });
 
     const [formData, setFormData] = useState({
@@ -75,9 +100,11 @@ const PricingDashboard = () => {
                 .badge-inactive { background: #f1f5f9; color: #475569; }
 
                 /* Modal Styles */
-                .modal-backdrop { position: fixed; inset: 0; background: rgba(11, 47, 53, 0.4); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; }
-                .modal-content { background: white; width: min(500px, 95vw); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+                .modal-backdrop { position: fixed; inset: 0; background: rgba(11, 47, 53, 0.4); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; animation: fadeIn 0.1s; }
+                .modal-content { background: white; width: min(500px, 95vw); border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); animation: slideUp 0.3s; }
                 .modal-header { padding: 24px 32px; background: var(--primary-dark); color: white; display: flex; justify-content: space-between; align-items: center; }
+                .close-x { background: none; border: none; color: white; font-size: 24px; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; }
+                .close-x:hover { opacity: 1; }
                 .modal-body { padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
                 .form-group { display: flex; flex-direction: column; gap: 6px; }
                 .form-group.full { grid-column: span 2; }
@@ -164,6 +191,7 @@ const PricingDashboard = () => {
                     <div className="modal-content" onClick={e => e.stopPropagation()}>
                         <div className="modal-header">
                             <h2>Edit Service Rate</h2>
+                            <button className="close-x" onClick={() => setIsModalOpen(false)}>×</button>
                         </div>
                         <div className="modal-body">
                             <div className="form-group full">

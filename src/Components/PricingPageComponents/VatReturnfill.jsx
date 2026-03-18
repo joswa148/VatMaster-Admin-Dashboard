@@ -5,50 +5,52 @@ import Navbar from "../CommonComponents/Navbar";
 import CalltoAction from "../CommonComponents/CalltoAction";
 import { CommonPricingCard } from "../CommonComponents/CommonPricingCards";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
+import { usePricing } from "../../hooks/usePricing";
 const dummyBg = "/assets/image/mobilePricing.jpg";
 
 /* ✅ Tick icon */
 const Tick = () => <span className="cu-tickDot">✓</span>;
 
-const plans = [
-  {
-    title: "VAT Return Filing - Micro",
-    price: "499",
-    items: [
-      "Up to 100 Transaction",
-      "VAT Filing & Reporting",
-      "VAT Adjustment , Amendment & Refund Process",
-      "Dedicated VAT Expert",
-      "30 minutes Live session",
-    ],
-  },
-  {
-    title: "VAT Return Filing - Small",
-    price: "999",
-    items: [
-      "Up to 500 Transaction",
-      "VAT Filing & Reporting",
-      "VAT Adjustment , Amendment & Refund Process",
-      "Dedicated VAT Expert",
-      "1 Hrs Live session",
-    ],
-    featured: true,
-  },
-  {
-    title: "VAT Return Filing-Medium",
-    price: "1499",
-    items: [
-      "Up to 1000 Transaction",
-      "VAT Filing & Reporting",
-      "VAT Adjustment , Amendment & Refund Process",
-      "Dedicated VAT Expert",
-      "2Hrs Live session",
-    ],
-  },
-];
-
 export default function VatReturnfill() {
   const { whatsappUrl } = useWhatsAppRouting();
+  const { getPrice } = usePricing();
+
+  const plans = [
+    {
+      title: "VAT Return Filing - Micro",
+      price: getPrice("vat-return-micro", "499"),
+      items: [
+        "Up to 100 Transaction",
+        "VAT Filing & Reporting",
+        "VAT Adjustment , Amendment & Refund Process",
+        "Dedicated VAT Expert",
+        "30 minutes Live session",
+      ],
+    },
+    {
+      title: "VAT Return Filing - Small",
+      price: getPrice("vat-return-small", "999"),
+      items: [
+        "Up to 500 Transaction",
+        "VAT Filing & Reporting",
+        "VAT Adjustment , Amendment & Refund Process",
+        "Dedicated VAT Expert",
+        "1 Hrs Live session",
+      ],
+      featured: true,
+    },
+    {
+      title: "VAT Return Filing-Medium",
+      price: getPrice("vat-return-medium", "1499"),
+      items: [
+        "Up to 1000 Transaction",
+        "VAT Filing & Reporting",
+        "VAT Adjustment , Amendment & Refund Process",
+        "Dedicated VAT Expert",
+        "2Hrs Live session",
+      ],
+    },
+  ];
 
   return (
     <div className='prize-vatcss'>

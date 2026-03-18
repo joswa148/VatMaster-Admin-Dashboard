@@ -1,4 +1,5 @@
-import React from "react";
+import { usePricing } from "../../hooks/usePricing";
+
 const pricingHeaderShape = "/assets/image/topBar.png";
 const pricingCardShape = "/assets/image/cardBg.png";
 import "../Style/Homecss/Homeprice.css";
@@ -35,6 +36,8 @@ const ArrowCircle = () => (
 );
 
 export default function HomePrice() {
+  const { getPrice } = usePricing();
+
   return (
     <section className="pc-section bg-white" id="pricing">
       <div className="pc-shell mx-auto">
@@ -50,14 +53,14 @@ export default function HomePrice() {
           <p className="pc-headerText">
             <span className="pc-headerSpan">
               We offer Fair Pricing on <br />
-           <span className="primarss">All Services</span> 
+            <span className="primarss">All Services</span> 
             </span>
           </p>
         </div>
 
         {/* Pricing cards grid */}
         <div className="row g-3 g-lg-5">
-          {/* CARD 1 */}
+          {/* CARD 1: VAT Registration */}
           <div className="col-12 col-sm-6 col-lg-4">
             <div className="w-100">
               <div className="pc-cardFrame">
@@ -71,11 +74,11 @@ export default function HomePrice() {
                 <div className="pc-cardInner">
                   <div className="pc-content">
                     <h3 className="pc-title pc-titleSpan">
-                     VAT Registration
+                      VAT Registration
                     </h3>
 
                     <div className="pc-pricePill">
-                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">125</span></span>
+                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">{getPrice("vat-reg-single", "125")}</span></span>
                     </div>
 
                     <ul className="pc-bullets">
@@ -92,7 +95,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Free VAT Consultancy
+                          Free VAT Consultancy
                         </span>
                       </li>
                       <li className="pc-bulletItem">
@@ -129,8 +132,8 @@ export default function HomePrice() {
             </div>
           </div>
 
-          {/* CARD 2 */}
-           <div className="col-12 col-sm-6 col-lg-4">
+          {/* CARD 2: Corporate Tax Registration */}
+          <div className="col-12 col-sm-6 col-lg-4">
             <div className="w-100">
               <div className="pc-cardFrame">
                 <img
@@ -147,7 +150,7 @@ export default function HomePrice() {
                     </h3>
 
                     <div className="pc-pricePill">
-                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">125</span></span>
+                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">{getPrice("corporate-tax-reg", "125")}</span></span>
                     </div>
 
                     <ul className="pc-bullets">
@@ -164,7 +167,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Free VAT Consultancy
+                          Free VAT Consultancy
                         </span>
                       </li>
                       <li className="pc-bulletItem">
@@ -172,11 +175,9 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Free CA Consultancy
+                          Free CA Consultancy
                         </span>
                       </li>
-
-                      
                     </ul>
 
                     <div className="pc-note pc-note-unorder pc-note-unorder-1">
@@ -194,8 +195,8 @@ export default function HomePrice() {
             </div>
           </div>
 
-          {/* CARD 3 */}
-        <div className="col-12 col-sm-6 col-lg-4">
+          {/* CARD 3: VAT Return Filing */}
+          <div className="col-12 col-sm-6 col-lg-4">
             <div className="w-100">
               <div className="pc-cardFrame dsdssadas">
                 <img
@@ -208,11 +209,11 @@ export default function HomePrice() {
                 <div className="pc-cardInner">
                   <div className="pc-content">
                     <p className="pc-title pc-titleSpan">
-                   VAT Return Filing
+                    VAT Return Filing
                     </p>
 
                     <div className="pc-pricePill">
-                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">499</span></span>
+                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">{getPrice("vat-return-micro", "499")}</span></span>
                     </div>
 
                     <ul className="pc-bullets">
@@ -230,7 +231,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         VAT Adjustment , Amendment & Refund
+                          VAT Adjustment , Amendment & Refund
                         </span>
                       </li>
 
@@ -248,7 +249,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                       30 minutes Live session
+                        30 minutes Live session
                         </span>
                       </li>
                     </ul>
@@ -268,8 +269,8 @@ export default function HomePrice() {
             </div>
           </div>
 
-          {/* CARD 4 */}
-        <div className="col-12 col-sm-6 col-lg-4">
+          {/* CARD 4: Accounting & Bookkeeping */}
+          <div className="col-12 col-sm-6 col-lg-4">
             <div className="w-100">
               <div className="pc-cardFrame">
                 <img
@@ -282,11 +283,11 @@ export default function HomePrice() {
                 <div className="pc-cardInner">
                   <div className="pc-content">
                     <p className="pc-title pc-titleSpan">
-                     Accounting & Bookkeeping
+                      Accounting & Bookkeeping
                     </p>
 
                     <div className="pc-pricePill">
-                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">499</span></span>
+                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">{getPrice("accounting-micro", "499")}</span></span>
                     </div>
 
                     <ul className="pc-bullets">
@@ -303,7 +304,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                       1 Hr Live session
+                        1 Hr Live session
                         </span>
                       </li>
                       <li className="pc-bulletItem">
@@ -320,7 +321,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Full Accounting & Bank Reconciliation
+                          Full Accounting & Bank Reconciliation
                         </span>
                       </li>
                     </ul>
@@ -340,8 +341,8 @@ export default function HomePrice() {
             </div>
           </div>
 
-          {/* CARD 5 */}
-         <div className="col-12 col-sm-6 col-lg-4">
+          {/* CARD 5: Outsource CFO */}
+          <div className="col-12 col-sm-6 col-lg-4">
             <div className="w-100">
               <div className="pc-cardFrame">
                 <img
@@ -358,7 +359,7 @@ export default function HomePrice() {
                     </p>
 
                     <div className="pc-pricePill">
-                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">499</span></span>
+                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">{getPrice("outsource-cfo", "499")}</span></span>
                     </div>
 
                     <ul className="pc-bullets">
@@ -375,7 +376,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Free Accounting , VAT & CA Consultancy
+                          Free Accounting , VAT & CA Consultancy
                         </span>
                       </li>
                       <li className="pc-bulletItem">
@@ -383,7 +384,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Financial Advisory & Accounting finalization
+                          Financial Advisory & Accounting finalization
                         </span>
                       </li>
 
@@ -406,7 +407,7 @@ export default function HomePrice() {
             </div>
           </div>
 
-          {/* CARD 6 */}
+          {/* CARD 6: VAT De-Registration */}
           <div className="col-12 col-sm-6 col-lg-4">
             <div className="w-100">
               <div className="pc-cardFrame dsdssadas">
@@ -424,7 +425,7 @@ export default function HomePrice() {
                     </p>
 
                     <div className="pc-pricePill">
-                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">499</span></span>
+                      <span className="pc-priceText">Starts <img src={UaeDirham} alt="" className="priceaed" /><span className="price">{getPrice("dereg-individual", "499")}</span></span>
                     </div>
 
                     <ul className="pc-bullets">
@@ -433,7 +434,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         1 Single De-Registration for 1 firm/company
+                          1 Single De-Registration for 1 firm/company
                         </span>
                       </li>
                       <li className="pc-bulletItem">
@@ -441,7 +442,7 @@ export default function HomePrice() {
                           <CheckIcon />
                         </span>
                         <span className="pc-bulletText">
-                         Free VAT Consultancy
+                          Free VAT Consultancy
                         </span>
                       </li>
                       <li className="pc-bulletItem">
@@ -471,6 +472,7 @@ export default function HomePrice() {
               </div>
             </div>
           </div>
+
 
         </div>
       </div>
