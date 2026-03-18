@@ -104,7 +104,12 @@ export const useWhatsAppRouting = () => {
         };
     }, [refreshRouting, location.pathname]); // Re-run on route change
 
-    const whatsappUrl = `https://wa.me/${routing.number}?text=${encodeURIComponent(routing.message)}`;
+    // Mobile: opens WhatsApp app  |  Desktop: forces WhatsApp Web in browser
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+    const encodedMsg = encodeURIComponent(routing.message);
+    const whatsappUrl = isMobile
+        ? `https://wa.me/${routing.number}?text=${encodedMsg}`
+        : `https://web.whatsapp.com/send?phone=${routing.number}&text=${encodedMsg}`;
 
     return {
         ...routing,

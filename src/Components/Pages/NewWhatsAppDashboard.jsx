@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ModernLayout from "../CommonDasboardComponents/ModernLayout";
 
 const NewWhatsAppDashboard = () => {
@@ -70,6 +70,37 @@ const NewWhatsAppDashboard = () => {
     }, [overrides]);
 
     const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+    const [copiedId, setCopiedId] = useState(null);
+
+    const handleCopy = useCallback((id, number) => {
+        navigator.clipboard.writeText(number).then(() => {
+            setCopiedId(id);
+            setTimeout(() => setCopiedId(null), 1500);
+        });
+    }, []);
+
+    const NumberCell = ({ row, isToday }) => (
+        <div className="number-cell">
+            <span className={`number-pill ${isToday ? 'number-pill-today' : ''}`}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.116.554 4.103 1.523 5.824L.057 23.8a.5.5 0 0 0 .614.612l5.973-1.491A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.882 9.882 0 0 1-5.031-1.378l-.361-.214-3.741.933.988-3.617-.236-.374A9.866 9.866 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1S21.9 6.534 21.9 12 17.466 21.9 12 21.9z"/>
+                </svg>
+                {row.number}
+            </span>
+            <button
+                className={`copy-btn ${copiedId === row.id ? 'copied' : ''}`}
+                title="Copy number"
+                onClick={() => handleCopy(row.id, row.number)}
+            >
+                {copiedId === row.id ? (
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                ) : (
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                )}
+            </button>
+        </div>
+    );
 
     return (
         <ModernLayout activeTitle="WhatsApp Routing">
@@ -112,13 +143,86 @@ const NewWhatsAppDashboard = () => {
                 .badge { padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
                 .badge-active { background: #dcfce7; color: #166534; }
                 .badge-inactive { background: #f1f5f9; color: #475569; }
-                .badge-today { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; font-size: 10px; }
                 .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+                /* ── Active-today row ───────────────────────────────────── */
+                .row-highlight td {
+                    background:
+                        repeating-linear-gradient(
+                            135deg,
+                            transparent,
+                            transparent 14px,
+                            rgba(37,99,235,0.045) 14px,
+                            rgba(37,99,235,0.045) 18px
+                        ),
+                        #eff6ff !important;
+                    border-bottom: 1px solid #bfdbfe !important;
+                }
+                .row-highlight td:first-child {
+                    border-left: 5px solid #2563eb;
+                    padding-left: 19px;
+                }
+
+                /* Today label inside Day cell */
+                .today-label {
+                    display: inline-flex; align-items: center; gap: 5px;
+                    background: #2563eb; color: #fff;
+                    font-size: 9px; font-weight: 800; letter-spacing: 0.8px;
+                    text-transform: uppercase; padding: 3px 8px;
+                    border-radius: 999px; margin-left: 8px;
+                    vertical-align: middle;
+                    animation: todayPulse 2.4s ease-in-out infinite;
+                }
+                .today-dot-live {
+                    width: 6px; height: 6px; border-radius: 50%;
+                    background: #93c5fd;
+                    animation: liveBlink 1.2s ease-in-out infinite;
+                    flex-shrink: 0;
+                }
+                @keyframes todayPulse {
+                    0%, 100% { box-shadow: 0 0 0 0 rgba(37,99,235,0.35); }
+                    50%       { box-shadow: 0 0 0 5px rgba(37,99,235,0); }
+                }
+                @keyframes liveBlink {
+                    0%, 100% { opacity: 1; }
+                    50%       { opacity: 0.3; }
+                }
+
+                /* ── Number column ──────────────────────────────────────── */
+                .number-cell { display: flex; align-items: center; gap: 10px; }
+                .number-pill {
+                    display: inline-flex; align-items: center; gap: 8px;
+                    background: #f0fdf4; border: 1px solid #bbf7d0;
+                    padding: 7px 14px; border-radius: 999px;
+                    font-size: 13px; font-weight: 700; color: #15803d;
+                    font-family: 'SF Mono', 'Fira Code', monospace;
+                    letter-spacing: 0.3px; transition: all 0.2s;
+                    cursor: default; white-space: nowrap;
+                }
+                .number-pill svg { flex-shrink: 0; }
+                /* Blue variant for today's active number */
+                .number-pill-today {
+                    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+                    border-color: #60a5fa;
+                    color: #1e3a8a;
+                    box-shadow: 0 2px 12px rgba(37,99,235,0.18);
+                    font-size: 14px;
+                }
+                .number-pill-today svg { color: #2563eb; }
+
+                .copy-btn {
+                    width: 28px; height: 28px; border-radius: 6px;
+                    display: grid; place-items: center;
+                    border: 1px solid var(--neutral-200); background: white;
+                    cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+                    color: var(--neutral-400);
+                }
+                .copy-btn:hover { background: var(--neutral-100); color: #2563eb; border-color: #60a5fa; transform: scale(1.05); }
+                .copy-btn.copied { border-color: #60a5fa; color: #1d4ed8; background: #eff6ff; }
 
                 .table-actions { display: flex; gap: 12px; justify-content: flex-end; }
                 .action-btn { width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; cursor: pointer; border: 1px solid var(--neutral-200); background: white; transition: all 0.2s; }
                 .action-btn:hover { background: var(--neutral-100); transform: translateY(-2px); }
-                .row-highlight td { background: #f0fdfa !important; border-left: 4px solid var(--primary); }
 
                 .modal-backdrop { position: fixed; inset: 0; background: rgba(11, 47, 53, 0.4); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 2000; animation: fadeIn 0.2s; }
                 .modal-content { background: white; width: min(600px, 95vw); border-radius: 24px; overflow: hidden; animation: slideUp 0.3s; }
@@ -168,11 +272,21 @@ const NewWhatsAppDashboard = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {globalData.map((row) => (
-                                <tr key={row.id} className={row.day === currentDay ? "row-highlight" : ""}>
-                                    <td>{row.day}</td>
+                            {globalData.map((row) => {
+                              const isToday = row.day === currentDay;
+                              return (
+                                <tr key={row.id} className={isToday ? "row-highlight" : ""}>
+                                    <td>
+                                        <span style={{ fontWeight: 700, color: isToday ? '#1e3a8a' : 'inherit' }}>{row.day}</span>
+                                        {isToday && (
+                                            <span className="today-label">
+                                                <span className="today-dot-live" />
+                                                Live Today
+                                            </span>
+                                        )}
+                                    </td>
                                     <td style={{ fontWeight: 700 }}>{row.name}</td>
-                                    <td>{row.number}</td>
+                                    <td><NumberCell row={row} isToday={isToday} /></td>
                                     <td>
                                         <span className={`badge badge-${row.status}`}>
                                             <span className="dot"></span>
@@ -186,7 +300,8 @@ const NewWhatsAppDashboard = () => {
                                         </div>
                                     </td>
                                 </tr>
-                            ))}
+                              );
+                            })}
                         </tbody>
                     </table>
                 </div>
@@ -216,7 +331,7 @@ const NewWhatsAppDashboard = () => {
                                     <tr key={row.id}>
                                         <td style={{ color: "var(--primary-dark)", fontWeight: 700 }}>{row.path}</td>
                                         <td>{row.name}</td>
-                                        <td>{row.number}</td>
+                                        <td><NumberCell row={row} isToday={false} /></td>
                                         <td>
                                             <span className={`badge badge-${row.status}`}>
                                                 <span className="dot"></span>
