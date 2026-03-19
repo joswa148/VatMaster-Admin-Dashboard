@@ -74,7 +74,10 @@ const CategoriesDashboard = () => {
 
             <header className="content-header">
                 <div className="header-left"><h1>Content Categories</h1></div>
-                <button className="add-btn" onClick={() => handleOpenModal()}>+ Add Category</button>
+                <button className="add-btn" onClick={() => handleOpenModal()}>
+                    <i className="bi bi-plus-lg" style={{ marginRight: '8px' }}></i>
+                    Add Category
+                </button>
             </header>
 
             <div className="grid">
@@ -86,8 +89,12 @@ const CategoriesDashboard = () => {
                         </div>
                         <div className="count-badge">{cat.count}</div>
                         <div className="card-actions">
-                            <button className="action-btn" onClick={() => handleOpenModal(cat)}>✏️</button>
-                            <button className="action-btn" onClick={() => deleteCategory(cat.id, cat.name)}>🗑️</button>
+                            <button className="action-btn" onClick={() => handleOpenModal(cat)} style={{ color: "var(--primary-dark)" }}>
+                                <i className="bi bi-pencil-square"></i>
+                            </button>
+                            <button className="action-btn" onClick={() => deleteCategory(cat.id, cat.name)} style={{ color: "var(--danger)" }}>
+                                <i className="bi bi-trash-fill"></i>
+                            </button>
                         </div>
                     </div>
                 ))}

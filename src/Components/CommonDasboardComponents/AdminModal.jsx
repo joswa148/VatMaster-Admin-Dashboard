@@ -104,7 +104,9 @@ const AdminModal = ({ isOpen, onClose, title, children, onConfirm, confirmText =
             <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <div className="modal-header">
                     <h2>{title}</h2>
-                    <button className="close-btn" onClick={onClose}>✕</button>
+                    <button className="close-btn" onClick={onClose}>
+                        <i className="bi bi-x-lg"></i>
+                    </button>
                 </div>
                 <div className="modal-body">
                     {children}

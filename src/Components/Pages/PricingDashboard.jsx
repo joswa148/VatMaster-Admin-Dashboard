@@ -103,11 +103,17 @@ const PricingDashboard = () => {
                     <div className="breadcrumbs">Dashboard / Pricing</div>
                 </div>
                 <div style={{ display: "flex", gap: "12px" }}>
-                    <button onClick={handleReset} className="btn-secondary">🔄 Reload from DB</button>
+                    <button onClick={handleReset} className="btn-secondary">
+                        <i className="bi bi-arrow-clockwise" style={{ marginRight: '8px' }}></i>
+                        Reload from DB
+                    </button>
                     <button onClick={() => {
                         setFormData({ service_id: `service-${Date.now()}`, name: "", price: "", originalPrice: "", currency: "AED", status: "active" });
                         setIsModalOpen(true);
-                    }} className="add-btn">+ Add Service</button>
+                    }} className="add-btn">
+                        <i className="bi bi-plus-lg" style={{ marginRight: '8px' }}></i>
+                        Add Service
+                    </button>
                 </div>
             </header>
 
@@ -137,8 +143,12 @@ const PricingDashboard = () => {
                                         <button onClick={() => {
                                             setFormData({ ...row, originalPrice: row.original_price });
                                             setIsModalOpen(true);
-                                        }} style={{ background: "none", border: "none", cursor: "pointer" }}>✏️</button>
-                                        <button onClick={() => handleToggle(row)} style={{ background: "none", border: "none", cursor: "pointer" }}>🔄</button>
+                                        }} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--primary-dark)" }}>
+                                            <i className="bi bi-pencil-square"></i>
+                                        </button>
+                                        <button onClick={() => handleToggle(row)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--neutral-400)" }}>
+                                            <i className="bi bi-toggle-on"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>

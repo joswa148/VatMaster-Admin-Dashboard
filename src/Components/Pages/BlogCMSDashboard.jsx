@@ -78,7 +78,10 @@ const BlogCMSDashboard = () => {
 
             <header className="content-header">
                 <div className="header-left"><h1>Blog CMS</h1></div>
-                <button className="add-btn" onClick={() => handleOpenModal()}>+ New Post</button>
+                <button className="add-btn" onClick={() => handleOpenModal()}>
+                    <i className="bi bi-plus-lg" style={{ marginRight: '8px' }}></i>
+                    New Post
+                </button>
             </header>
 
             <div className="table-card">
@@ -98,8 +101,12 @@ const BlogCMSDashboard = () => {
                                 <td><span className={`status-badge status-${post.status.toLowerCase()}`}>{post.status}</span></td>
                                 <td style={{ color: "var(--neutral-400)" }}>{post.date}</td>
                                 <td style={{ textAlign: "right" }}>
-                                    <button onClick={() => handleOpenModal(post)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "16px" }}>✏️</button>
-                                    <button onClick={() => deletePost(post.id)} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "16px", marginLeft: "8px" }}>🗑️</button>
+                                    <button onClick={() => handleOpenModal(post)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--primary-dark)" }}>
+                                        <i className="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button onClick={() => deletePost(post.id)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--danger)", marginLeft: "12px" }}>
+                                        <i className="bi bi-trash-fill"></i>
+                                    </button>
                                 </td>
                             </tr>
                         ))}

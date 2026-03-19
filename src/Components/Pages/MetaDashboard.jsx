@@ -76,7 +76,9 @@ const MetaDashboard = () => {
                                     <div className="meta-desc">{row.description}</div>
                                 </td>
                                 <td style={{ textAlign: "right" }}>
-                                    <button onClick={() => { setFormData(row); setIsModalOpen(true); }} style={{ background: "none", border: "none", cursor: "pointer", fontSize: "18px" }}>✏️</button>
+                                    <button onClick={() => { setFormData(row); setIsModalOpen(true); }} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--primary-dark)" }}>
+                                        <i className="bi bi-pencil-square"></i>
+                                    </button>
                                 </td>
                             </tr>
                         ))}

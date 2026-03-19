@@ -190,7 +190,8 @@ const WhatsAppManager = () => {
 
             {message.text && (
                 <div className={`feedback-toast feedback-${message.type}`}>
-                    {message.type === 'success' ? '✅' : '❌'} {message.text}
+                    <i className={`bi ${message.type === 'success' ? 'bi-check-circle-fill' : 'bi-exclamination-triangle-fill'}`} style={{ marginRight: '8px' }}></i>
+                    {message.text}
                 </div>
             )}
         </ModernLayout>

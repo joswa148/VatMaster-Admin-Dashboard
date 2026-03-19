@@ -4,10 +4,10 @@ import { whatsappAPI, pricingAPI, metaAPI, blogAPI } from "../../services/api";
 
 const DashboardHome = () => {
     const [stats, setStats] = useState([
-        { label: "Active Services", value: "—", icon: "💰", color: "#6366f1" },
-        { label: "Active WhatsApp", value: "—", icon: "💬", color: "#22c55e" },
-        { label: "SEO Configs", value: "—", icon: "🎯", color: "#00E6F6" },
-        { label: "Blog Posts", value: "—", icon: "📝", color: "#f59e0b" },
+        { label: "Active Services", value: "—", icon: "bi-cash-stack", color: "#6366f1" },
+        { label: "Active WhatsApp", value: "—", icon: "bi-whatsapp", color: "#22c55e" },
+        { label: "SEO Configs", value: "—", icon: "bi-globe", color: "#00E6F6" },
+        { label: "Blog Posts", value: "—", icon: "bi-journal-text", color: "#f59e0b" },
     ]);
     const [recentActivity, setRecentActivity] = useState([]);
 
@@ -27,10 +27,10 @@ const DashboardHome = () => {
             const activePricing = pricingList.filter(d => d.status === 'active').length;
             
             setStats([
-                { label: "Active Services",  value: activePricing.toString(),             icon: "💰", color: "#6366f1" },
-                { label: "Active WhatsApp",  value: `${activeWA} / ${whatsappList.length}`,   icon: "💬", color: "#22c55e" },
-                { label: "SEO Configs",      value: metaList.length.toString(),               icon: "🎯", color: "#00E6F6" },
-                { label: "Blog Posts",       value: blogList.length.toString(),               icon: "📝", color: "#f59e0b" },
+                { label: "Active Services",  value: activePricing.toString(),             icon: "bi-cash-stack", color: "#6366f1" },
+                { label: "Active WhatsApp",  value: `${activeWA} / ${whatsappList.length}`,   icon: "bi-whatsapp", color: "#22c55e" },
+                { label: "SEO Configs",      value: metaList.length.toString(),               icon: "bi-globe", color: "#00E6F6" },
+                { label: "Blog Posts",       value: blogList.length.toString(),               icon: "bi-journal-text", color: "#f59e0b" },
             ]);
 
             // Create a pseudo-activity feed from real data
@@ -40,7 +40,8 @@ const DashboardHome = () => {
                     action: `Blog post '${p.title}' published`,
                     time: p.date || "Recently",
                     user: p.author || "Admin",
-                    type: "blog"
+                    type: "blog",
+                    icon: "bi-file-earmark-post"
                 }));
             }
             if (pricingList.length > 0) {
@@ -48,11 +49,12 @@ const DashboardHome = () => {
                     action: `Service '${p.name}' price: ${p.currency} ${p.price}`,
                     time: "Active",
                     user: "System",
-                    type: "pricing"
+                    type: "pricing",
+                    icon: "bi-tag-fill"
                 }));
             }
             if (activities.length === 0) {
-                activities.push({ action: "Welcome to VAT Masters Dashboard", time: "Now", user: "System", type: "system" });
+                activities.push({ action: "Welcome to VAT Masters Dashboard", time: "Now", user: "System", type: "system", icon: "bi-info-circle" });
             }
             setRecentActivity(activities);
 
@@ -60,10 +62,10 @@ const DashboardHome = () => {
     }, []);
 
     const quickActions = [
-        { label: "Update WhatsApp", path: "/dashboard/whatsapp", icon: "📲" },
-        { label: "Edit Meta Tags", path: "/dashboard/meta", icon: "🔍" },
-        { label: "Manage Pricing", path: "/dashboard/pricing", icon: "💰" },
-        { label: "New Blog Post", path: "/dashboard/blogs", icon: "✍️" },
+        { label: "Update WhatsApp", path: "/dashboard/whatsapp", icon: "bi-whatsapp" },
+        { label: "Edit Meta Tags", path: "/dashboard/meta", icon: "bi-globe" },
+        { label: "Manage Pricing", path: "/dashboard/pricing", icon: "bi-cash-stack" },
+        { label: "New Blog Post", path: "/dashboard/blogs", icon: "bi-pencil-square" },
     ];
 
     return (
@@ -83,19 +85,20 @@ const DashboardHome = () => {
                     display: flex;
                     align-items: center;
                     gap: 20px;
-                    transition: transform 0.2s;
+                    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
                 }
-                .stat-card:hover { transform: translateY(-4px); }
+                .stat-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
                 .stat-icon { 
                     width: 56px; 
                     height: 56px; 
                     border-radius: 16px; 
                     background: var(--neutral-50); 
-                    display: grid; 
-                    place-items: center; 
+                    display: flex; 
+                    align-items: center;
+                    justify-content: center;
                     font-size: 24px;
                 }
-                .stat-info .label { color: var(--neutral-400); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+                .stat-info .label { color: var(--neutral-400); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
                 .stat-info .value { font-size: 28px; font-weight: 800; color: var(--neutral-800); }
 
                 .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
@@ -117,30 +120,34 @@ const DashboardHome = () => {
                     display: flex; 
                     justify-content: space-between; 
                     align-items: center;
+                    transition: background 0.2s;
                 }
-                .activity-item:last-child { border-bottom: none; }
-                .activity-main { display: flex; flex-direction: column; gap: 4px; }
+                .activity-item:hover { background: var(--neutral-50); }
+                .activity-main { display: flex; align-items: center; gap: 16px; }
+                .activity-icon { color: var(--neutral-400); font-size: 18px; }
+                .activity-details { display: flex; flex-direction: column; gap: 4px; }
                 .activity-action { font-weight: 700; color: var(--neutral-700); font-size: 14px; }
                 .activity-meta { font-size: 12px; color: var(--neutral-400); font-weight: 600; }
                 
-                .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px; }
+                .quick-actions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px; }
                 .action-btn { 
                     background: var(--neutral-50); 
                     border: 1px solid var(--neutral-200);
-                    padding: 16px;
-                    border-radius: 16px;
+                    padding: 20px 16px;
+                    border-radius: 20px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 8px;
+                    gap: 12px;
                     text-decoration: none;
-                    transition: all 0.2s;
+                    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
                     cursor: pointer;
+                    color: var(--neutral-700);
                 }
-                .action-btn:hover { background: var(--primary-dark); border-color: var(--primary); }
-                .action-btn:hover span { color: white; }
-                .action-btn .icon { font-size: 20px; }
-                .action-btn span { font-size: 12px; font-weight: 700; color: var(--neutral-800); }
+                .action-btn:hover { background: var(--primary-dark); border-color: var(--primary); transform: scale(1.02); }
+                .action-btn:hover span, .action-btn:hover i { color: white; }
+                .action-btn .icon { font-size: 24px; }
+                .action-btn span { font-size: 12px; font-weight: 700; text-align: center; }
 
                 @media (max-width: 1024px) {
                     .main-grid { grid-template-columns: 1fr; }
@@ -149,14 +156,14 @@ const DashboardHome = () => {
 
             <section className="welcome-section">
                 <h1>Welcome Back, Admin</h1>
-                <p>Here's what's happening with VAT Masters today.</p>
+                <p>Monitor your performance and manage VAT services from a single console.</p>
             </section>
 
             <div className="stats-grid">
                 {stats.map((stat, idx) => (
                     <div key={idx} className="stat-card">
-                        <div className="stat-icon" style={{ backgroundColor: `${stat.color}15` }}>
-                            {stat.icon}
+                        <div className="stat-icon" style={{ backgroundColor: `${stat.color}15`, color: stat.color }}>
+                            <i className={`bi ${stat.icon}`}></i>
                         </div>
                         <div className="stat-info">
                             <div className="label">{stat.label}</div>
@@ -170,16 +177,18 @@ const DashboardHome = () => {
                 <div className="grid-card">
                     <div className="card-header">
                         <h2>Recent Activity</h2>
-                        {/* <button style={{ background: "none", border: "none", color: "var(--primary-dark)", fontWeight: 700, fontSize: "13px", cursor: "pointer" }}>View All</button> */}
                     </div>
                     <ul className="activity-list">
                         {recentActivity.map((activity, idx) => (
                             <li key={idx} className="activity-item">
                                 <div className="activity-main">
-                                    <span className="activity-action">{activity.action}</span>
-                                    <span className="activity-meta">by {activity.user} • {activity.time}</span>
+                                    <div className="activity-icon"><i className={`bi ${activity.icon}`}></i></div>
+                                    <div className="activity-details">
+                                        <span className="activity-action">{activity.action}</span>
+                                        <span className="activity-meta">by {activity.user} • {activity.time}</span>
+                                    </div>
                                 </div>
-                                <div style={{ fontSize: "14px", opacity: 0.5 }}>→</div>
+                                <div style={{ fontSize: "14px", opacity: 0.3 }}><i className="bi bi-chevron-right"></i></div>
                             </li>
                         ))}
                     </ul>
@@ -189,10 +198,10 @@ const DashboardHome = () => {
                     <div className="card-header">
                         <h2>Quick Actions</h2>
                     </div>
-                    <div className="quick-actions">
+                    <div className="quick-actions-grid">
                         {quickActions.map((action, idx) => (
                             <div key={idx} onClick={() => window.location.href=action.path} className="action-btn">
-                                <span className="icon">{action.icon}</span>
+                                <i className={`bi ${action.icon} icon`}></i>
                                 <span>{action.label}</span>
                             </div>
                         ))}
