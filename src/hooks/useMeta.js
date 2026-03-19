@@ -1,9 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { metaAPI } from '../services/api';
 
-/**
- * Hook to manage SEO Meta tags dynamically.
- * Syncs with localStorage and updates document head.
- */
 export const useMeta = () => {
     const defaultMeta = useMemo(() => ({
         "home": {
@@ -27,71 +24,44 @@ export const useMeta = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const refreshMeta = useCallback(() => {
-        const saved = localStorage.getItem('vat_masters_meta_config');
-        if (saved) {
-            try {
-                setMetaData(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse meta config", e);
-                setMetaData(defaultMeta);
-            }
-        } else {
-            setMetaData(defaultMeta);
-        }
-        setIsLoading(false);
+        metaAPI.getAll()
+            .then(rows => {
+                const config = {};
+                rows.forEach(r => {
+                    config[r.page_id] = { title: r.title, description: r.description, keywords: r.keywords };
+                });
+                setMetaData(config);
+            })
+            .catch(() => setMetaData(defaultMeta))
+            .finally(() => setIsLoading(false));
     }, [defaultMeta]);
 
     useEffect(() => {
-        // Use a small delay or just a clean effect to avoid cascading render warning
-        const timer = setTimeout(() => {
-            refreshMeta();
-        }, 0);
-        
-        const handleStorage = (e) => {
-            if (e.key === 'vat_masters_meta_config') {
-                refreshMeta();
-            }
-        };
-
-        window.addEventListener('storage', handleStorage);
-        return () => {
-            window.removeEventListener('storage', handleStorage);
-            clearTimeout(timer);
-        };
+        refreshMeta();
     }, [refreshMeta]);
 
-    /**
-     * Set meta tags for the current page
-     */
     const setPageMeta = useCallback((pageId) => {
         const pageMeta = metaData[pageId] || defaultMeta[pageId];
         if (!pageMeta) return;
 
-        // Title
         document.title = pageMeta.title;
 
-        // Description
         let descTag = document.querySelector('meta[name="description"]');
         if (!descTag) {
             descTag = document.createElement('meta');
-            descTag.name = "description";
+            descTag.name = 'description';
             document.head.appendChild(descTag);
         }
         descTag.content = pageMeta.description;
 
-        // Keywords
         let keyTag = document.querySelector('meta[name="keywords"]');
         if (!keyTag) {
             keyTag = document.createElement('meta');
-            keyTag.name = "keywords";
+            keyTag.name = 'keywords';
             document.head.appendChild(keyTag);
         }
         keyTag.content = pageMeta.keywords;
     }, [metaData, defaultMeta]);
 
-    return {
-        metaData,
-        setPageMeta,
-        isLoading
-    };
+    return { metaData, setPageMeta, isLoading };
 };

@@ -1,28 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ModernLayout from "../CommonDasboardComponents/ModernLayout";
+import { whatsappAPI, pricingAPI, metaAPI, blogAPI } from "../../services/api";
 
 const DashboardHome = () => {
-    // Pull real stats from localStorage
-    const getStats = () => {
-        const whatsappData = JSON.parse(localStorage.getItem('whatsapp_routing_raw_data') || '[]');
-        const pricingData = JSON.parse(localStorage.getItem('vat_masters_pricing_raw_data') || '[]');
-        const metaData = JSON.parse(localStorage.getItem('vat_masters_meta_raw_data') || '[]');
-        const blogData = JSON.parse(localStorage.getItem('vat_masters_blog_posts') || '[]');
+    const [stats, setStats] = useState([
+        { label: "Active Services", value: "—", icon: "💰", color: "#6366f1" },
+        { label: "Active WhatsApp", value: "—", icon: "💬", color: "#22c55e" },
+        { label: "SEO Configs", value: "—", icon: "🎯", color: "#00E6F6" },
+        { label: "Blog Posts", value: "—", icon: "📝", color: "#f59e0b" },
+    ]);
 
-        const activeWhatsapp = whatsappData.filter(d => d.status === 'active').length;
-        const totalWhatsapp = whatsappData.length;
-
-        const activePricing = pricingData.filter(d => d.status === 'active').length;
-
-        return [
-            { label: "Active Services", value: activePricing.toString(), icon: "💰", color: "#6366f1" },
-            { label: "Active WhatsApp", value: `${activeWhatsapp} / ${totalWhatsapp}`, icon: "💬", color: "#22c55e" },
-            { label: "SEO Configs", value: metaData.length.toString(), icon: "🎯", color: "#00E6F6" },
-            { label: "Blog Posts", value: blogData.length.toString(), icon: "📝", color: "#f59e0b" },
-        ];
-    };
-
-    const stats = getStats();
+    useEffect(() => {
+        Promise.all([
+            whatsappAPI.getGlobal(),
+            pricingAPI.getAll(),
+            metaAPI.getAll(),
+            blogAPI.getPosts(),
+        ]).then(([whatsapp, pricing, meta, blog]) => {
+            const activeWA = whatsapp.filter(d => d.status === 'active').length;
+            const activePricing = pricing.list.filter(d => d.status === 'active').length;
+            setStats([
+                { label: "Active Services",  value: activePricing.toString(),             icon: "💰", color: "#6366f1" },
+                { label: "Active WhatsApp",  value: `${activeWA} / ${whatsapp.length}`,   icon: "💬", color: "#22c55e" },
+                { label: "SEO Configs",      value: meta.length.toString(),               icon: "🎯", color: "#00E6F6" },
+                { label: "Blog Posts",       value: blog.length.toString(),               icon: "📝", color: "#f59e0b" },
+            ]);
+        }).catch(console.error);
+    }, []);
 
     const quickActions = [
         { label: "Update WhatsApp", path: "/dashboard/whatsapp", icon: "📲" },

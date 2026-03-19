@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { authAPI } from '../services/api';
 
 /**
  * Hook to manage Dashboard Authentication.
@@ -19,15 +20,20 @@ export const useAuth = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const login = useCallback((username, password) => {
-        // Mock credentials: admin / admin123
-        if (username === 'admin' && password === 'admin123') {
-            const userData = { username, role: 'admin', loginAt: new Date().toISOString() };
-            localStorage.setItem('vat_masters_auth_user', JSON.stringify(userData));
-            setUser(userData);
-            return { success: true };
+    const login = useCallback(async (username, password) => {
+        try {
+            const result = await authAPI.login(username, password);
+            if (result.success) {
+                const userData = { ...result.user, loginAt: new Date().toISOString() };
+                localStorage.setItem('vat_masters_auth_user', JSON.stringify(userData));
+                setUser(userData);
+                return { success: true };
+            }
+            return { success: false, message: result.message || "Invalid credentials" };
+        } catch (err) {
+            console.error("Login Error:", err);
+            return { success: false, message: err.message || "Server connection failed" };
         }
-        return { success: false, message: "Invalid credentials" };
     }, []);
 
     const logout = useCallback(() => {

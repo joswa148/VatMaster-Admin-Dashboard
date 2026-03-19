@@ -16,16 +16,18 @@ const LoginPage = () => {
         setError("");
         setIsSubmitting(true);
 
-        // Simulate network delay
-        setTimeout(() => {
-            const result = login(username, password);
+        try {
+            const result = await login(username, password);
             if (result.success) {
                 navigate("/dashboard");
             } else {
                 setError(result.message);
                 setIsSubmitting(false);
             }
-        }, 1000);
+        } catch {
+            setError("An unexpected error occurred.");
+            setIsSubmitting(false);
+        }
     };
 
     return (

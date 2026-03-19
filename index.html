@@ -10,21 +10,25 @@
 <link   href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Google Tag Manager -->
     <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MK2FF99');
+    if (window.location.hostname !== 'localhost') {
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MK2FF99');
+    }
     </script>
     <!-- End Google Tag Manager -->
         <!-- Smartlook Tracking Code -->
     <script type="text/javascript">
-      window.smartlook||(function(d) {
-        var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-        c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
-      })(document);
-      smartlook('init', '5e9c313e302f17492f2bf2770bc37523a0e88203', { region: 'eu' });
+      if (window.location.hostname !== 'localhost') {
+        window.smartlook||(function(d) {
+          var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+          var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+          c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+        })(document);
+        smartlook('init', '5e9c313e302f17492f2bf2770bc37523a0e88203', { region: 'eu' });
+      }
     </script>
     <!-- End Smartlook Tracking Code -->
   </head>
@@ -40,16 +44,18 @@
 
     <!--Start of Tawk.to Script (0.9.2)-->
 <script id="tawk-script" type="text/javascript">
-var Tawk_API = Tawk_API || {};
-var Tawk_LoadStart=new Date();
-(function(){
-	var s1 = document.createElement( 'script' ),s0=document.getElementsByTagName( 'script' )[0];
-	s1.async = true;
-	s1.src = 'https://embed.tawk.to/62e8a6a337898912e960c017/1g9eclsqa';
-	s1.charset = 'UTF-8';
-	s1.setAttribute( 'crossorigin','*' );
-	s0.parentNode.insertBefore( s1, s0 );
-})();
+if (window.location.hostname !== 'localhost') {
+  var Tawk_API = Tawk_API || {};
+  var Tawk_LoadStart=new Date();
+  (function(){
+  	var s1 = document.createElement( 'script' ),s0=document.getElementsByTagName( 'script' )[0];
+  	s1.async = true;
+  	s1.src = 'https://embed.tawk.to/62e8a6a337898912e960c017/1g9eclsqa';
+  	s1.charset = 'UTF-8';
+  	s1.setAttribute( 'crossorigin','*' );
+  	s0.parentNode.insertBefore( s1, s0 );
+  })();
+}
 </script>
 <!--End of Tawk.to Script (0.9.2)-->
 
