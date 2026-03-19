@@ -1,7 +1,5 @@
 import React from "react";
-const logo = "/assets/image/Vat-Master-Logo-1.png";
 const heroImg = "/assets/image/Subtract 10.png";
-const offerBg = "/assets/image/Frame 1000006032.png";
 import "../Style/Pricingcss/AboutPage.css";
 const dummyBg = "/assets/image/mobilePricing.jpg";
 

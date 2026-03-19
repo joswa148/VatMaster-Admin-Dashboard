@@ -1,6 +1,4 @@
 import React from "react";
-const rightBg = "/assets/image/Group 1000005923.png";
-const offerBg = "/assets/image/Frame 1000006032.png";
 const digram = "/assets/image/UAE_Dirham_Symboll.svg";
 import "../Style/VatConsultant/CtPenaltySectionNew.css";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";

@@ -1,9 +1,7 @@
 import React from "react";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
 const bg = "/assets/image/Subtract 4.png";
-const leftBg = "/assets/image/Group 1000005923.png";
 const rightBg = "/assets/image/Group 1000005928.png";
-const consultantImg = "/assets/image/three-talking-associates.jpg"; 
 const landgroup = "/assets/image/langroup.png";
 import "../Style/Fillingcss/CtDocsRatesSectionNew.css"
 const Tick = () => <span className="ct3-tick">✓</span>;

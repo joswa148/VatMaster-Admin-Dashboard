@@ -9,22 +9,53 @@ const DashboardHome = () => {
         { label: "SEO Configs", value: "—", icon: "🎯", color: "#00E6F6" },
         { label: "Blog Posts", value: "—", icon: "📝", color: "#f59e0b" },
     ]);
+    const [recentActivity, setRecentActivity] = useState([]);
 
     useEffect(() => {
         Promise.all([
-            whatsappAPI.getGlobal(),
-            pricingAPI.getAll(),
-            metaAPI.getAll(),
-            blogAPI.getPosts(),
+            whatsappAPI.getGlobal().catch(() => []),
+            pricingAPI.getAll().catch(() => ({ list: [] })),
+            metaAPI.getAll().catch(() => []),
+            blogAPI.getPosts().catch(() => []),
         ]).then(([whatsapp, pricing, meta, blog]) => {
-            const activeWA = whatsapp.filter(d => d.status === 'active').length;
-            const activePricing = pricing.list.filter(d => d.status === 'active').length;
+            const pricingList = Array.isArray(pricing?.list) ? pricing.list : [];
+            const whatsappList = Array.isArray(whatsapp) ? whatsapp : [];
+            const metaList = Array.isArray(meta) ? meta : [];
+            const blogList = Array.isArray(blog) ? blog : [];
+
+            const activeWA = whatsappList.filter(d => d.status === 'active').length;
+            const activePricing = pricingList.filter(d => d.status === 'active').length;
+            
             setStats([
                 { label: "Active Services",  value: activePricing.toString(),             icon: "💰", color: "#6366f1" },
-                { label: "Active WhatsApp",  value: `${activeWA} / ${whatsapp.length}`,   icon: "💬", color: "#22c55e" },
-                { label: "SEO Configs",      value: meta.length.toString(),               icon: "🎯", color: "#00E6F6" },
-                { label: "Blog Posts",       value: blog.length.toString(),               icon: "📝", color: "#f59e0b" },
+                { label: "Active WhatsApp",  value: `${activeWA} / ${whatsappList.length}`,   icon: "💬", color: "#22c55e" },
+                { label: "SEO Configs",      value: metaList.length.toString(),               icon: "🎯", color: "#00E6F6" },
+                { label: "Blog Posts",       value: blogList.length.toString(),               icon: "📝", color: "#f59e0b" },
             ]);
+
+            // Create a pseudo-activity feed from real data
+            const activities = [];
+            if (blogList.length > 0) {
+                blogList.slice(0, 2).forEach(p => activities.push({
+                    action: `Blog post '${p.title}' published`,
+                    time: p.date || "Recently",
+                    user: p.author || "Admin",
+                    type: "blog"
+                }));
+            }
+            if (pricingList.length > 0) {
+                pricingList.slice(0, 1).forEach(p => activities.push({
+                    action: `Service '${p.name}' price: ${p.currency} ${p.price}`,
+                    time: "Active",
+                    user: "System",
+                    type: "pricing"
+                }));
+            }
+            if (activities.length === 0) {
+                activities.push({ action: "Welcome to VAT Masters Dashboard", time: "Now", user: "System", type: "system" });
+            }
+            setRecentActivity(activities);
+
         }).catch(console.error);
     }, []);
 
@@ -33,13 +64,6 @@ const DashboardHome = () => {
         { label: "Edit Meta Tags", path: "/dashboard/meta", icon: "🔍" },
         { label: "Manage Pricing", path: "/dashboard/pricing", icon: "💰" },
         { label: "New Blog Post", path: "/dashboard/blogs", icon: "✍️" },
-    ];
-
-    const recentActivity = [
-        { action: "WhatsApp routing updated for Monday", time: "2 hours ago", user: "Admin", type: "whatsapp" },
-        { action: "New service 'VAT Audit' added to Pricing", time: "5 hours ago", user: "Admin", type: "pricing" },
-        { action: "Meta description updated for Home Page", time: "1 day ago", user: "System", type: "meta" },
-        { action: "Blog post 'New FTA Regulations' published", time: "2 days ago", user: "Content Team", type: "blog" },
     ];
 
     return (
@@ -102,7 +126,7 @@ const DashboardHome = () => {
                 .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 24px; }
                 .action-btn { 
                     background: var(--neutral-50); 
-                    border: 1px solid var(--neutral-100);
+                    border: 1px solid var(--neutral-200);
                     padding: 16px;
                     border-radius: 16px;
                     display: flex;
@@ -146,7 +170,7 @@ const DashboardHome = () => {
                 <div className="grid-card">
                     <div className="card-header">
                         <h2>Recent Activity</h2>
-                        <button style={{ background: "none", border: "none", color: "var(--primary-dark)", fontWeight: 700, fontSize: "13px", cursor: "pointer" }}>View All</button>
+                        {/* <button style={{ background: "none", border: "none", color: "var(--primary-dark)", fontWeight: 700, fontSize: "13px", cursor: "pointer" }}>View All</button> */}
                     </div>
                     <ul className="activity-list">
                         {recentActivity.map((activity, idx) => (
@@ -167,10 +191,10 @@ const DashboardHome = () => {
                     </div>
                     <div className="quick-actions">
                         {quickActions.map((action, idx) => (
-                            <a key={idx} href={action.path} className="action-btn">
+                            <div key={idx} onClick={() => window.location.href=action.path} className="action-btn">
                                 <span className="icon">{action.icon}</span>
                                 <span>{action.label}</span>
-                            </a>
+                            </div>
                         ))}
                     </div>
                 </div>

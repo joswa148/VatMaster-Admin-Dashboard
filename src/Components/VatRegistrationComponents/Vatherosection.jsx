@@ -1,10 +1,7 @@
 import React from "react";
 const logo = "/assets/image/Vat-Master-Logo-1.png";
-const rightPanelBg = "/assets/image/Group 1000005918.png";
 const modelImg = "/assets/image/Screenshot_2025-12-20_132826-removebg-preview.png";
 const offerBg = "/assets/image/Frame 1000006032.png";
-const destww = "/assets/image/UAE_Dirham_Symboll.svg";
-const goolerew = "/assets/image/225.webp";
 const newsub = "/assets/image/newsub.png";
 const clients = "/assets/image/homepic.png";
 import { useNavigate } from "react-router-dom";
@@ -112,7 +109,7 @@ export default function Vatherosection() {
              <img className="vm-model" src={modelImg} alt="Model" />
             <img src="/assets/image/newcard.png" alt="" className="priceimg" />
             <div className="pricelist">
-              <p>Limited Offer Running @ Just </p>
+              <p>Limited Offer Running @ Just </p>
               <p>AED <span className="p1">499</span> <span  className="p2">199</span></p>
            </div>
           </div>

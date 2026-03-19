@@ -5,6 +5,7 @@ import { useAuth } from "../../hooks/useAuth";
 const LoginPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     
@@ -73,12 +74,13 @@ const LoginPage = () => {
                 .form-group { margin-bottom: 24px; }
                 .form-group label { display: block; color: rgba(255, 255, 255, 0.6); font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
                 
-                .input-wrapper { position: relative; }
+                .input-wrapper { position: relative; display: flex; align-items: center; }
                 .login-input {
                     width: 100%;
                     background: rgba(255, 255, 255, 0.05);
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     padding: 14px 16px;
+                    padding-right: 48px;
                     border-radius: 12px;
                     color: white;
                     font-size: 15px;
@@ -90,6 +92,22 @@ const LoginPage = () => {
                     background: rgba(255, 255, 255, 0.08);
                     box-shadow: 0 0 0 4px rgba(0, 230, 246, 0.1);
                 }
+
+                .eye-btn {
+                    position: absolute;
+                    right: 12px;
+                    background: none;
+                    border: none;
+                    color: rgba(255, 255, 255, 0.4);
+                    cursor: pointer;
+                    padding: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: color 0.2s;
+                    font-size: 18px;
+                }
+                .eye-btn:hover { color: #00E6F6; }
 
                 .error-box {
                     background: rgba(239, 68, 68, 0.1);
@@ -143,14 +161,24 @@ const LoginPage = () => {
                     </div>
                     <div className="form-group">
                         <label>Password</label>
-                        <input 
-                            type="password" 
-                            className="login-input" 
-                            placeholder="••••••••" 
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            required
-                        />
+                        <div className="input-wrapper">
+                            <input 
+                                type={showPassword ? "text" : "password"} 
+                                className="login-input" 
+                                placeholder="••••••••" 
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                required
+                            />
+                            <button 
+                                type="button" 
+                                className="eye-btn"
+                                onClick={() => setShowPassword(!showPassword)}
+                                aria-label={showPassword ? "Hide password" : "Show password"}
+                            >
+                                <i className={`bi bi-eye${showPassword ? "-slash" : ""}`}></i>
+                            </button>
+                        </div>
                     </div>
 
                     <button type="submit" className="login-btn" disabled={isSubmitting}>

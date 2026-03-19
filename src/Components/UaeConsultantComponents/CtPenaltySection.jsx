@@ -1,5 +1,4 @@
 import React from "react";
-const rightBg = "/assets/image/Group 1000005923.png";      // white card shape with wave
 const offerBg = "/assets/image/Frame 1000006032.png"; 
 const destww = "/assets/image/UAE_Dirham_Symboll.svg";     // offer card bg
 
@@ -11,7 +10,7 @@ const Tick = () => <span className="ct-tick">✓</span>;
 export default function CtPenaltySection() {
   const { whatsappUrl } = useWhatsAppRouting();
   return (
-     <section className="pen-wrap">
+    <section className="pen-wrap">
      
    <div className="bg-pen">
       <p className="avoidep">Avoid AED 10,000 penalty by registering for Corporate Tax today!</p>

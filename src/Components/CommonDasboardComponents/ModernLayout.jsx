@@ -107,7 +107,7 @@ const ModernLayout = ({ children, activeTitle = "Dashboard" }) => {
                 .menu-label { opacity: ${isSidebarOpen ? 1 : 0}; transition: opacity 0.2s; }
 
                 /* Content Area */
-                .page-content { flex: 1; padding: 15px; background: #f8fafc; overflow-y: auto; }
+                .page-content { flex: 1; padding: 32px; background: #f8fafc; overflow-y: auto; }
 
                 @media (max-width: 1024px) {
                     .sidebar { width: 80px; }

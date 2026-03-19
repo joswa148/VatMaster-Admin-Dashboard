@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
 
 const Vattestimonialcertificate = () => {
   const testimonials = useMemo(
@@ -38,14 +38,14 @@ const Vattestimonialcertificate = () => {
   const visibleCount = 3; // 👈 desktop cards
   const maxIndex = testimonials.length - visibleCount;
 
-  const next = () => {
+  const next = useCallback(() => {
     setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
+  }, [maxIndex]);
 
   useEffect(() => {
     timerRef.current = setInterval(next, 3000); // 👈 3 sec once
     return () => clearInterval(timerRef.current);
-  }, [maxIndex]);
+  }, [next]);
 
   return (
     <section className="vat3-wrap">

@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "../Style/Homecss/Hometest.css";
 const leftBigCardImg = "/assets/image/Subtract-6.png";
-const rightCardShapeImg = "/assets/image/Subtract-5.png";
-const avatarImg = "/assets/image/bussman.jpg";
 import { useNavigate } from "react-router-dom";
 export default function HomeTest() {
   const trackRef = useRef(null);

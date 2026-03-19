@@ -1,12 +1,9 @@
 import React from "react";
 const bg = "/assets/image/Subtract 4.png";
-const leftBg = "/assets/image/Group 1000005923.png";
 const rightBg = "/assets/image/Group 1000005928.png";
-const consultantImg = "/assets/image/three-talking-associates.jpg"; 
 const landgroup = "/assets/image/langroup.png";
 
-
-import "../Style/VatsecondRegistration/CtDocsRateSectionNew.css";
+import "../Style/VatRegistration/CtDocsRateSectionNew.css";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
 
 const Tick = () => <span className="ct3-tick">✓</span>;
@@ -30,7 +27,7 @@ export default function CtDocsRatesSectionNew() {
 
          
             {/* Caption like image */}
-            <h3 className="ct3-cardLefttitle">Best VAT Registration Company In Dubai</h3>
+            <h3 className="ct3-cardLefttitle">Best VAT Registration Services In Dubai</h3>
              <img className="bc-img" src={landgroup} alt="Consultant" />
      
         </div>
@@ -44,7 +41,7 @@ export default function CtDocsRatesSectionNew() {
           <a href={whatsappUrl} target="_blank" rel="noreferrer" className="ct-wa">
             <i className="bi bi-whatsapp"></i> WhatsApp us
           </a>
-          <h3 className="ct3-cardTitle">Documents required for VAT Registration UAE</h3>
+          <h3 className="ct3-cardTitle">Necessary Documents for VAT Registration in UAE</h3>
          
 
           <ul className="ct3-list">
@@ -56,65 +53,46 @@ export default function CtDocsRatesSectionNew() {
 <li>
   <Tick />
   <span className="ct3-data">
-     MOA/AOA (Not needed for Sole Est.)
+    Certificate of Incorporation
   </span>
 </li>
 
 <li>
   <Tick />
   <span className="ct3-data">
-    Passport Copy of the Signatory
+    Memorandum of Association (MoA)
   </span>
 </li>
 
 <li>
   <Tick />
   <span className="ct3-data">
-    Emirates ID of the Signatory
+    Passport & Emirates ID (Owners/Partners)
   </span>
 </li>
 
 <li>
   <Tick />
   <span className="ct3-data">
-    Visa Copy of Signatory (Optional)
+    Company Bank Account Details & IBAN
   </span>
 </li>
 
 <li>
   <Tick />
   <span className="ct3-data">
-    Invoices
+    Business Activities & Financial Projections
   </span>
 </li>
 
 <li>
   <Tick />
   <span className="ct3-data">
-    Bank Details
+    Contact Details & Registered Office Address
   </span>
 </li>
 
-<li>
-  <Tick />
-  <span className="ct3-data">
-    Email ID
-  </span>
-</li>
 
-<li>
-  <Tick />
-  <span className="ct3-data">
-    Mobile Number
-  </span>
-</li>
-
-<li>
-  <Tick />
-  <span className="ct3-data">
-    Office Address with PO Box
-  </span>
-</li>
 
           </ul>
 

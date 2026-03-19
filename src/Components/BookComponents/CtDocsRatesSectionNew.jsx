@@ -1,10 +1,7 @@
 import React from "react";
 const bg = "/assets/image/Subtract 4.png";
-const leftBg = "/assets/image/Group 1000005923.png";
 const rightBg = "/assets/image/Group 1000005928.png";
-const consultantImg = "/assets/image/three-talking-associates.jpg"; 
 const landgroup = "/assets/image/langroup.png";
-
 
 import "../Style/Book/CtDocsRateSectionNew.css";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";

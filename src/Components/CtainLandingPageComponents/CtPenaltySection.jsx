@@ -1,5 +1,4 @@
 import React from "react";
-const rightBg = "/assets/image/Group 1000005923.png";      // white card shape with wave
 const offerBg = "/assets/image/Frame 1000006032.png"; 
 const destww = "/assets/image/UAE_Dirham_Symboll.svg";     // offer card bg
 import "../Style/CtainLandingcss/CtPenaltySection.css";

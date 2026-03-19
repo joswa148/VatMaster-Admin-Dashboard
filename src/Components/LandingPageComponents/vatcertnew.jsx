@@ -2,8 +2,6 @@ import React from "react";
 import "../Style/CtainLandingcss/vatcertnew.css";
 const newvatregbg = "/assets/image/Subtract 4.png";
 const logo = "/assets/image/Vat-Master-Logo-1.png";
-const girlmain = "/assets/image/vtmain.png";
-const derer = "/assets/image/AED-Symbol.svg";
 import { useNavigate } from "react-router-dom";
 import { useWhatsAppRouting } from "../../hooks/useWhatsAppRouting";
 

@@ -1,10 +1,14 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 import bcrypt from 'bcrypt';
 import pool from './db.js';
 
 const app = express();
+app.use(helmet({
+    contentSecurityPolicy: false, // Disable CSP if it interferes with certain frontend scripts
+}));
 app.use(cors());
 app.use(express.json());
 
